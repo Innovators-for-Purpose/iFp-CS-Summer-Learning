@@ -132,7 +132,7 @@ Lets do the same for our info-box. Use `<h2>` to add a line for the title and `<
 ```html
 <h2 id="Title">
     About Me
-    </h1>
+    </h2>
 <p id="description"> 
     Your Title Here
     </p>
@@ -147,7 +147,7 @@ Now you have have this:
         <div class="info-box">
             <h2 id="Title">
                 About Me
-                </h1>
+                </h2>
             <p id="description"> 
                 Your Title Here
                 </p>
@@ -176,7 +176,7 @@ Add the `<img>` tag into Profile-Card class, and put it right before your name t
         <div class="info-box">
             <h2 id="Title">
                 About Me
-                </h1>
+                </h2>
             <p id="description"> 
                 Your Title Here
                 </p>
@@ -218,7 +218,7 @@ Now add buttons for Skills, Interests, and Experience. Your html should look som
         <div class="info-box">
             <h2 id="Title">
                 About Me
-                </h1>
+                </h2>
             <p id="description"> 
                 Your Title Here
                 </p>
@@ -257,37 +257,47 @@ Things to remember:
 A CSS file controls the look of your webpage. It changes how text, backgrounds, spacing, and layout appear so your HTML looks polished and easy to read.
 
 
-1. Open `style.css` in VS Code. I have given you 3 empty,sections to start adding styles:
+1. Open `style.css` in VS Code. I have given you 3 example sections to start adding styles:
 
 ```css
 .body{
 
 },
 .buttons-container {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 18px;
+
 }
 
 button {
-  background-color: #5b7ff3;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  padding: 12px 18px;
+
 }
 
 button:hover {
-  background-color: #496fdb;
+
 }
 .
 ```
 
 
-2. Add styles for the `body` so the page has a soft background and centered content.
+2. Add styles for the `body` so the page has a soft background and centered content. You can start by adding a background color like so:
+
+```css
+body {
+  background-color: #2c87fd;
+}
+```
+
+You can center the conten using `justify-content`:
+
+
+```css
+body {
+  background-color: #2c87fd;
+  justify-content: center;
+}
+```
+
+Remember to end each new style with `;` so no error will occur and they can appear in the preview.
+
 3. Style `.profile-card`, `.info-box`, and `.buttons-container` so they have spacing, background color, and aligned text.
 4. Use `color`, `background-color`, `padding`, `margin`, and `text-align`.
 
