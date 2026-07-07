@@ -32,7 +32,7 @@ There will be tips and definitions here to guide you and reference back if you f
 
 ## "index.html"
 
-An HTML file is the main structure of a webpage. It uses tags to tell the browser what content should appear, such as headings, paragraphs, links, and images. In this practice, you will make a file is used to hold the page content and layout while the other files add style and behavior.
+An HTML file is the main structure of a webpage. It uses tags to tell the browser what content should appear, such as headings, paragraphs, links, and images. In this practice, you will make a file used to hold the page content and layout while the other files add style and behavior.
 
 
 
