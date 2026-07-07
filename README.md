@@ -137,6 +137,7 @@ Lets do the same for our info-box. Use `<h2>` to add a line for the title and `<
     Your Title Here
     </p>
 ```
+<br></br>
 
 Now you have have this:
 
@@ -160,12 +161,15 @@ Now you have have this:
 
 ### Images
 
-Let's try adding an image to our page. We can call images and other files by using `src` to call for items in our directory. Because we are calling an image, we will use the `<img>` tag to call are image into. I have provided a folder called "Images", so for our source, we will have to take the path of where the photo is coming from before we call the image:
+Let's try adding an image to our page. Firstly, make a new folder called `images` and add it to the directory. We can call images and other files by using `src` to call for items in our directory. Once you have do that, go ahead and add an image file to the folder so you can use it to your profile. Remember to rename the file if the name is too long when you save it and be aware of the types of files such a JPG, JPEG, and PNG.
+
+
+Because we are calling an image, we will use the `<img>` tag to call are image into. We will have to take the path of where the photo is coming from before we call the image:
 
 ```html
 src="images/profile_image.png"
 ```
-
+<br></br>
 Add the `<img>` tag into Profile-Card class, and put it right before your name tag. You should end up with something like this:
 
 ```html
@@ -257,7 +261,7 @@ Things to remember:
 A CSS file controls the look of your webpage. It changes how text, backgrounds, spacing, and layout appear so your HTML looks polished and easy to read.
 
 
-1. Open `style.css` in VS Code. I have given you 3 example sections to start adding styles:
+1. Create the file `style.css` just as you did for the `index.html`. Below, I have given you 3 example sections to start adding styles:
 
 ```css
 .body{
@@ -276,6 +280,24 @@ button:hover {
 }
 .
 ```
+<br></br>
+Notice how each section is named the same as a div container you have created in you index. This is because once we connect the stylesheet the HTML, any changes you make to the styles will effect the container. To connect the CSS to the HTML, you will add it into the `<head>` div of the index by using the `<link>` div. Link will take two items: A relationship (`rel`) and a Hypertext Reference (`href`). These items tell the HTMl what exactly what it'll be looking for and where to find it. For our sake, we will be looking for the stylesheet which is our CSS file. Set up the `<link>` div like this and add it inside the `<head>` div:
+```HTML
+<link rel="stylesheet" href="style.css">
+```
+<br></br>
+You should end up with something like this:
+
+```HTML
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+```
+
 
 
 2. Add styles for the `body` so the page has a soft background and centered content. You can start by adding a background color like so:
