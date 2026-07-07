@@ -382,6 +382,22 @@ This section is about using CSS to enhance your HTML file. Start with these styl
 
 A JavaScript or sometimes refered to as JS file makes your page interactive. It controls behavior like updating text, responding to clicks, and changing content without reloading the page.
 
+Let's start by creating a script.js file just like the HTML and CSS files you established before. 
+
+Once you do that, go back to you HTML file so we can reference the Script. At the bottom of your `<body>` div, add a `<script>` div. Just like we did for the the profile image, we will call the `src` for the file and set it to the path of the script file:
+
+```HTML
+<script src="script.js"></script>
+```
+<br></br>
+Your file should looks something like this:
+
+```HTML
+    ...
+
+    <script src="script.js"></script>
+</body>
+```
 
 ### How to write a function
 
