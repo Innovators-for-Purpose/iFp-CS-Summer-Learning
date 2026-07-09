@@ -1,0 +1,60 @@
+body{
+    background-color: #000000;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-image: url("images2/Back.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.profile-card {
+    background-color: #000000 ;
+    max-width: 470px;
+    padding: 30px;
+    border-radius: 20px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.info-box {
+    background-color: #000000 ;
+    max-width: 600px;
+    margin: 20px 0px;
+    border-width: 5px;
+    border-color: azure;
+    border-style: solid;
+    color:white;
+    text-align: center;
+    min-width: 400px;
+}
+.button-container {
+    background-color: #000000;
+    max-width: 450px;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: #000000;
+    color: #da5a23;
+    border-color: #da5a23;
+    text-align: center;
+    padding: 12px;
+}
+button:hover{
+border-color: yellow;
+color: yellow;
+}
+
+img {
+    height: 250px;
+    width: 202px;
+    border-radius: 30%;
+}
