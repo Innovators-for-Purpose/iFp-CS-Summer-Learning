@@ -464,7 +464,128 @@ function showInterests() {
 This makes your buttons work and updates the page content when the user clicks them.
 
 
+## "Test your knowledge"
+
+Now that you have been able to create your own profile page, feel free to keep adding to it and styling it to your desire. For the next assignment, you will be using the knowledge and skills that you learned to create a button that talks to you. Think of a small helper character like Clippy that pops up when you click it.
+
+### "Talking Button Assignment"
+
+This challenge will help you build a small round button that opens a little message box. The box will show one phrase and three options. When the user clicks an option, a short response will appear.
+
+For this assignment, students should build the button in their own project files, not inside the Example Code folder. They should use the same ideas from this lesson and add them into their own `index.html`, `style.css`, and `script.js` files.
+
+### "index.html"
+
+Create a new `index.html`. Like we did before, you want to set up the HTML file like before, but this time we will be adding
+1. A button that will act like the talking helper.
+2. A small container for the message box.
+3. Three buttons inside the message box so the user can choose an option.
+4. A place where the reply text will appear.
+
+Start with the button itself. This is the small round icon that the user will click.
+
+Example:
+
+```html
+<button class="talking-button" onclick="openDialog()">💬</button>
+```
+
+This button is the part the user sees first. The `onclick="openDialog()"` tells the browser to run a JavaScript function when the button is clicked. The emoji is just a simple icon for the button, but you can change this to an image or any emoji.
+
+Next, add the message box that will appear after the button is clicked.
+
+Example:
+
+```html
+<div class="dialog-box" id="dialog-box">
+  <p>Need some help?</p>
+  <button onclick="showOptionOne()">Option 1</button>
+  <p id="response">Choose an option.</p>
+</div>
+```
+
+The Dialog Box `div` acts like a container for the pop-up message.
+The first paragraph is the phrase the helper says. The three buttons are the choices the user can click.
+The last paragraph is where the reply will appear.
+
+You can place the button and the dialog box anywhere in your page, but they should be inside the main content area so they are easy to see. Add 3 more options.
+
+### "style.css"
+
+Now add the style for this talking box. Remember to include styles for all the new classes that you have added.
+
+1. Create or update your `style.css` file.
+2. Style the button so it looks small, round, and easy to click.
+3. Style the dialog box so it looks like a little pop-up box.
+4. Hide the dialog box at first, then show it when the button is clicked.
+
+Example:
+
+```css
+.talking-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #5b7ff3;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dialog-box {
+  display: none;
+  margin-top: 20px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 260px;
+}
+```
+
+The button needs a fixed size and a round shape. `border-radius: 50%` makes it a circle.`display: none` hides the box until the JavaScript opens it, you can add padding and a box-shadow make the message box look more polished.
+
+### "script.js"
+
+Creat a new JS file and call it `talking-box.js`. Just like the last `script,js` you will write a function to open the dialog box and three functions that change the answer text when each option is clicked.
+
+Start with the `openDialog` function.
+
+Example:
+
+```js
+function openDialog() {
+  document.getElementById("dialog-box").style.display = "block";
+}
+```
+
+The function is named `openDialog` because its job is to open the message box. `document.getElementById("dialog-box")` finds the message box in the HTML and `.style.display = "block"` changes the CSS so the box becomes visible.
+
+Next, add the option responses.
+
+Example:
+
+```js
+function showOptionOne() {
+  document.getElementById("response").textContent = "....";
+}
+
+```
+
+Each function changes the text inside the `response` paragraph. The words inside the quotes are the reply that appears after the user clicks an option.This teaches the idea that JavaScript can update content on the page.
+
+### "Your Challenge"
+
+Try to complete these goals:
+
+- Make the button round and small.
+- Make the button appear on the page.
+- Show a phrase when the button is clicked.
+- Add three options that each give a different response.
+- Use your own colors, words, and style to make it feel unique.
 
 
+Your next challenge is to make it so that you can simply add this Talking Button component to you original Profile HTML. 
 
-
+Hint: You know you can call the Styles into the HTML file using an `href`, do you think its possible to add them to the Script file too?
