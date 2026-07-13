@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../chatbot/style.css">
 </head>
 <body>
     <div class="profile-card">
@@ -41,6 +42,18 @@
             </button>
         </div>
     </div>
+    <button class="talking-button" onclick="openDialog()">💬</button>
+    <div class="dialog-box" id="dialog_box">
+        <p>Need Some help?</p>
+        <div class="Button-options">
+        <button class="Button" onclick="showOptionOne()">Option 1</button>
+        <button class="Button" onclick="showOptionTwo()">Option 2</button>
+        <button class="Button" onclick="showOptionThree()">Option 3</button>
+        </div>
+        <p id="response">Choose an option.</p>
+    </div>
+    
     <script src="script.js"></script>
+    <script src="../chatbot/script.js"></script>
 </body>
 </html>

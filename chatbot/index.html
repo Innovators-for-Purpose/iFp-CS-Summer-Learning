@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <button class="talking-button" onclick="openDialog()">💬</button>
-    <div class="dialog-box" id="dialog-box">
+    <div class="dialog-box" id="dialog_box">
         <p>Need Some help?</p>
-        <button onclick="showOptionOne()">Option 1</button>
+        <div class="Button-options">
+        <button class="Button" onclick="showOptionOne()">Option 1</button>
+        <button class="Button" onclick="showOptionTwo()">Option 2</button>
+        <button class="Button" onclick="showOptionThree()">Option 3</button>
+        </div>
         <p id="response">Choose an option.</p>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

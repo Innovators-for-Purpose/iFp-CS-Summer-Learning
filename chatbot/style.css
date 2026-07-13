@@ -1,0 +1,39 @@
+.talking-button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #5b7ff3;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dialog-box {
+    display: none;
+    margin-top: 20px;
+    padding: 16px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 12px;
+    border: solid;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 260px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button-options {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.Button {
+    width: 60px;
+    height: 60px;
+    border: solid;
+    border-color: rgb(185, 185, 185);
+    background: #98b0ff;
+    border-radius: 40%;
+}
