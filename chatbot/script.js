@@ -5,6 +5,7 @@ function openDialog() {
     }
     else {
         element.style.display = "none";
+        document.getElementById("response").textContent = "Choose an option.";        
     }
 }
 
