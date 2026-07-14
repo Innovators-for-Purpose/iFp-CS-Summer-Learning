@@ -33,7 +33,7 @@
     width: 60px;
     height: 60px;
     border: solid;
-    border-color: rgb(185, 185, 185);
+    border-color: rgba(38, 38, 38, 0.22);
     background: #98b0ff;
     border-radius: 40%;
 }

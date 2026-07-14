@@ -1,5 +1,11 @@
 function openDialog() {
-    document.getElementById("dialog_box").style.display = "flex";
+    const element = document.getElementById("dialog_box");
+    if (element.style.display === "none") {
+        element.style.display = "flex";
+    }
+    else {
+        element.style.display = "none";
+    }
 }
 
 function showOptionOne() {
