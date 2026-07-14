@@ -31,5 +31,6 @@ function showVideo() {
 }
 
 function showGenius() {
-  
+  document.getElementById("Title").innerHTML = '<a style="color: inherit; text-decoration: inherit;" href="https://genius.innovatorsforpurpose.org/" target="_blank">Genius Project</a>';
+  document.getElementById("Description").innerHTML = '<iframe width="400" height="400" src="https://genius.innovatorsforpurpose.org/" title="description"></iframe>';
 }
