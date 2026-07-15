@@ -1,0 +1,61 @@
+body {
+  background-color: #43361C;
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  background-color: #d48c07;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(82, 45, 2, 0.08);
+  max-width: 460px;
+  padding: 30px;
+  text-align: center;
+}
+
+.info-box {
+  background-color: #ffc251;
+  border-radius: 14px;
+  margin: 20px 0;
+  padding: 16px;
+  text-align: left;
+}
+
+.button-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+button {
+  background-color: #AE1216;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 12px 18px;
+}
+
+button:hover {
+  background-color: #61080b;
+}
+
+img {
+  height: 150px;
+  width: auto;
+  border-radius: 25%;
+}
+
+iframe {
+  height: 275px;
+  width: 400px;
+  border: 100;
+  border-color: #ffd000;
+  display: none;
+}

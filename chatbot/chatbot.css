@@ -1,0 +1,35 @@
+
+
+.talking-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #5b7ff3;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dialogue {
+  display: none;
+  margin-top: 20px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 260px;
+}
+
+button {
+  background-color: #0471cb;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 12px 18px;
+}
+
+button:hover {
+  background-color: #053b71;
+}
