@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+     <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Example Code/style.css">
+    <title>Document</title>
+</head>
+<body>
+ <div class ="profile-card">
+    <img id="img" src="images/me2.png" alt="profile-image">
+    <h1> Nathan Yohannes</h1>
+    <h3>Computer Science Beginner</h3>
+        <div class="info-box">
+            <h2 id="title">About Me</h2>
+            <p id="description"> Hi im Nathan. I am a new student at Ifp learning code and computer science.</p>
+            
+        </div>
+    <div class="buttons-container">
+          <button onclick="showAbout()">
+                About Me
+            </button>
+
+            <button onclick="showSkills()">
+                Skills
+
+            </button>
+
+            <button onclick="showExperience()">
+                Experience
+            </button>
+
+            <button onclick="showInterests()">
+                Interests
+            </button>
+
+            <button onclick="showVideo()"> 
+                Video </button>
+
+            <button onclick="showIframe()">
+                Genius </button>
+
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+
+     <main class="container"></main>
+        <button class="talking-button" onclick="openDialog()">💬</button>
+
+        <div class="dialog-box" id="dialog-box">
+            <p>Need some help?</p>
+            <button class="round-button" onclick="showOptionOne()">What is this website?</button>
+            <button class="round-button" onclick="showOptionTwo()">What are his career goals?</button>
+            <button class="round-button" onclick="showOptionThree()">What is Innovators For Purpose?</button>
+            <p id="response">Choose an option</p> 
+        </div>
+
+        
+                
+
+    </main>
+    <script src="talking-box.js"></script>
+    
+    <iframe id="iframe" src="https://genius.innovatorsforpurpose.org/" title="Iframe Example"></iframe>
+
+</body>
+</html> 
