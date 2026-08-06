@@ -9,36 +9,46 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="profile-box">
-        <img id="pfp" src="images/purple flowers.png"></img>
-        <h1>Eden Hossaena</h1>
-        <h3>Super Awesome Coder Girl</h3>
+    <div class="selection-bar">
         <div class="page-buttons">
             <button onclick="showAbout()">About Me</button>
             <button onclick="showProjects()">Projects</button>
             <button onclick="showSkills()">Skills</button>
             <button onclick="showInterests()">Interests</button>
+         </div>
+         <div class="other-buttons">
+            <a href="https://innovatorsforpurpose.org/">
+                <img class="ifp" src="images/ifp logo.png" alt="iFp logo">
+            </a>
+
+        <div class="dialog-box" id="dialog-box">
+            <p>Got any other questions?</p>
+            <button onclick="showOptionOne()">Getting in touch</button>
+            <button onclick="showOptionTwo()">Fun fact?</button>
+            <button onclick="showOptionThree()">About the Site</button>
+            <p id="answer-text"></p>
+            <a href="https://www.linkedin.com/in/eden-hossaena/" id="linkedin">You can find me on LinkedIn here.</a>
+            </div>
+            <button id="openDialogue" onclick="openDialogue()">?</button>
         </div>
+    </div>
+
+    <break></break>
+
+    <div class="profile-box">
+        <div class="top-section">
+            <img id="pfp" src="images/seth 1.jpeg"></img>
+            <h1>Eden Hossaena</h1>
+            <h3>Super Awesome Coder Girl</h3>
+        </div>
+
         <div id="info">
             <h2 id="title">About Me</h2>
             <p id="description">Hello! I’m an Ethiopian-American teenage girl who loves to create. Feel free to click around and see what I’ve worked on.</p>
             <iframe id="video" src="https://www.youtube.com/embed/CUWJTC4ChSM?si=Crw91BR_5KoLMi71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
         </div>
     </div>
 
-    <a href="https://innovatorsforpurpose.org/">
-    <img class="ifp" src="images/ifp logo.png" alt="iFp logo">
 
-    <div class="dialog-box" id="dialog-box">
-        <p>Got any other questions?</p>
-        <button onclick="showOptionOne()">Getting in touch</button>
-        <button onclick="showOptionTwo()">Fun fact?</button>
-        <button onclick="showOptionThree()">About the Site</button>
-        <p id="answer-text"></p>
-        <a href="https://www.linkedin.com/in/eden-hossaena/" id="linkedin">You can find me on LinkedIn here.</a>
-    </div>
-    <button id="openDialogue" onclick="openDialogue()">?</button>
 </body>
 </html>

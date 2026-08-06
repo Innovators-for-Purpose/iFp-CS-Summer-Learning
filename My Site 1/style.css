@@ -47,10 +47,10 @@ a {
 
 .profile-box {
   box-shadow: black 0 0 10px;
- /*background-color: #d1d0a3;*/
-  background: linear-gradient(
-     to left, rgb(62, 97, 62), #857e61
-  );
+  background-color: #d1d0a3;
+  /*background: linear-gradient(
+     tan, #d1d0a3
+  );*/
   border-width: 5px;
   border-radius: 50px;
   border-color: #aaa694;
