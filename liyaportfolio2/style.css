@@ -1,0 +1,25 @@
+.buttons-container {
+
+
+}
+button {
+
+}
+button:hover{
+
+}
+
+
+.body {
+    background-color: hsl(214, 38%, 57%);
+    justify-content: center;
+}
+.profile-image
+{
+    width: 150px;
+    height: 200px;
+    object-fit:contain;
+    border: 3px solid #000000; 
+    border-radius: 8px
+    
+}
