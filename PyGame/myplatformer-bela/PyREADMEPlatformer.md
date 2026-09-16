@@ -131,7 +131,7 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 ```
 
-You can create your own colors and use them throughout your game. Enter to this free RGB Calculator[RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Change one color at a time and run your game to see what happens!
+You can create your own colors and use them throughout your game. Enter to this free [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Change one color at a time and run your game to see what happens!
 
 ### Initial Pygame setup
 
@@ -149,3 +149,41 @@ clock = pygame.time.Clock
 
 `clock` creates a Pygame clock that helps control how fast the game runs.
 
+
+### Game Objects
+
+The player needs platforms to walk and jump on. We can create our platforms using `Rect`. Pygame uses `Rect` objects to represent rectangles.
+
+Each `pygame.Rect()` has four important values.
+For example:
+
+`pygame.Rect(420, 430, 180, 22)`
+
+Which means:
+
+`420` → x position
+`430` → y position
+`180` → width
+`22` → height
+
+We have several platforms (which meand several Rectangules!) to create, so instead of writing all of the platform code directly inside the main game loop, we group it together in a *function* called `make_platforms()`:
+
+```python
+def make_platforms():
+    return [
+        pygame.Rect(0, 530, 720, 70),
+        pygame.Rect(800, 530, 620, 70),
+        pygame.Rect(1510, 530, 720, 70),
+        pygame.Rect(2320, 530, 1280, 70),
+        pygame.Rect(420, 430, 180, 22),
+        pygame.Rect(960, 390, 190, 22),
+        pygame.Rect(1240, 470, 150, 22),
+        pygame.Rect(1660, 410, 210, 22),
+        pygame.Rect(1980, 330, 180, 22),
+        pygame.Rect(2470, 420, 210, 22),
+        pygame.Rect(2860, 350, 180, 22),
+        pygame.Rect(3200, 455, 190, 22),
+    ]
+```
+
+This function creates all of the platforms and returns them as a list.

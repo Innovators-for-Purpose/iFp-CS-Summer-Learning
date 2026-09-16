@@ -33,3 +33,23 @@ INK = (35, 45, 48)
 pygame.init() 
 pygame.display.set_caption("My Platform Game") #changes title of game
 clock = pygame.time.Clock() #control how fast game runs
+
+
+# Creating the platforms for the game!
+
+def make_platforms():
+    return [
+        pygame.Rect(0, 530, 720, 70),
+        pygame.Rect(800, 530, 620, 70),
+        pygame.Rect(1510, 530, 720, 70),
+        pygame.Rect(2320, 530, 1280, 70),
+        pygame.Rect(420, 430, 180, 22),
+        pygame.Rect(960, 390, 190, 22),
+        pygame.Rect(1240, 470, 150, 22),
+        pygame.Rect(1660, 410, 210, 22),
+        pygame.Rect(1980, 330, 180, 22),
+        pygame.Rect(2470, 420, 210, 22),
+        pygame.Rect(2860, 350, 180, 22),
+        pygame.Rect(3200, 455, 190, 22),
+    ]
+
