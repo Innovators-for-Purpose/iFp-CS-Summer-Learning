@@ -16,11 +16,7 @@ function showAbout() {
   document.getElementById("video").style.display = "none"
 }
 
-function showSkills() {
-  document.getElementById("title").textContent = "Skills";
-  document.getElementById("description").innerHTML = "I am proficient in several coding languages, including HTML, CSS, JavaScript, Python, SQL, and GDScript. I am skilled with mechanics as well. In terms of design, I have used Canva and Adobe Illustrator for my work.<br></br>I have good leadership skills and work well with other people. I am also able to complete solo tasks efficiently. I am very adaptable and flexible with my work, and I am good at thinking outside of the box.";
-  document.getElementById("video").style.display = "none"
-}
+
 
 
 
@@ -39,6 +35,7 @@ function openDialogue() {
 
 function showOptionOne() {
     const text = document.getElementById("answer-text")
+    document.getElementById("answer-text").innerHTML = 'You can find me on my Linkedin <a href="https://www.linkedin.com/in/eden-hossaena">here</a>.';
     const link = document.getElementById("linkedin")
     link.style.display = "block"
     text.style.display = "none"
