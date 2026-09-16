@@ -35,7 +35,7 @@ By the time you finish, or when you feel you've made good progress, you can choo
 ## Before Start Coding
 
 - Step 1: Install Python
-Download and install([Python](https://www.python.org/downloads/)) on your computer. 
+Download and install [Python](https://www.python.org/downloads/) on your computer. 
 
 After installing Python, open your VS Code terminal and check that it works:
 
@@ -142,7 +142,7 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 ```
 
-You can create your own colors and use them throughout your game. Enter to this free RGB Calculator([RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp)) and find the code for your favorite colors. Try changing the colors and see how the appearance of your game changes.
+You can create your own colors and use them throughout your game. Enter to this free RGB Calculator [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Try changing the colors and see how the appearance of your game changes.
 
 ### Game Objects: Platforms
 
