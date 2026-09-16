@@ -34,6 +34,9 @@ pygame.init()
 pygame.display.set_caption("My Platform Game") #changes title of game
 clock = pygame.time.Clock() #control how fast game runs
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e7ab75d (platforms)
 
 
 # Creating the platforms for the game!
@@ -54,6 +57,7 @@ def make_platforms():
         pygame.Rect(3200, 455, 190, 22),
     ]
 
+<<<<<<< HEAD
 # Drawing the player
 
 def draw_player(surface, player_rect, camera_x):
@@ -169,3 +173,5 @@ if __name__ == "__main__": # runs the main function inside of the file "__name__
     main(window) #starts main loop
 =======
 >>>>>>> 25a715d (adding set up)
+=======
+>>>>>>> e7ab75d (platforms)
