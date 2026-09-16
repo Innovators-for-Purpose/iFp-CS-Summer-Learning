@@ -35,7 +35,7 @@ By the time you finish, or when you feel you've made good progress, you can choo
 ## Before Start Coding
 
 - Step 1: Install Python
-Download and install Python("[text](https://www.python.org/downloads/)") on your computer. 
+Download and install([Python](https://www.python.org/downloads/)) on your computer. 
 
 After installing Python, open your VS Code terminal and check that it works:
 
@@ -131,23 +131,21 @@ For example:
 ```python
 SKY = (116, 190, 212)
 SUN = (255, 220, 132)
+CLOUD = (224, 244, 237)
+HILL_FAR = (103, 166, 151)
+HILL_NEAR = (72, 135, 119)
+GROUND = (50, 77, 68)
+PLATFORM_TOP = (226, 183, 91)
+PLATFORM_SIDE = (157, 103, 61)
 PLAYER_COLOR = (239, 91, 91)
+PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 ```
 
-You can create your own colors and use them throughout your game. Enter to this free RGB Calculator["https://www.w3schools.com/colors/colors_rgb.asp"] and find the code for your favorite colors. Try changing the colors and see how the appearance of your game changes.
+You can create your own colors and use them throughout your game. Enter to this free RGB Calculator([RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp)) and find the code for your favorite colors. Try changing the colors and see how the appearance of your game changes.
 
 ### Game Objects: Platforms
 
 The player needs platforms to walk and jump on. Create a function to build the platforms:
-
-```python
-def make_platforms():
-    return [
-        pygame.Rect(0, 530, 720, 70),
-        pygame.Rect(800, 530, 620, 70),
-        pygame.Rect(1510, 530, 720, 70),
-        pygame.Rect(2320, 530, 1280, 70),
-    ]
 
 `
