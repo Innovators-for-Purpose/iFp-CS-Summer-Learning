@@ -33,6 +33,7 @@ INK = (35, 45, 48)
 pygame.init() 
 pygame.display.set_caption("My Platform Game") #changes title of game
 clock = pygame.time.Clock() #control how fast game runs
+<<<<<<< HEAD
 
 
 # Creating the platforms for the game!
@@ -166,3 +167,5 @@ def main(window):
 if __name__ == "__main__": # runs the main function inside of the file "__name__"<- this name is choose by the student.
     window = pygame.display.set_mode((WIDTH, HEIGHT)) # opens the game widown and sets the size of it
     main(window) #starts main loop
+=======
+>>>>>>> 25a715d (adding set up)
