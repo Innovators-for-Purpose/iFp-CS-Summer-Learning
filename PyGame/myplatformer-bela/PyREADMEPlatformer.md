@@ -64,7 +64,7 @@ Pygame is a Python library. A library is a collection of code that someone else 
 
 The provided `platformer.py` file is a reference example. Your `myplatformer.py` file will contain the structure and behavior of your game. You will organize it into imports, constants, functions, game objects, and the main game loop.
 
-### Imports and Setup
+### Imports
 
 1. Open `platformer.py` in VS Code and look through the example.
 2. Create a new file in the same folder named `myplatformer.py`.
@@ -78,15 +78,7 @@ import sys
 
 `import` loads code that your program can use. `pygame` gives you the game tools, and `sys` gives you access to Python system functions such as exiting the program.
 
-Before using Pygame, initialize it:
-
-```python
-pygame.init()
-```
-
-`pygame.init()` prepares the Pygame modules so your program can create a window, read events, draw shapes, and use other Pygame features.
-
-Now let's create the game window:
+### Creating our game window
 
 ```python
 WIDTH, HEIGHT = 960, 600
@@ -100,9 +92,9 @@ WORLD_WIDTH = 3600
 
 `WORLD_WIDTH` describes the width of the game world. The game world is wider than the visible window, which allows the player to explore by moving from left to right.
 
-### Variables and Player Settings
+### Adding more variables for our player and the game world
 
-Create *variables* for the player movement and physics settings:
+Create *variables* for the player movement:
 
 ```python
 PLAYER_SIZE = 34
@@ -120,9 +112,6 @@ A *variable* is a name that stores a value. For example:
 `JUMP_SPEED` controls how fast the player moves when jumping.
 
 `GRAVITY` controls how fast the player starts falling down after jumping.
-
-
-### Variables and Colors
 
 Pygame colors use an RGB tuple. RGB means red, green, and blue. Each value normally ranges from `0` to `255`:
 
@@ -142,10 +131,21 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 ```
 
-You can create your own colors and use them throughout your game. Enter to this free RGB Calculator [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Try changing the colors and see how the appearance of your game changes.
+You can create your own colors and use them throughout your game. Enter to this free RGB Calculator[RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Change one color at a time and run your game to see what happens!
 
-### Game Objects: Platforms
+### Initial Pygame setup
 
-The player needs platforms to walk and jump on. Create a function to build the platforms:
+To start running our game before we add functions we need to make sure Pygame library is set up.
 
-`
+```python
+pygame.init()
+pygame.display.set_caption("My Platform Game")
+clock = pygame.time.Clock
+```
+
+`pygame.init()` prepares the Pygame modules to create a window, draw graphics, etc.
+
+`pygame.display.set_caption("Change me!")`changes the title of the game window.
+
+`clock` creates a Pygame clock that helps control how fast the game runs.
+

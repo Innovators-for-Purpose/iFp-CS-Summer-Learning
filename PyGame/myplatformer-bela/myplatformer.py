@@ -4,9 +4,6 @@
 import pygame #loads pygame library
 import sys #loads the system where our game will be open
 
-# initializing pygame library
-pygame.init()
-
 # Creating the game window
 
 WIDTH, HEIGHT = 960, 600 #this is how big your window will be!
@@ -32,4 +29,7 @@ PLAYER_COLOR = (239, 91, 91)
 PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 
-
+# initializing pygame library
+pygame.init() 
+pygame.display.set_caption("My Platform Game") #changes title of game
+clock = pygame.time.Clock() #control how fast game runs
