@@ -20,9 +20,16 @@ MOVE_SPEED = 5 # how fast the player moves
 JUMP_SPEED = -13 # how fast the player jumps
 GRAVITY = 0.6 #
 
-SKY = (116, 190, 212) #colors
+SKY = (116, 190, 212) #colors!!!
 SUN = (255, 220, 132)
+CLOUD = (224, 244, 237)
+HILL_FAR = (103, 166, 151)
+HILL_NEAR = (72, 135, 119)
+GROUND = (50, 77, 68)
+PLATFORM_TOP = (226, 183, 91)
+PLATFORM_SIDE = (157, 103, 61)
 PLAYER_COLOR = (239, 91, 91)
+PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 
 
