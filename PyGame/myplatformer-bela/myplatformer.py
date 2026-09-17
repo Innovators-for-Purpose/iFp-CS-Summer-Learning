@@ -66,6 +66,8 @@ def draw_player(surface, player_rect, camera_x):
 
     pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top + 12), 2) #draws player's right eye
 
+# Drawing background
+
     for cloud_x, cloud_y in ((150, 105), (540, 170), (830, 90)): #for loop to create a lot of clouds
         x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)
         pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
@@ -80,6 +82,32 @@ def draw_player(surface, player_rect, camera_x):
                            (screen_x + 260, HEIGHT - height)))
         points.append((WIDTH + 200, HEIGHT))
         pygame.draw.polygon(surface, color, points)
+
+# Start working on the movement of the player
+
+def move_player(player, velocity, platforms):
+    player.x += velocity.x
+    player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.x > 0:
+                player.right = platform.left
+            elif velocity.x < 0:
+                player.left = platform.right
+
+    velocity.y += GRAVITY
+    player.y += velocity.y
+    on_ground = False
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.y > 0:
+                player.bottom = platform.top
+                velocity.y = 0
+                on_ground = True
+            elif velocity.y < 0:
+                player.top = platform.bottom
+                velocity.y = 0
+    return on_ground
 
 
     
