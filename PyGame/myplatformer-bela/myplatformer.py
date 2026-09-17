@@ -66,6 +66,7 @@ def make_platforms():
 def draw_player(surface, player_rect, camera_x):
     screen_rect = player_rect.move(-camera_x, 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect) #draws player's body
 
@@ -180,9 +181,15 @@ if __name__ == "__main__": # runs the main function inside of the file "__name__
 =======
 >>>>>>> e7ab75d (platforms)
 =======
+=======
+
+>>>>>>> 1285482 (Adding clouds!)
     pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect) #draws player's body
+
     pygame.draw.circle(surface, PLAYER_FACE, (screen_rect.centerx, screen_rect.top + 13), 10) #draws player's face, notice how we are calling variables we declare at the beginning of our program!
+
     pygame.draw.circle(surface, INK, (screen_rect.centerx - 4, screen_rect.top + 12), 2) #draws player's left eye
+    
     pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top + 12), 2) #draws player's right eye
 
 >>>>>>> 790dd57 (Adding platform and players)
