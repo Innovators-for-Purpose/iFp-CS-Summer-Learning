@@ -24,6 +24,8 @@ This tutorial is part of the **Game Development with Python and Pygame** iFp cur
 
 ## Before Start Coding
 
+We need to make sure we have the following install in our computer:
+
 **Step 1: Install Python**
 Download and install [Python](https://www.python.org/downloads/) on your computer. 
 
@@ -42,24 +44,21 @@ Open your terminal and run:
 
 ## Start coding!
 
-Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new folder named `myplatformer-Name`. Inside it create a new file named `myplatforme.py`. You will edit `myplatformer.py` to make your own version of the platform game.
+Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new folder named `myplatformer_NameOfStudent`. Inside it create a new file named `myplatform.py`. You will edit `myplatformer.py` to make your own version of the platform game.
 
 Each section has an objective to help you understand both Python syntax and the structure of a small game. There are tips and definitions here to guide you and give you something to reference when you feel unsure. You are also encouraged to make your own decisions and research Python or Pygame documentation when you are curious or stuck. Your mentors will be available to answer questions.
 
-## "myplatformer.py"
-
-A Python file is a text file containing instructions written in the Python programming language. Python reads the instructions from top to bottom when the file runs.
-
-Pygame is a Python library. A library is a collection of code that someone else has already written so you can use features such as windows, drawings, keyboard input, and timing.
+## myplatformer.py
 
 The provided `platformer.py` file is a reference example. Your `myplatformer.py` file will contain the structure and behavior of your game. You will organize it into imports, constants, functions, game objects, and the main game loop.
 
 ### Imports
 
 1. Open `platformer.py` in VS Code and look through the example.
-2. Create a new file in the same folder named `myplatformer.py`.
-3. Open `myplatformer.py` in VS Code.
-4. Add the imports at the top of `myplatformer.py`:
+2. Create a new folder named `myplatformer_NameOfStudent`.
+3. Create a file in the same folder named `myplatformer.py`.
+4. Open `myplatformer.py` in VS Code.
+5. Add the folling imports at the top of `myplatformer.py`:
 
 ```python
 import pygame
@@ -556,10 +555,10 @@ We can check which keys are currently being held down:
 `keys = pygame.key.get_pressed()`
 
 Now use the keys to control horizontal movement:
+
 ```python
 velocity.x = (
-    (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * MOVE_SPEED
-    - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
+    (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * MOVE_SPEED - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
 )
 ```
 
@@ -569,26 +568,61 @@ The player can use:
 
 The result is stored in: `velocity.x`
 
-Then the `move_player()` function uses that velocity to update the player's position.
+#### Main Function: Player status
 
+Now let's update the player's status inside the game loop. We want to check three things:
 
+1. Is the game still going?
+2. Did the player fall off the screen?
+3. Did the player reach the end of the world?
 
+First, check if the player has not won yet:
 
+```python
+if not won:
+    on_ground = move_player(player, velocity, platforms)
+```
 
+`not won` means that the game will continue updating the player as long as the player has not reached the goal.
 
+`move_player()` moves the player and checks for collisions with the platforms. It also returns whether the player is standing on a platform, which we save in `on_ground`.
 
+Let's check what happens if the player misses a platform and falls:
 
+```python
+            if player.top > HEIGHT:
+                player.topleft = (100, 470)
+                velocity.update(0, 0)
+```
 
+If the top of the player goes below the height of the game window, we know the player has fallen off the screen.
 
+Instead of ending the game, we reset the player: 
+- `player.topleft = (100, 470)` moves the player back to the starting position.
+- `velocity.update(0, 0)` stops the player's movement.
 
+Finally, let's check if the player has won:
 
+```python
+            if player.right >= WORLD_WIDTH - 180:
+                won = True
+```
 
+Our game world is wider than the screen, so we need a way to know when the player has reached the end. When the player's right side gets close to the end of the world, `won` becomes `True`.
 
+#### Main Function: Scrolling Camera
 
+Our game world is 3600 pixels wide, but the window is only 960 pixels wide. We don't want the player to disappear off the screen when they move to the right.
 
+Instead, the camera follows the player:
 
+```python
+camera_x = max(0, min(player.centerx - WIDTH // 2, WORLD_WIDTH - WIDTH))
+draw_background(window, camera_x)
+```
 
+The camera tries to keep the player near the center of the screen `WIDTH // 2` finds half of the window width. The `max()` and `min()` functions keep the camera from moving beyond the edges of the game world.
 
+### Main Function: Platforms
 
-
-
+wahhhh this is too long!!!!
