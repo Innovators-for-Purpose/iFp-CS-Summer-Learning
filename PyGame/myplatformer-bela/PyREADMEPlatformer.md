@@ -131,7 +131,9 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 ```
 
-You can create your own colors and use them throughout your game. Enter to this free [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. Change one color at a time and run your game to see what happens!
+You can create your own colors and use them throughout your game. Enter to this free [RGB Calculator](https://www.w3schools.com/colors/colors_rgb.asp) and find the code for your favorite colors. 
+
+*After you declare the main() function*: Change one color at a time and run your game to see what happens!
 
 ### Initial Pygame setup
 
@@ -149,7 +151,9 @@ clock = pygame.time.Clock
 
 `clock` creates a Pygame clock that helps control how fast the game runs.
 
-At this point we can start running our game. You may see a game window open but there is nothing to see yet because we haven't draw any of game objects. Don't worry! In the next section, we will focus on that.
+At this point, we can try running our game. You may see the game window trying to open, but there is **nothing to see yet** because we haven't defined our `main()` function or drawn any of the game objects.
+
+Don't worry! That's expected. In the end of our tutorial, we'll create our `main()` function and start putting the different parts of our game together.
 
 
 ### Game Objects: Platforms
@@ -452,6 +456,58 @@ elif velocity.y < 0:
 ```
 
 When the player is moving up and hits the bottom of a platform, the player stops moving up. At the end of the function, return whether the player is standing on the ground: `return on_ground`
+
+### Structuring the Main Function
+
+Our game has a lot of code, so we can organize it into functions. Let's put the code that runs our game inside a function called `main()`.
+
+The `main()` function will contain the game loop and will bring together the different parts we created for our game. We will then call `main()` at the bottom of our file to start the game.
+
+```python
+def main(window):
+    platforms = make_platforms()
+    player = pygame.Rect(100, 470, PLAYER_SIZE, PLAYER_SIZE)
+    velocity = pygame.Vector2(0, 0)
+    camera_x = 0
+    on_ground = False
+    won = False
+    font = pygame.font.Font(None, 28)
+    big_font = pygame.font.Font(None, 46)
+```
+
+- `platforms` stores our list of platforms (yes! the list we created earlier in our program!).
+
+- `player` stores the player's position and size.
+
+- `velocity` stores how fast the player is moving horizontally and vertically.
+
+- `camera_x` stores the camera's horizontal position.
+
+- `on_ground` keeps track of whether the player is standing on something.
+
+- `won` keeps track of whether the player has reached the end.
+
+Games need a loop that repeats many times every second. A typical game loop has three major jobs:
+
+- Check what the player is doing.
+- Update the game.
+- Draw the new frame.
+
+```python
+while True:
+    # We will add the code here little by little.
+```
+
+Everything inside this loop will happen over and over while the game is running.
+
+hummmm
+
+```python
+for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+```
 
 
 
