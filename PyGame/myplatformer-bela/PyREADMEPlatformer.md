@@ -149,6 +149,8 @@ clock = pygame.time.Clock
 
 `clock` creates a Pygame clock that helps control how fast the game runs.
 
+At this point we can start running our game. You may see a game window open but there is nothing to see yet because we haven't draw any of game objects. Don't worry! In the next section, we will focus on that.
+
 
 ### Game Objects: Platforms
 
@@ -195,10 +197,15 @@ Now that we have the world game, let's create a function to draw our player.
 ```python
 def draw_player(surface, player_rect, camera_x):
     screen_rect = player_rect.move(-camera_x, 0)
+
     pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect)
+
     pygame.draw.circle(surface, PLAYER_FACE, (screen_rect.centerx, screen_rect.top + 13), 10)
+
     pygame.draw.circle(surface, INK, (screen_rect.centerx - 4, screen_rect.top + 12), 2)
+
     pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top + 12), 2)
+
 ```
 
 The player is currently made from simple shapes.
@@ -221,4 +228,36 @@ You may notice something new here:
 The player's actual position exists in the larger game world. `camera_x` tells us how far the camera has moved.
 
 We will learn more about the camera later!
+
+### Game Objects: Background
+
+We already created our platforms but our background has no color or design. We need to draw a background.
+
+```python
+def draw_background(surface, camera_x):
+    surface.fill(SKY)
+    pygame.draw.circle(surface, SUN, (WIDTH - 110, 90), 48)
+```
+
+Let's start with something basic:
+
+`surface.fill(SKY)` fills the entire game window with the sky color.
+
+`pygame.draw.circle()` creates the sun.
+
+Inside of your `draw_background` function, let's add some clouds:
+
+```python
+for cloud_x, cloud_y in ((150, 105), (540, 170), (830, 90)):
+        x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)
+        pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
+        pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
+        pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
+```   
+We are using a for loop so we can draw a lot of clouds.
+
+With: `x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)`
+
+The clouds move more slowly than the player. This makes the background look like it is farther away.
+
 
