@@ -4,7 +4,6 @@ Welcome to iFp's Python coding practice 2! In this session you will practice Pyt
 
 ## What You'll Do
 
-- Work with Python and the Pygame library
 - Build your own version of a platform game in `myplatformer.py`
 - Practice organizing a program into functions
 - Create a player and platforms
@@ -17,8 +16,7 @@ Welcome to iFp's Python coding practice 2! In this session you will practice Pyt
 Work on this project will help you to:
 
 - Improve your Python programming skills
-- Understand variables and constants
-- Work with lists
+- Understand variables, constants and lists
 - Respond to keyboard and window events
 - Use conditionals and loops
 - Break a large problem into smaller functions
@@ -461,6 +459,8 @@ When the player is moving up and hits the bottom of a platform, the player stops
 
 Our game has a lot of code, so we can organize it into functions. Let's put the code that runs our game inside a function called `main()`.
 
+#### Main Function: Variables
+
 The `main()` function will contain the game loop and will bring together the different parts we created for our game. We will then call `main()` at the bottom of our file to start the game.
 
 ```python
@@ -500,7 +500,13 @@ while True:
 
 Everything inside this loop will happen over and over while the game is running.
 
-hummmm
+#### Main Function: Events
+
+Our game needs to know when the player does something, like closing the game window or pressing a key.
+
+These actions are called events in Pygame, We can check these actions using `pygame.event.get()`.
+
+Add this inside the game loop:
 
 ```python
 for event in pygame.event.get():
@@ -508,6 +514,39 @@ for event in pygame.event.get():
                 pygame.quit()
                 sys.exit()
 ```
+The `for` loop goes through each action one at a time. `pygame.QUIT` happens when the player closes the game window.
+
+### Main Function: Jump
+
+Now let's make make our player jump everytime we press specific keyboard keys. Inside our `for event in pygame.event.get()` and after our `if event.type == pygame.QUIT` let's add:
+
+```python
+            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
+                if on_ground and not won:
+                    velocity.y = JUMP_SPEED
+```
+
+`pygame.KEYDOWN` means that a key was pressed.
+
+The player can jump using the following keys:
+- `SPACE`
+- `W`
+- `the UP arrow`
+
+The player can only jump if: `on_ground` is True. This prevents the player from continuously jumping in the air.
+
+The line: `velocity.y = JUMP_SPEED` gives the player an upward velocity. Remember that our jump speed is negative: `JUMP_SPEED = -13`
+In Pygame, smaller `y` values are higher on the screen, so a negative vertical velocity moves the player up.
+
+#### Main Function: Re-start the game
+
+
+
+
+
+
+
+
 
 
 
