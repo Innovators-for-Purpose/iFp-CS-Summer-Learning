@@ -150,7 +150,7 @@ clock = pygame.time.Clock
 `clock` creates a Pygame clock that helps control how fast the game runs.
 
 
-### Game Objects
+### Game Objects: Platforms
 
 The player needs platforms to walk and jump on. We can create our platforms using `Rect`. Pygame uses `Rect` objects to represent rectangles.
 
@@ -166,7 +166,7 @@ Which means:
 `180` → width
 `22` → height
 
-We have several platforms (which meand several Rectangules!) to create, so instead of writing all of the platform code directly inside the main game loop, we group it together in a *function* called `make_platforms()`:
+We have several platforms to create (which meand several Rectangules!), so instead of writing all of the platform code directly inside the main game loop, we group it together in a *function* called `make_platforms()`:
 
 ```python
 def make_platforms():
@@ -187,3 +187,38 @@ def make_platforms():
 ```
 
 This function creates all of the platforms and returns them as a list.
+
+### Game Objects: Player
+
+Now that we have the world game, let's create a function to draw our player.
+
+```python
+def draw_player(surface, player_rect, camera_x):
+    screen_rect = player_rect.move(-camera_x, 0)
+    pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect)
+    pygame.draw.circle(surface, PLAYER_FACE, (screen_rect.centerx, screen_rect.top + 13), 10)
+    pygame.draw.circle(surface, INK, (screen_rect.centerx - 4, screen_rect.top + 12), 2)
+    pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top + 12), 2)
+```
+
+The player is currently made from simple shapes.
+
+`pygame.draw.ellipse()` draws the player's body.
+
+`pygame.draw.circle()` draws the face and eyes.
+
+The player does not have to look like this! Later, you can replace these shapes with your own artwork or sprites.
+
+Notice that we are using the color variables we created earlier, such as `PLAYER_COLOR`, `PLAYER_FACE`, and `INK`.
+This means we don't have to write the RGB values every time we draw something. If you want a different color for the player, you only need to change the value of the variable at the beginning of your program, and the new color will be used everywhere that variable is called.
+
+This is one of the **advantages of using variables**: *instead of changing the same value in many different places, we can change it once and reuse it throughout our program.*
+
+You may notice something new here:
+
+`player_rect.move(-camera_x, 0)`
+
+The player's actual position exists in the larger game world. `camera_x` tells us how far the camera has moved.
+
+We will learn more about the camera later!
+
