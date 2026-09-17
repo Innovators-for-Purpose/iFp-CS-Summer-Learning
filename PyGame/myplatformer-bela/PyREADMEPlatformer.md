@@ -2,7 +2,7 @@
 
 Welcome to iFp's Python coding practice 2! In this session you will practice Python by building your own version of a platform game with Pygame.
 
-## What You'll Do
+## What you'll do
 
 - Build your own version of a platform game in `myplatformer.py`
 - Create a player and platforms
@@ -10,7 +10,7 @@ Welcome to iFp's Python coding practice 2! In this session you will practice Pyt
 - Add gravity and collision detection
 - Create a scrolling screen for the game
 
-## What You'll Learn
+## What you'll learn
 
 Work on this project will help you to:
 
@@ -22,7 +22,7 @@ Work on this project will help you to:
 
 This tutorial is part of the **Game Development with Python and Pygame** iFp curriculum.
 
-## Before Start Coding
+## Before start coding
 
 We need to make sure we have the following install in our computer:
 
@@ -44,11 +44,11 @@ Open your terminal and run:
 
 ## Start coding!
 
-Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new folder named `myplatformer_NameOfStudent`. Inside it create a new file named `myplatform.py`. You will edit `myplatformer.py` to make your own version of the platform game.
+Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new folder named `myplatformer_NameOfStudent`. We will create here our version of the game.
 
-Each section has an objective to help you understand both Python syntax and the structure of a small game. There are tips and definitions here to guide you and give you something to reference when you feel unsure. You are also encouraged to make your own decisions and research Python or Pygame documentation when you are curious or stuck. Your mentors will be available to answer questions.
+Each section has an objective to help you understand both Python syntax and the structure of a small game. You are also encouraged to make your own decisions and research Python or Pygame documentation when you are curious or stuck. Your mentors will be available to answer questions.
 
-## myplatformer.py
+### `myplatformer.py`
 
 The provided `platformer.py` file is a reference example. Your `myplatformer.py` file will contain the structure and behavior of your game. You will organize it into imports, constants, functions, game objects, and the main game loop.
 
@@ -76,9 +76,7 @@ WORLD_WIDTH = 3600
 ```
 
 `WIDTH` and `HEIGHT` describe the size of the game window.
-
 `FPS` represents frames per second. The game uses this value to control how quickly the game loop runs.
-
 `WORLD_WIDTH` describes the width of the game world. The game world is wider than the visible window, which allows the player to explore by moving from left to right.
 
 ### Adding more variables for our player and the game world
@@ -95,16 +93,11 @@ GRAVITY = 0.6
 A *variable* is a name that stores a value. For example:
 
 `PLAYER_SIZE` stores the size of the player.
-
 `MOVE_SPEED` controls how fast the player moves horizontally.
-
 `JUMP_SPEED` controls how fast the player moves when jumping.
-
 `GRAVITY` controls how fast the player starts falling down after jumping.
 
 Pygame colors use an RGB tuple. RGB means red, green, and blue. Each value normally ranges from `0` to `255`:
-
-For example:
 
 ```python
 SKY = (116, 190, 212)
@@ -135,21 +128,17 @@ clock = pygame.time.Clock
 ```
 
 `pygame.init()` prepares the Pygame modules to create a window, draw graphics, etc.
-
 `pygame.display.set_caption("Change me!")`changes the title of the game window.
-
 `clock` creates a Pygame clock that helps control how fast the game runs.
 
 At this point, we can try running our game. You may see the game window trying to open, but there is **nothing to see yet** because we haven't defined our `main()` function or drawn any of the game objects.
 
 Don't worry! That's expected. In the end of our tutorial, we'll create our `main()` function and start putting the different parts of our game together.
 
-
 ### Game Objects: Platforms
 
-The player needs platforms to walk and jump on. We can create our platforms using `Rect`. Pygame uses `Rect` objects to represent rectangles.
+The player needs platforms to walk and jump on. We can create our platforms using `Rect`. Pygame uses `Rect` objects to represent rectangles. Each `pygame.Rect()` has four important values.
 
-Each `pygame.Rect()` has four important values.
 For example:
 
 `pygame.Rect(420, 430, 180, 22)`
@@ -161,7 +150,7 @@ Which means:
 `180` → width
 `22` → height
 
-We have several platforms to create (which meand several Rectangules!), so instead of writing all of the platform code directly inside the main game loop, we group it together in a *function* called `make_platforms()`:
+We have several platforms to create (which means several Rectangules!), so instead of writing all of the platform code directly inside the main game loop, we group it together in a *function* called `make_platforms()`:
 
 ```python
 def make_platforms():
@@ -204,7 +193,6 @@ def draw_player(surface, player_rect, camera_x):
 The player is currently made from simple shapes.
 
 `pygame.draw.ellipse()` draws the player's body.
-
 `pygame.draw.circle()` draws the face and eyes.
 
 The player does not have to look like this! Later, you can replace these shapes with your own artwork or sprites.
@@ -233,37 +221,31 @@ def draw_background(surface, camera_x):
 ```
 
 Let's start with something basic:
-
 `surface.fill(SKY)` fills the entire game window with the sky color.
-
 `pygame.draw.circle()` creates the sun.
-
 Inside of your `draw_background` function, let's add some clouds:
 
 ```python
 for cloud_x, cloud_y in ((150, 105), (540, 170), (830, 90)):
-        x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)
-        pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
-        pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
-        pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
+    x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)
+    pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
+    pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
+    pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
 ```   
 We are using a for loop so we can draw a lot of clouds.
 
-With: `x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)`
-
-The clouds move more slowly than the player. This makes the background look like it is farther away.
+With: `x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)` The clouds move more slowly than the player. This makes the background look like it is farther away.
 
 To finish with our basic background let's create some hills inside of our `draw_background` function.
 
 ```python
-    for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)):
-        points = [(-200, HEIGHT), (-200, HEIGHT - height)]
-        for world_x in range(-200, WORLD_WIDTH + 400, 260):
-            screen_x = world_x - int(camera_x * offset)
-            points.extend(((screen_x, HEIGHT - height), (screen_x + 130, HEIGHT - height - 85),
-                           (screen_x + 260, HEIGHT - height)))
-        points.append((WIDTH + 200, HEIGHT))
-        pygame.draw.polygon(surface, color, points)
+for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)):
+    points = [(-200, HEIGHT), (-200, HEIGHT - height)]
+    for world_x in range(-200, WORLD_WIDTH + 400, 260):
+        screen_x = world_x - int(camera_x * offset)
+        points.extend(((screen_x, HEIGHT - height), (screen_x + 130, HEIGHT - height - 85), (screen_x + 260, HEIGHT - height)))
+    points.append((WIDTH + 200, HEIGHT))
+    pygame.draw.polygon(surface, color, points)
 
 ```
 
@@ -271,15 +253,13 @@ I know this code make look pretty big and confusing so let's explain it little b
 
 First, we have:
 
-     ```python
-     for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160))
-     ```
+```python
+for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160))
+ ```
 Here we are creating two groups of hills. For each group, we give the hills three values:
 
 The `offset` controls how much the hills move when the camera moves.
-
 The `color` tells us what color to use for the hills.
-
 The `height` controls how tall the hills are.
 
 The farther hills use a smaller offset, so they move more slowly when the camera moves. This helps make the background look farther away.
@@ -390,19 +370,16 @@ Let's start with:
 
 ```python
 for platform in platforms:
-        if player.colliderect(platform):
-            if velocity.x > 0:
-                player.right = platform.left
-            elif velocity.x < 0:
-                player.left = platform.right
+    if player.colliderect(platform):
+        if velocity.x > 0:
+            player.right = platform.left
+        elif velocity.x < 0:
+            player.left = platform.right
 ```
 
 `colliderect()` checks whether two rectangles overlap.
-
 This code checks whether the player is moving right or left.
-
 If the player is moving right: `player.right = platform.left` moves the player back to the left side of the platform.
-
 If the player is moving left: `player.left = platform.right` moves the player back to the right side of the platform.
 
 This prevents the player from walking through platforms.
@@ -450,7 +427,7 @@ When the player is moving up and hits the bottom of a platform, the player stops
 
 Our game has a lot of code, so we can organize it into functions. Let's put the code that runs our game inside a function called `main()`.
 
-#### Main Function: Variables
+### Main Function: Variables
 
 The `main()` function will contain the game loop and will bring together the different parts we created for our game. We will then call `main()` at the bottom of our file to start the game.
 
@@ -491,7 +468,7 @@ while True:
 
 Everything inside this loop will happen over and over while the game is running. All the following steps are happening inside the `while True` loop.
 
-#### Main Function: Events
+### Main Function: Events
 
 Our game needs to know when the player does something, like closing the game window or pressing a key.
 
@@ -501,20 +478,20 @@ Add this inside the game loop:
 
 ```python
 for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+    if event.type == pygame.QUIT:
+        pygame.quit()
+        sys.exit()
 ```
 The `for` loop goes through each action one at a time. `pygame.QUIT` happens when the player closes the game window.
 
-#### Main Function: Jump
+### Main Function: Jump
 
 Now let's make make our player jump everytime we press specific keyboard keys. Inside our `for event in pygame.event.get()` and after the end of our `if event.type == pygame.QUIT` let's add:
 
 ```python
-            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
-                if on_ground and not won:
-                    velocity.y = JUMP_SPEED
+if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
+    if on_ground and not won:
+        velocity.y = JUMP_SPEED
 ```
 
 `pygame.KEYDOWN` means that a key was pressed.
@@ -525,21 +502,19 @@ The player can jump using the following keys:
 - `the UP arrow`
 
 The player can only jump if: `on_ground` is True. This prevents the player from continuously jumping in the air.
-
 The line: `velocity.y = JUMP_SPEED` gives the player an upward velocity. Remember that our jump speed is negative: `JUMP_SPEED = -13`
 In Pygame, smaller `y` values are higher on the screen, so a negative vertical velocity moves the player up.
 
-#### Main Function: Re-start the game
+### Main Function: Re-start the game
 
 Let's give the player a restart key. Add the following code after the end of our `if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP)`:
 
 ```python
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
-                player.topleft = (100, 470)
-                velocity.update(0, 0)
-                won = False
+if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+    player.topleft = (100, 470)
+    velocity.update(0, 0)
+    won = False
 ```
-
 When the player presses the key `R`:
 
 - The player returns to the starting position.
@@ -548,11 +523,13 @@ When the player presses the key `R`:
 
 Try adding another key that does something interesting!
 
-#### Main Function: Left and Right Keys
+### Main Function: Left and Right Keys
 
 We can check which keys are currently being held down:
 
-`keys = pygame.key.get_pressed()`
+```python
+keys = pygame.key.get_pressed()
+```
 
 Now use the keys to control horizontal movement:
 
@@ -566,9 +543,9 @@ The player can use:
 - `A` or `the left arrow` to move left
 - `D` or the `right arrow` to move right
 
-The result is stored in: `velocity.x`
+The result is stored in `velocity.x`
 
-#### Main Function: Player status
+### Main Function: Player status
 
 Now let's update the player's status inside the game loop. We want to check three things:
 
@@ -590,9 +567,9 @@ if not won:
 Let's check what happens if the player misses a platform and falls:
 
 ```python
-            if player.top > HEIGHT:
-                player.topleft = (100, 470)
-                velocity.update(0, 0)
+    if player.top > HEIGHT:
+        player.topleft = (100, 470)
+        velocity.update(0, 0)
 ```
 
 If the top of the player goes below the height of the game window, we know the player has fallen off the screen.
@@ -604,13 +581,13 @@ Instead of ending the game, we reset the player:
 Finally, let's check if the player has won:
 
 ```python
-            if player.right >= WORLD_WIDTH - 180:
-                won = True
+    if player.right >= WORLD_WIDTH - 180:
+        won = True
 ```
 
 Our game world is wider than the screen, so we need a way to know when the player has reached the end. When the player's right side gets close to the end of the world, `won` becomes `True`.
 
-#### Main Function: Scrolling Camera
+### Main Function: Scrolling Camera
 
 Our game world is 3600 pixels wide, but the window is only 960 pixels wide. We don't want the player to disappear off the screen when they move to the right.
 
@@ -622,16 +599,16 @@ camera_x = max(0, min(player.centerx - WIDTH // 2, WORLD_WIDTH - WIDTH))
 
 The camera tries to keep the player near the center of the screen `WIDTH // 2` finds half of the window width. The `max()` and `min()` functions keep the camera from moving beyond the edges of the game world.
 
-#### Main Function: Platforms
+### Main Function: Platforms
 
 Now we need to draw the platforms.
 
 ```python
 draw_background(window, camera_x)
 for platform in platforms:
-            visible = platform.copy().move(-camera_x, 0)
-            pygame.draw.rect(window, PLATFORM_SIDE, visible)
-            pygame.draw.rect(window, PLATFORM_TOP, (visible.x, visible.y, visible.width, 7))
+    visible = platform.copy().move(-camera_x, 0)
+    pygame.draw.rect(window, PLATFORM_SIDE, visible)
+    pygame.draw.rect(window, PLATFORM_TOP, (visible.x, visible.y, visible.width, 7))
 ```
 
 `-camera_x` makes the platforms appear to move as the camera follows the player. We draw two rectangles to create one platform:
@@ -641,7 +618,7 @@ for platform in platforms:
 
 This gives the platforms a little more visual detail.
 
-#### Main Function: Player
+### Main Function: Player
 
 Now let's draw the player:
 
@@ -653,19 +630,19 @@ The `draw_player()` function uses the camera position to decide where the player
 
 This is another example of **why functions are useful**: instead of writing all of the drawing code inside the game loop, we can simply call the function we already created.
 
-#### Main Function: Game Instructions
+### Main Function: Game Instructions
 
 We can display text on the screen to remind the player about the game controls:
 
 ```python
 hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
-        window.blit(hint, (22, 20))
+window.blit(hint, (22, 20))
 ```
 
 `font.render()` creates an image containing the text.
 `window.blit()` places that image onto the game window.
 
-#### Main Function: Winning Message
+### Main Function: Winning Message
 
 If the player reaches the end and wins, show a message:
 
@@ -676,10 +653,9 @@ if won:
 ```
 
 The `if won` condition means this code only runs after the player wins.
-
 `WIDTH // 2 - message.get_width() // 2` helps center the message horizontally.
 
-#### Main Function: Refreshing the Screen
+### Main Function: Refreshing the Screen
 
 At the end of every game loop, update the display:
 
