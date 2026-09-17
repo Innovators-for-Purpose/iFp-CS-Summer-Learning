@@ -109,5 +109,5 @@ def move_player(player, velocity, platforms):
                 velocity.y = 0
     return on_ground
 
-
+### Creating main function!
     
