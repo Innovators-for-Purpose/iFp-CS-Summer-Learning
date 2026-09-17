@@ -260,4 +260,88 @@ With: `x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)`
 
 The clouds move more slowly than the player. This makes the background look like it is farther away.
 
+To finish with our basic background let's create some hills inside of our `draw_background` function.
+
+```python
+    for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)):
+        points = [(-200, HEIGHT), (-200, HEIGHT - height)]
+        for world_x in range(-200, WORLD_WIDTH + 400, 260):
+            screen_x = world_x - int(camera_x * offset)
+            points.extend(((screen_x, HEIGHT - height), (screen_x + 130, HEIGHT - height - 85),
+                           (screen_x + 260, HEIGHT - height)))
+        points.append((WIDTH + 200, HEIGHT))
+        pygame.draw.polygon(surface, color, points)
+
+```
+
+I know this code make look pretty big and confusing so let's explain it little by little.
+
+First, we have:
+
+     ```python
+     for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160))
+     ```
+Here we are creating two groups of hills. For each group, we give the hills three values:
+
+The `offset` controls how much the hills move when the camera moves.
+
+The `color` tells us what color to use for the hills.
+
+The `height` controls how tall the hills are.
+
+The farther hills use a smaller offset, so they move more slowly when the camera moves. This helps make the background look farther away.
+
+Next, we create our `points` list:
+
+```python
+points = [(-200, HEIGHT), (-200, HEIGHT - height)]
+```
+This list will store the different points we need to create the shape of our hills.
+
+Each point has an `x` and a `y` position. We will keep adding points to this list as we create more hills.
+
+Now let's look at this for loop:
+
+```python
+for world_x in range(-200, WORLD_WIDTH + 400, 260):
+```
+
+We use `world_x` to help decide where to create each hill. Inside the loop, we calculate the position of the hill on the screen:
+
+```python
+screen_x = world_x - int(camera_x * offset)
+```
+camera_x tells us how far the camera has moved.
+
+By multiplying `camera_x` by `offset`, we can make the hills move at different speeds depending on how far away they appear.
+
+Then we add three points for each hill:
+
+```python
+points.extend((
+    (screen_x, HEIGHT - height),
+    (screen_x + 130, HEIGHT - height - 85),
+    (screen_x + 260, HEIGHT - height)
+))
+```
+
+These three points are:
+- The start of the hill.
+- The top of the hill.
+- The end of the hill.
+
+Finally, we add a point at the bottom of the screen:
+
+```python
+points.append((WIDTH + 200, HEIGHT))
+```
+
+Then we add:
+
+```python
+pygame.draw.polygon(surface, color, points)
+```
+This connect all of our points and fill the shape with the color we chose.
+
+
 
