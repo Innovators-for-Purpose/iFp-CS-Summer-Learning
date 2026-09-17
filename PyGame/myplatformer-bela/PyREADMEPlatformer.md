@@ -507,7 +507,7 @@ for event in pygame.event.get():
 ```
 The `for` loop goes through each action one at a time. `pygame.QUIT` happens when the player closes the game window.
 
-### Main Function: Jump
+#### Main Function: Jump
 
 Now let's make make our player jump everytime we press specific keyboard keys. Inside our `for event in pygame.event.get()` and after the end of our `if event.type == pygame.QUIT` let's add:
 
@@ -618,11 +618,118 @@ Instead, the camera follows the player:
 
 ```python
 camera_x = max(0, min(player.centerx - WIDTH // 2, WORLD_WIDTH - WIDTH))
-draw_background(window, camera_x)
 ```
 
 The camera tries to keep the player near the center of the screen `WIDTH // 2` finds half of the window width. The `max()` and `min()` functions keep the camera from moving beyond the edges of the game world.
 
-### Main Function: Platforms
+#### Main Function: Platforms
 
-wahhhh this is too long!!!!
+Now we need to draw the platforms.
+
+```python
+draw_background(window, camera_x)
+for platform in platforms:
+            visible = platform.copy().move(-camera_x, 0)
+            pygame.draw.rect(window, PLATFORM_SIDE, visible)
+            pygame.draw.rect(window, PLATFORM_TOP, (visible.x, visible.y, visible.width, 7))
+```
+
+`-camera_x` makes the platforms appear to move as the camera follows the player. We draw two rectangles to create one platform:
+
+`PLATFORM_SIDE` is the rectangle for the side.
+`PLATFORM_TOP` is the smaller rectangle for the top.
+
+This gives the platforms a little more visual detail.
+
+#### Main Function: Player
+
+Now let's draw the player:
+
+```python
+draw_player(window, player, camera_x)`
+```
+
+The `draw_player()` function uses the camera position to decide where the player should appear on the screen.
+
+This is another example of **why functions are useful**: instead of writing all of the drawing code inside the game loop, we can simply call the function we already created.
+
+#### Main Function: Game Instructions
+
+We can display text on the screen to remind the player about the game controls:
+
+```python
+hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
+        window.blit(hint, (22, 20))
+```
+
+`font.render()` creates an image containing the text.
+`window.blit()` places that image onto the game window.
+
+#### Main Function: Winning Message
+
+If the player reaches the end and wins, show a message:
+
+```python
+if won:
+    message = big_font.render("You made it!", True, INK)
+    window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
+```
+
+The `if won` condition means this code only runs after the player wins.
+
+`WIDTH // 2 - message.get_width() // 2` helps center the message horizontally.
+
+#### Main Function: Refreshing the Screen
+
+At the end of every game loop, update the display:
+
+```python
+pygame.display.flip()
+clock.tick(FPS)
+```
+
+`pygame.display.flip()` shows the completed frame on the screen.
+`clock.tick(FPS)` controls how fast the game loop runs.
+
+### Run the game!
+
+We finish our main function. Now let's run the game!
+
+```python
+if __name__ == "__main__":
+    window = pygame.display.set_mode((WIDTH, HEIGHT))
+    main(window)
+```
+
+`if __name__ == "__main__"` runs the game when this file is opened directly.
+`pygame.display.set_mode()` creates the game window.
+`main(window)` starts the main game loop.
+
+### Putting It Together
+
+Your `myplatformer.py` file should now contain:
+
+1. Imports
+2. Game settings and constants
+3. Colors
+4. Pygame setup
+5. A function for creating platforms
+6. A function for drawing the player
+7. A function for drawing the background
+8. A function for moving the player
+9. A main() function containing the game loop
+
+For the final step, run your `myplatformer.py` and play the game!
+
+**Congrats! You made it!!!**
+
+### Your Challenge
+
+- Change the game colors and window title.
+- Add a start screen before the game begins.
+- Add a pause key.
+- Add an object to power-up the player.
+- Replace the simple shapes with your own artwork.
+- Keep the game loop readable by moving repeated tasks into functions.
+
+Remember: the goal is not only to make the game run. The goal is to understand why it runs and how the pieces of the Python program fit together.

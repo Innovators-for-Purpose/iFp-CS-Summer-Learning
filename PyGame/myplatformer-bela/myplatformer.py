@@ -163,3 +163,6 @@ def main(window):
         pygame.display.flip()
         clock.tick(FPS)
     
+if __name__ == "__main__": # runs the main function inside of the file "__name__"<- this name is choose by the student.
+    window = pygame.display.set_mode((WIDTH, HEIGHT)) # opens the game widown and sets the size of it
+    main(window) #starts main loop
