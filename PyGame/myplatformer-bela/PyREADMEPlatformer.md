@@ -5,7 +5,6 @@ Welcome to iFp's Python coding practice 2! In this session you will practice Pyt
 ## What You'll Do
 
 - Build your own version of a platform game in `myplatformer.py`
-- Practice organizing a program into functions
 - Create a player and platforms
 - Add keyboard controls and jumping
 - Add gravity and collision detection
@@ -21,18 +20,11 @@ Work on this project will help you to:
 - Use conditionals and loops
 - Break a large problem into smaller functions
 
-## Your Next Step
-
-By the time you finish, or when you feel you've made good progress, you can choose a project path to continue with:
-
-- Game Development with Python and Pygame
-- Game Development in Godot 3.5
-- Web Development with JavaScript, CSS, and HTML
-- AI Research and Development using Python
+This tutorial is part of the **Game Development with Python and Pygame** iFp curriculum.
 
 ## Before Start Coding
 
-- Step 1: Install Python
+**Step 1: Install Python**
 Download and install [Python](https://www.python.org/downloads/) on your computer. 
 
 After installing Python, open your VS Code terminal and check that it works:
@@ -41,7 +33,7 @@ After installing Python, open your VS Code terminal and check that it works:
 
 You should see a Python version number.
 
-- Step 2: Install Pygame
+**Step 2: Install Pygame**
 
 Pygame is the Python library we will use to create the game.
 Open your terminal and run:
@@ -50,7 +42,7 @@ Open your terminal and run:
 
 ## Start coding!
 
-Navigate to VS Code in your applications and open the iFp Fall Coding Practice folder. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new file named `myplatformer.py`. You will edit `myplatformer.py` and use the example as a guide while making your own version of the platform game.
+Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. In the `PyGame` folder, open `platformer.py` to study the example. Then create a new folder named `myplatformer-Name`. Inside it create a new file named `myplatforme.py`. You will edit `myplatformer.py` to make your own version of the platform game.
 
 Each section has an objective to help you understand both Python syntax and the structure of a small game. There are tips and definitions here to guide you and give you something to reference when you feel unsure. You are also encouraged to make your own decisions and research Python or Pygame documentation when you are curious or stuck. Your mentors will be available to answer questions.
 
@@ -498,7 +490,7 @@ while True:
     # We will add the code here little by little.
 ```
 
-Everything inside this loop will happen over and over while the game is running.
+Everything inside this loop will happen over and over while the game is running. All the following steps are happening inside the `while True` loop.
 
 #### Main Function: Events
 
@@ -518,7 +510,7 @@ The `for` loop goes through each action one at a time. `pygame.QUIT` happens whe
 
 ### Main Function: Jump
 
-Now let's make make our player jump everytime we press specific keyboard keys. Inside our `for event in pygame.event.get()` and after our `if event.type == pygame.QUIT` let's add:
+Now let's make make our player jump everytime we press specific keyboard keys. Inside our `for event in pygame.event.get()` and after the end of our `if event.type == pygame.QUIT` let's add:
 
 ```python
             if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
@@ -539,6 +531,47 @@ The line: `velocity.y = JUMP_SPEED` gives the player an upward velocity. Remembe
 In Pygame, smaller `y` values are higher on the screen, so a negative vertical velocity moves the player up.
 
 #### Main Function: Re-start the game
+
+Let's give the player a restart key. Add the following code after the end of our `if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP)`:
+
+```python
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+                player.topleft = (100, 470)
+                velocity.update(0, 0)
+                won = False
+```
+
+When the player presses the key `R`:
+
+- The player returns to the starting position.
+- The velocity is reset.
+- The win state is reset.
+
+Try adding another key that does something interesting!
+
+#### Main Function: Left and Right Keys
+
+We can check which keys are currently being held down:
+
+`keys = pygame.key.get_pressed()`
+
+Now use the keys to control horizontal movement:
+```python
+velocity.x = (
+    (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * MOVE_SPEED
+    - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
+)
+```
+
+The player can use:
+- `A` or `the left arrow` to move left
+- `D` or the `right arrow` to move right
+
+The result is stored in: `velocity.x`
+
+Then the `move_player()` function uses that velocity to update the player's position.
+
+
 
 
 
