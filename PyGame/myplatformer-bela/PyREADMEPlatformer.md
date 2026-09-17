@@ -414,7 +414,44 @@ If the player is moving left: `player.left = platform.right` moves the player ba
 
 This prevents the player from walking through platforms.
 
-### Movement: Jumping
+### Movement: Making the player jump!
+
+First, increase the player's vertical velocity:
+
+```python
+velocity.y += GRAVITY
+```
+
+This is what creates the effect of gravity. If the player is moving up, gravity gradually makes the upward movement slower. When the player starts to fall, the player's vertical velocity becomes positive.
+
+Then move the player: `player.y += velocity.y`
+
+Now check whether the player has landed on a platform:
+
+```python
+on_ground = False
+
+for platform in platforms:
+    if player.colliderect(platform):
+        if velocity.y > 0:
+            player.bottom = platform.top
+            velocity.y = 0
+            on_ground = True
+```
+
+When `velocity.y > 0`, the player is moving down.
+
+If the player hits a platform while moving down: `player.bottom = platform.top` places the player directly on top of the platform. And `velocity.y = 0` stops the down movement.
+
+Finally: `on_ground = True` records that the player is standing on a platform. We also need to handle hitting the bottom of a platform while jumping:
+
+```python
+elif velocity.y < 0:
+    player.top = platform.bottom
+    velocity.y = 0
+```
+
+When the player is moving up and hits the bottom of a platform, the player stops moving up. At the end of the function, return whether the player is standing on the ground: `return on_ground`
 
 
 
