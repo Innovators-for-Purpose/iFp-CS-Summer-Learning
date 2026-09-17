@@ -63,6 +63,23 @@ def draw_player(surface, player_rect, camera_x):
     pygame.draw.circle(surface, PLAYER_FACE, (screen_rect.centerx, screen_rect.top + 13), 10) #draws player's face, notice how we are calling variables we declare at the beginning of our program!
 
     pygame.draw.circle(surface, INK, (screen_rect.centerx - 4, screen_rect.top + 12), 2) #draws player's left eye
-    
+
     pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top + 12), 2) #draws player's right eye
 
+    for cloud_x, cloud_y in ((150, 105), (540, 170), (830, 90)): #for loop to create a lot of clouds
+        x = cloud_x - int(camera_x * 0.15) % (WIDTH + 240)
+        pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
+        pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
+        pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
+
+    for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)): # creating hills!
+        points = [(-200, HEIGHT), (-200, HEIGHT - height)]
+        for world_x in range(-200, WORLD_WIDTH + 400, 260):
+            screen_x = world_x - int(camera_x * offset)
+            points.extend(((screen_x, HEIGHT - height), (screen_x + 130, HEIGHT - height - 85),
+                           (screen_x + 260, HEIGHT - height)))
+        points.append((WIDTH + 200, HEIGHT))
+        pygame.draw.polygon(surface, color, points)
+
+
+    
