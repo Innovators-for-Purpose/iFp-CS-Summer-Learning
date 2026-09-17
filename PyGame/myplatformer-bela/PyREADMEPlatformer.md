@@ -231,7 +231,7 @@ We will learn more about the camera later!
 
 ### Game Objects: Background
 
-We already created our platforms but our background has no color or design. We need to draw a background.
+We already created our platforms and player but our background has no color or design. We need to draw a background.
 
 ```python
 def draw_background(surface, camera_x):
@@ -342,6 +342,88 @@ Then we add:
 pygame.draw.polygon(surface, color, points)
 ```
 This connect all of our points and fill the shape with the color we chose.
+
+### Movement: Making the player move horizontally
+
+We finish creating our platforms, player and background but our player can't move yet on the game world. Let's create a function to help the player move!
+
+```python
+def move_player(player, velocity, platforms):
+    player.x += velocity.x
+    player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.x > 0:
+                player.right = platform.left
+            elif velocity.x < 0:
+                player.left = platform.right
+
+    velocity.y += GRAVITY
+    player.y += velocity.y
+    on_ground = False
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.y > 0:
+                player.bottom = platform.top
+                velocity.y = 0
+                on_ground = True
+            elif velocity.y < 0:
+                player.top = platform.bottom
+                velocity.y = 0
+    return on_ground
+```
+Let's create our function:
+
+```python
+def move_player(player, velocity, platforms):
+```
+The function receives three things:
+
+- `player` the player's Rect that we created at the beginning of our program that represent the  position and size of our player.
+- `velocity` how fast the player is moving.
+- `platforms` the list of platforms
+
+First, move the player horizontally: `player.x += velocity.x`
+
+We also want to keep the player inside the game world:
+
+`player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))`
+
+This prevents the player from moving beyond the left or right edges of the world.
+
+### Movement: Making sure the player don't collide with platforms
+
+Let's start with:
+
+```python
+for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.x > 0:
+                player.right = platform.left
+            elif velocity.x < 0:
+                player.left = platform.right
+```
+
+`colliderect()` checks whether two rectangles overlap.
+
+This code checks whether the player is moving right or left.
+
+If the player is moving right: `player.right = platform.left` moves the player back to the left side of the platform.
+
+If the player is moving left: `player.left = platform.right` moves the player back to the right side of the platform.
+
+This prevents the player from walking through platforms.
+
+### Movement: Jumping
+
+
+
+
+
+
+
+
+
 
 
 
