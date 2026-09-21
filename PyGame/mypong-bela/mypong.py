@@ -21,11 +21,4 @@ PADDLE_WIDTH = 15
 PADDLE_HEIGHT = 110
 BALL_SIZE = 18
 
-left_paddle = pygame.Rect{
-    40,
-    HEIGHT // 2 - PADDLE_HEIGHT // 2,
-    PADDLE_HEIGHT,
-    PADDLE_WIDTH
-    
-}
 
