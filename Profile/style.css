@@ -1,25 +1,31 @@
+
 .profile-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 4px solid #83473a;
 }
-.block{
-    background-color: #83473a;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-    border-radius: 50%;
-}
 
 body{
-    background-image: linear-gradient(to bottom right, #F29494, #FAEDED, #F7393F);
+    background-image: linear-gradient(to bottom right, #ea9797, #faeeee, #F7393F);
     padding: 77px;
+}
+
+.title{
+   font-family: "Castoro Titling", serif; 
+}
+.table{
+    font-family: "Castoro Titling", serif;
 }
 p {
     height: 50px;
-    width: 200px;
+    width: 290px;
     color: #060606;
+    font-family: "", serif;
+    position: relative;
+    left: 10px;
+    font-family: "IM Fell Double Pica", serif;
+    line-height: 1.8;
 }
 button {
     background-color: #83473a;
@@ -29,14 +35,14 @@ button {
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    bottom: -30px;
-    left: -58px;
+    left: 7px;
+    box-shadow: 10px 5px 5px rgba(144, 66, 66, 0.353);
+    font-family: "Playfair Display", serif;
 }
-.about-me {
-    padding: 0px;
-}
+
 .button-box{
-    padding: 60px;
+    padding-top: 0px;
+    padding-bottom: 60px;
 }
 
 .profile-card{
@@ -48,6 +54,60 @@ button {
     border-radius: 100px;
 
 }
-.resume {
-    
+
+.castoro-titling-regular {
+  font-family: "Castoro Titling", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.im-fell-double-pica-regular {
+  font-family: "IM Fell Double Pica", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.im-fell-double-pica-regular-italic {
+  font-family: "IM Fell Double Pica", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.playfair-display-regular {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sticky-note-1 {
+    width: 400px;
+    height: 400px;
+    top: 300px;
+    right: 120px;
+    position: absolute;
+}
+
+.sticky-note-3 {
+    width: 400px;
+    height: 400px;
+    top: 300px;
+    left: 160px;
+    position: absolute;
+}
+
+.textpert-1{
+    font-family: "IM Fell Double Pica", serif;
+    position: relative;
+    left: 428px;
+    top: -300px;
+    rotate: -7deg;
+}
+.textpert-2{
+    font-family: "IM Fell Double Pica", serif;
+    position: relative;
+    left: -379px;
+    top: -380px;
+    rotate: 12deg;
 }
