@@ -43,5 +43,10 @@ button {
 }
 
 button:hover {
-  background-color: #496fdb;
+  background-color: #5b7ff3;
+}
+.profile-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }

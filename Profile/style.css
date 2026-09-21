@@ -1,0 +1,53 @@
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #83473a;
+}
+.block{
+    background-color: #83473a;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+body{
+    background-image: linear-gradient(to bottom right, #F29494, #FAEDED, #F7393F);
+    padding: 77px;
+}
+p {
+    height: 50px;
+    width: 200px;
+    color: #060606;
+}
+button {
+    background-color: #83473a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    bottom: -30px;
+    left: -58px;
+}
+.about-me {
+    padding: 0px;
+}
+.button-box{
+    padding: 60px;
+}
+
+.profile-card{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 100px;
+
+}
+.resume {
+    
+}
