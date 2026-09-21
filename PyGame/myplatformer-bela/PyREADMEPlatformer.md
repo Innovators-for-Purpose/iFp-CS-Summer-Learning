@@ -345,7 +345,7 @@ def move_player(player, velocity, platforms):
                 velocity.y = 0
     return on_ground
 ```
-Let's create our function:
+Let's understand our function little by little:
 
 ```python
 def move_player(player, velocity, platforms):
