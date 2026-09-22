@@ -2,38 +2,45 @@ body{
   background-image: linear-gradient(to right, #9c23ff, #b8eeb3);
 }
 
-.buttons-container {
-
-
-}
-button {
-
-}
-button:hover{
-
-}
-
 .profile-image
 {
     width: 150px;
     height: 200px;
-    object-fit:contain;
     border: 3px solid #000000; 
-    border-radius: 8px
+    border-radius: 8px;
+    display: block;
+    margin: auto;
     
 }
-img
-{ display: block;
-  margin: auto;
-  width: 50%;
-}
-.profile-class
-{ display: block;
-  margin: auto;
-  width: 50%;
-}
+
 
 .profile-card 
-{ 
-  background-color: #ffffff;
+{ display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #918b93, #f0e9ea);
+  padding : 4%;
+
+}
+
+h1{
+  font-size: 3.5em;
+  margin: 0;
+
+}
+
+.ballet-font {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.About-Me-Font {
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
