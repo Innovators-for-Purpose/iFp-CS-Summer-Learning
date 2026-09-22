@@ -32,3 +32,8 @@ img
   margin: auto;
   width: 50%;
 }
+
+.profile-card 
+{ 
+  background-color: #ffffff;
+}
