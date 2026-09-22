@@ -1,5 +1,5 @@
 body{
-  background-image: linear-gradient(to right, #9c23ff, #b8eeb3);
+  background-image: linear-gradient(to right, #fff2f7, #c9dcf4);
 }
 
 .profile-image
@@ -19,7 +19,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #918b93, #f0e9ea);
+  background-image: linear-gradient(to right, #ddb5e8cc, #464c9a82);
   padding : 4%;
 
 }
