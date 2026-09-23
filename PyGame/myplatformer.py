@@ -58,10 +58,10 @@ def draw_background(surface, camera_x):
     pygame.draw.circle(surface, SUN, (WIDTH - 110,90), 48)
 
     for clouds_x, cloud_y in ((150, 105), (540, 170), (830, 90)):
-    
         x = clouds_x - int(camera_x * 0.15) % (WIDTH + 240)
         pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
         pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
         pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
 
-        
+        for offset, color, hight in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)):
+            points = [(-200, HEIGHT),(-200, HEIGHT - height)]
