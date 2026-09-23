@@ -9,4 +9,8 @@ Welcome to iFp's Python coding practice 3! In this session you will practice Pyt
 - Create
 
 ## What you'll learn
+- Improve your Pyhton programming skills
+- Understand how to use python for Data Analysis
+-
+-
 
