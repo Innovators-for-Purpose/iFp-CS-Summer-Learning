@@ -1,31 +1,31 @@
+
 body {
-  background-color: #f4f7fb;
-  color: #2e3a4f;
+  background-color: #000000;
+  color: #e1ff00;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  display: flex;
-  justify-content: center;
+  display: ;
+  justify-content: ;
 }
 
 .profile-card {
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 18px;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
   max-width: 460px;
   padding: 30px;
-  text-align: center;
+  text-align: ;
 }
 
 .info-box {
-  background-color: #eef2fb;
+  background-color: #000000;
   border-radius: 14px;
   margin: 20px 0;
   padding: 16px;
   text-align: left;
 }
-
-.button-container {
+.buttons-container {
   display: flex;
   gap: 12px;
   justify-content: center;
@@ -34,7 +34,7 @@ body {
 }
 
 button {
-  background-color: #5b7ff3;
+  background-color: #000000;
   border: none;
   border-radius: 10px;
   color: white;
@@ -43,5 +43,5 @@ button {
 }
 
 button:hover {
-  background-color: #496fdb;
+  background-color: #000000;
 }

@@ -1,31 +1,54 @@
-/* ========================================================
-DEVELOPER PROFILE PROJECT
+(function () {
+  const scriptPath = "talking-button/script.js";
+  const stylePath = "talking-button/style.css";
+  const rootId = "chatbot-root";
 
-This website uses three files:
+  if (!document.querySelector('link[href="' + stylePath + '"]')) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = stylePath;
+    document.head.appendChild(link);
+  }
 
-index.html: Controls the STRUCTURE
-style.css: Controls the APPEARANCE
-script.js: Controls the BEHAVIOR
+  let root = document.getElementById(rootId);
+  if (!root) {
+    root = document.createElement("div");
+    root.id = rootId;
+    document.body.appendChild(root);
+  }
 
-Throughout the week, you will customize all three files
-to build your own Developer Profile page.
-======================================================== */
+  if (!root.querySelector(".talking-button")) {
+    root.innerHTML = `
+      <button class="talking-button" onclick="openDialog()"></button>
+      <div class="dialog-box" id="dialog-box">
+        <p>Need some help?</p>
+        <button onclick="showOptionOne()">Option 1</button>
+        <button onclick="showOptionTwo()">Option 2</button>
+        <button onclick="showOptionThree()">Option 3</button>
+        <p id="response">Choose an option.</p>
+      </div>
+    `;
+  }
 
+  window.openDialog = function () {
+    const dialogBox = document.getElementById("dialog-box");
 
-function showAbout() {
+    if (dialogBox.style.display === "block") {
+      dialogBox.style.display = "none";
+    } else {
+      dialogBox.style.display = "block";
+    }
+  };
 
-    document.getElementById("section-title").textContent = "About Me";
+  window.showOptionOne = function () {
+    document.getElementById("response").textContent = "Hello World.";
+  };
 
-    document.getElementById("description").textContent = "Hello! My name is ______.";
+  window.showOptionTwo = function () {
+    document.getElementById("response").textContent = "jummble 3iafiefigagigf.";
+  };
 
-}
-
-function showSkills() {
-
-    document.getElementById("section-title").innerHTML =
-        "Skills";
-
-    document.getElementById("description").innerHTML =
-        "Python<br>HTML<br>CSS<br>JavaScript";
-
-}
+  window.showOptionThree = function () {
+    document.getElementById("response").textContent = "WORDS.";
+  };
+})();
