@@ -104,13 +104,13 @@ def Move_Player(Player, Velocity, Platforms):
 
 def main(window):
     Platforms = make_platforms()
-    Player = pygame.Rect(100, 400, Player_Size, Player_Size)
+    Player = pygame.Rect(100, 470, Player_Size, Player_Size)
     Velocity = pygame.Vector2(0, 0)
     Camera_X = 0
     On_Ground = False
     won = False
     font = pygame.font.Font(None, 48)
-    Big_Font = pygame.font.Font(None, 72)
+    Big_Font = pygame.font.Font(None, 46)
 
 
     while True:
@@ -127,7 +127,7 @@ def main(window):
                 won = False
 
             keys = pygame.key.get_pressed()
-            Velocity.x = ((keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed)
+            Velocity.x = (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed
             if not won:
                 On_Ground = Move_Player(Player, Velocity, Platforms)
             if Player.top > Height:
