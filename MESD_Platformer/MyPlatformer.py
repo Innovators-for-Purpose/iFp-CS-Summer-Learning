@@ -4,17 +4,13 @@ import sys
 
 
 
-Width, Height = 1000, 900
+Width, Height = 900, 600
 FPS = 60
 World_Width = 3600
-
-
-
-Player_Size = 20
-Move_Speed = 7.5
-Jump_Speed = -15
-Gravity = 0.75
-
+Player_Size = 37
+Move_Speed = 5
+Jump_Speed = -13
+Gravity = 0.6
 
 
 Sky = (95, 126, 160)
@@ -38,57 +34,47 @@ clock = pygame.time.Clock()
 
 def make_platforms():
     return [
-        pygame.Rect(0, 625, 850, 125),
-        pygame.Rect(750, 625, 600, 125),
-        pygame.Rect(1500, 625, 850, 125),
-        pygame.Rect(2250, 625, 1300, 125),
-        pygame.Rect(500, 523, 220, 28),
-        pygame.Rect(975, 420, 245, 28),
-        pygame.Rect(1300, 490, 175, 28),
-        pygame.Rect(1725, 440, 315, 28),
-        pygame.Rect(2225, 340, 285, 28),
-        pygame.Rect(2950, 430, 315, 28),
-        pygame.Rect(3700, 360, 285, 28),
-        pygame.Rect(4200, 525, 295, 28),
+        pygame.Rect(0, 530, 720, 70),
+        pygame.Rect(800, 530, 620, 70),
+        pygame.Rect(1510, 530, 720, 70),
+        pygame.Rect(2320, 530, 1280, 70),
+        pygame.Rect(420, 430, 180, 22),
+        pygame.Rect(960, 390, 190, 22),
+        pygame.Rect(1240, 470, 150, 22),
+        pygame.Rect(1660, 410, 210, 22),
+        pygame.Rect(1980, 330, 180, 22),
+        pygame.Rect(2470, 420, 210, 22),
+        pygame.Rect(2860, 350, 180, 22),
+        pygame.Rect(3200, 455, 190, 22),
 
     ]
 
 def draw_player(Surface, Player_Rect, Camera_X):
     Screen_Rect = Player_Rect.move(-Camera_X, 0)
-
-    pygame.draw.ellipse(Surface, Player_Color, 
-Screen_Rect) 
-
-    pygame.draw.circle(Surface, Player_Face, 
-(Screen_Rect.centerx, Screen_Rect.top + 13), 10)
-    
-    pygame.draw.circle(Surface, Ink, (Screen_Rect.centerx 
-- 4, Screen_Rect.top + 12), 2)
-
-    pygame.draw.circle(Surface, Ink, (Screen_Rect.centerx 
-+ 4, Screen_Rect.top + 12), 2)
+    pygame.draw.ellipse(Surface, Player_Color, Screen_Rect) 
+    pygame.draw.circle(Surface, Player_Face, (Screen_Rect.centerx, Screen_Rect.top + 13), 10)
+    pygame.draw.circle(Surface, Ink, (Screen_Rect.centerx - 4, Screen_Rect.top + 12), 2)
+    pygame.draw.circle(Surface, Ink, (Screen_Rect.centerx + 4, Screen_Rect.top + 12), 2)
     
 
 def draw_background(Surface, Camera_X):
     Surface.fill(Sky)
-    pygame.draw.circle(Surface, Sun, (Width - 100, 100), 50)
+    pygame.draw.circle(Surface, Sun, (Width - 110, 90), 50)
     
     
-    for Cloud_X, Cloud_Y in ((125, 95), (555, 200), (1025, 475)):
-        X = Cloud_X - int(Camera_X * 0.15) % (Width + 200)
-        pygame.draw.circle(Surface, Cloud, (X, Cloud_Y),50)
-        pygame.draw.circle(Surface, Cloud, (X + 50, Cloud_Y - 10), 50)
-        pygame.draw.circle(Surface, Cloud, (X + 100, Cloud_Y), 50)
+    for Cloud_X, Cloud_Y in ((150, 105), (540, 170), (830, 90)):
+        X = Cloud_X - int(Camera_X * 0.15) % (Width + 240)
+        pygame.draw.circle(Surface, Cloud, (X, Cloud_Y), 25)
+        pygame.draw.circle(Surface, Cloud, (X + 28, Cloud_Y - 10), 34)
+        pygame.draw.circle(Surface, Cloud, (X + 60, Cloud_Y), 25)
 
-    for offset, Color, height in ((0, Hill_Far, 150),
-    (50, Hill_Near, 250)):
-        points = [(0, Height), (0, Height - height)]
-        for World_X in range(-200, World_Width + 200, 200):
+    for offset, Color, height in ((0.18, Hill_Far, 110),(0.32, Hill_Near, 160)):
+        points = [(-200, Height), (-200, Height - height)]
+        for World_X in range(-200, World_Width + 400, 260):
             Screen_X = World_X - int(Camera_X * offset)
-            points.extend(((Screen_X, Height - height),
-        (Screen_X + 100, Height - height - 50), (Screen_X 
-    + 200, Height - height))) 
-        points.append((Width + 200, height))
+            points.extend(((Screen_X, Height - height), (Screen_X + 130, Height - height - 85), 
+                           (Screen_X + 260, Height - height))) 
+        points.append((Width + 200, Height))
         pygame.draw.polygon(Surface, Color, points)
 
     
@@ -118,7 +104,7 @@ def Move_Player(Player, Velocity, Platforms):
 
 def main(window):
     Platforms = make_platforms()
-    player = pygame.Rect(100, 400, Player_Size, Player_Size)
+    Player = pygame.Rect(100, 400, Player_Size, Player_Size)
     Velocity = pygame.Vector2(0, 0)
     Camera_X = 0
     On_Ground = False
@@ -132,33 +118,38 @@ def main(window):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, 
-            pygame.K_w, pygame.K_UP):
+            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
                 if On_Ground and not won:
                     Velocity.y = Jump_Speed
             if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
-                player.topleft = (120, 490)
+                Player.topleft = (100, 470)
                 Velocity.update(0, 0)
                 won = False
+
             keys = pygame.key.get_pressed()
-            Velocity.x = (
-                 (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed 
-            - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed
-            )
+            Velocity.x = ((keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed)
             if not won:
-                On_Ground = Move_Player(player, Velocity, Platforms)
-            if player.top > Height:
-                player.topleft = (120, 490)
+                On_Ground = Move_Player(Player, Velocity, Platforms)
+            if Player.top > Height:
+                Player.topleft = (100, 470)
                 Velocity.update(0, 0)
-            Camera_X = max(0, 
-            min(player.centerx - Width // 
-            2, World_Width - Width))
-            draw_background(window, 
-            Camera_X)
+            if Player.right >= World_Width - 180:
+                won = True
+                
+
+
+            Camera_X = max(0, min(Player.centerx - Width // 2, World_Width - Width))
+            draw_background(window, Camera_X)
             for platform in Platforms:
                 visible = platform.move(-Camera_X, 0)
                 pygame.draw.rect(window, Platform_Side, visible)
                 pygame.draw.rect(window, Platform_Top, (visible.x, visible.y, visible.width, 5))
+                draw_player(window, Player, Camera_X)
+
+
+            hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, Ink)
+            window.blit(hint, (22, 20))
+
             if won: 
                 message = Big_Font.render("You Win!", True, Ink)
                 window.blit(message, (Width // 2 - message.get_width() // 2, 76))
