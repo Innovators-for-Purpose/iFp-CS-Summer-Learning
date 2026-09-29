@@ -19,7 +19,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #ddb5e8cc, #464c9a82);
+  background-image: linear-gradient(to right, #fff4ffcc, #a8ddff82);
   padding : 4%;
 
 }
