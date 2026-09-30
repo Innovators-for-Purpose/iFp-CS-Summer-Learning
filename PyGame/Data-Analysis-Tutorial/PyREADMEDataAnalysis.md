@@ -52,6 +52,11 @@ In the same VS Code terminal:
 
 `python3 -m pip install matplotlib`
 
+**OPTIONAL Step 4: Install Rainbow CSV in Visual Studio Code**
+
+Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension. This extension give different colors to the colums in our CSV file.
+
+
 ## Start coding!
 
 Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
@@ -74,7 +79,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-`import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. These shorter names are called aliases.
+`import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. In the world of programming, this shorter names are called aliases.
 
 Later, when we want to use something from pandas, we can write:
 
@@ -94,4 +99,13 @@ For example:
 
 We will show you how to work with this in the following steps!
 
+### Data Analysis - Part 1: The DIKW Model
 
+### Data Analysis - Part 1: The Dataset
+
+what is a csv?
+what do we when we have
+
+### Data Analysis - Part 1: The Libraries
+
+### Data Analysis - Part 2: The 
