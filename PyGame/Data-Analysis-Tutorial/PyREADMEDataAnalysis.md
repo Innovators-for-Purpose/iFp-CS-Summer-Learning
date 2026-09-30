@@ -15,8 +15,8 @@ Work on this project will help you to:
 
 - Improve your Python programming skills
 - Understand how Python can be used for data analysis
-- Work with CSV files using `pandas`
-- Create visualizations using `matplotlib`
+- Work with CSV files using `pandas` library
+- Create visualizations using `matplotlib` library
 - Learn what data can show us and what it can't
 
 This tutorial is part of the **Data Analysis and AI with Python** iFp curriculum.
@@ -54,7 +54,7 @@ In the same VS Code terminal:
 
 ## Start coding!
 
-Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
+Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
 - `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
 
@@ -74,4 +74,4 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-`pd` means pandas and `plt` means matplotlib's plotting tools.
+`pd` means pandas and `plt` means matplotlib's plotting tools. 
