@@ -67,11 +67,31 @@ Navigate to Visual Studio Code in your applications and clone the `iFp Summer Co
 1. Open `data-analysis-tutorial.py` in VS Code and look through the example.
 3. Create a file in the same folder named `my-data-analysis.py`.
 4. Open `my-data-analysis.py` in VS Code.
-5. Add the folling imports at the top of `my-data-analysis.py`:
+5. Add the following imports at the top of `my-data-analysis.py`:
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-`pd` means pandas and `plt` means matplotlib's plotting tools. 
+`import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. These shorter names are called aliases.
+
+Later, when we want to use something from pandas, we can write:
+
+`pd.NAME_OF_PANDAS_FUNCTION`
+
+For example:
+
+`pd.read_csv()`
+
+And when we want to use something from matplotlib, we can write:
+
+`plt.NAME_OF_MATPLOTLIB_FUNCTION`
+
+For example:
+
+`plt.show()`
+
+We will show you how to work with this in the following steps!
+
+
