@@ -53,3 +53,11 @@ In the same VS Code terminal:
 `python3 -m pip install matplotlib`
 
 ## Start coding!
+
+Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
+
+- `data-analysis-tutorial.py`: Reference python file here you will organize into imports...
+
+- `PyREADMEDataAnalysis.md` : This file with the tutorial instructions
+
+- `Social_media_impact_on_life.csv` : The Dataset we will work with!
