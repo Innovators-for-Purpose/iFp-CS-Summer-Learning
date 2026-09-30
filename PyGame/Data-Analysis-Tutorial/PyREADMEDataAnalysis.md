@@ -56,8 +56,22 @@ In the same VS Code terminal:
 
 Navigate to Visual Studio Code in your applications and clone the iFp Fall Coding Practice folder from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
-- `data-analysis-tutorial.py`: Reference python file here you will organize into imports...
+- `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
 
-- `PyREADMEDataAnalysis.md` : This file with the tutorial instructions
+- `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
 - `Social_media_impact_on_life.csv` : The Dataset we will work with!
+
+### Imports
+
+1. Open `data-analysis-tutorial.py` in VS Code and look through the example.
+3. Create a file in the same folder named `my-data-analysis.py`.
+4. Open `my-data-analysis.py` in VS Code.
+5. Add the folling imports at the top of `my-data-analysis.py`:
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+`pd` means pandas and `plt` means matplotlib's plotting tools.
