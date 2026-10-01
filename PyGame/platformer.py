@@ -23,7 +23,7 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 
 pygame.init()
-pygame.display.set_caption("Little Leap")
+pygame.display.set_caption("isahaq")
 clock = pygame.time.Clock()
 
 
