@@ -3,13 +3,17 @@ import sys
 
 # --- Constants ---
 WIDTH, HEIGHT = 900, 600
-FPS = 60
-PADDLE_WIDTH = 15
+FPS = 120
+PADDLE_WIDTH = 150
 PADDLE_HEIGHT = 110
-BALL_SIZE = 18
-PADDLE_SPEED = 6
-BALL_SPEED_X = 5
-BALL_SPEED_Y = 4
+PADDLE_IMAGE = pygame.transform.scale(
+    pygame.image.load("PyGame/images/rectangle.png"),
+    (PADDLE_WIDTH, PADDLE_HEIGHT),
+)
+BALL_SIZE = 20
+PADDLE_SPEED = 12
+BALL_SPEED_X = 10
+BALL_SPEED_Y = 8z
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (30, 30, 30)
@@ -20,8 +24,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
 # --- Game Objects ---
-left_paddle = pygame.Rect(40, HEIGHT // 2 - PADDLE_HEIGHT // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
-right_paddle = pygame.Rect(WIDTH - 40 - PADDLE_WIDTH, HEIGHT // 2 - PADDLE_HEIGHT // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
+left_paddle = PADDLE_IMAGE.get_rect(topleft=(40, HEIGHT // 2 - PADDLE_HEIGHT // 2))
+right_paddle = PADDLE_IMAGE.get_rect(topright=(WIDTH - 40, HEIGHT // 2 - PADDLE_HEIGHT // 2))
 ball = pygame.Rect(WIDTH // 2 - BALL_SIZE // 2, HEIGHT // 2 - BALL_SIZE // 2, BALL_SIZE, BALL_SIZE)
 ball_speed_x = BALL_SPEED_X
 ball_speed_y = BALL_SPEED_Y
@@ -90,8 +94,8 @@ while True:
     for y in range(0, HEIGHT, 20):
         pygame.draw.rect(screen, WHITE, (WIDTH // 2 - 2, y, 4, 10))
 
-    pygame.draw.rect(screen, WHITE, left_paddle)
-    pygame.draw.rect(screen, WHITE, right_paddle)
+    screen.blit(PADDLE_IMAGE, left_paddle)
+    screen.blit(PADDLE_IMAGE, right_paddle)
     pygame.draw.ellipse(screen, WHITE, ball)
 
     score_text = font.render(f"{left_score}  {right_score}", True, WHITE)
