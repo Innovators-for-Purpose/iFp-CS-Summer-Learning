@@ -16,20 +16,20 @@ CLOUD = (224, 244, 237)
 HILL_FAR = (103, 166, 151)
 HILL_NEAR = (72, 135, 119)
 GROUND = (50, 77, 68)
-PLATFORM_TOP = (226, 183, 91)
+PLATFORM_TOP = (26, 183, 91)
 PLATFORM_SIDE = (157, 103, 61)
 PLAYER_COLOR = (239, 91, 91)
 PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 
 pygame.init()
-pygame.display.set_caption("My Plateform Game :D")
-clock = pygame.time.Clock
+pygame.display.set_caption("My Plateform Game")
+clock = pygame.time.Clock()
 
-def make_plateforms():
+def make_platforms():
     return [
         pygame.Rect(0, 530, 720, 70),
-        pygame.Rect(800, 530, 620, 70),
+        pygame.Rect(700, 530, 620, 70),
         pygame.Rect(1510, 530, 720, 70),
         pygame.Rect(2320, 530, 1280, 70),
         pygame.Rect(420, 430, 180, 22),
@@ -42,7 +42,7 @@ def make_plateforms():
         pygame.Rect(3200, 455, 190, 22),
     ]
 def draw_player(surface, player_rect, camera_x):
-    screen_rect = player_rect.move(-camera_x)
+    screen_rect = player_rect.move(-camera_x, 0)
 
     pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect)
 
@@ -50,7 +50,7 @@ def draw_player(surface, player_rect, camera_x):
 
     pygame.draw.circle(surface, INK, (screen_rect.centerx -4,screen_rect.top + 12), 2)
 
-    pygame.draw.circle(surface, INK, (screen_rect.centerx + 3, screen_rect.top +12), 2)
+    pygame.draw.circle(surface, INK, (screen_rect.centerx + 4, screen_rect.top +12), 2)
 
 def draw_background(surface, camera_x):
     surface.fill(SKY)
@@ -95,7 +95,7 @@ def move_player(player, velocity, platforms):
     return on_ground
 
 def main(window):
-    plateforms = make_plateforms()
+    platforms = make_platforms()
     player = pygame.Rect(100, 470, PLAYER_SIZE, PLAYER_SIZE)
     velocity = pygame.Vector2(0, 0)
     camera_x = 0
@@ -109,18 +109,16 @@ def main(window):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_SPACE, pygame.K_w, pygame.K_UP):
+            if event.type == pygame.KEYDOWN and event.key in ( pygame.K_SPACE, pygame.K_w, pygame.K_UP):
                 if on_ground and not won:
                     velocity.y = JUMP_SPEED
             if event.type == pygame.KEYDOWN and event.key == pygame.K_r: 
                 player.topleft = (100, 470)
                 velocity.update(0, 0)
                 won = False
-
+        
         keys = pygame.key.get_pressed()
-
-        velocity.x = (
-            (keys[pygame.K_d] or keys[pygame.K_RIGHT] * MOVE_SPEED - (keys[pygame.K_a]) or keys[pygame.K_LEFT] * MOVE_SPEED))
+        velocity.x = ((keys[pygame.K_d] or keys[pygame.K_RIGHT])) * MOVE_SPEED - ((keys[pygame.K_a]) or keys[pygame.K_LEFT]) * MOVE_SPEED
         if not won:
             on_ground = move_player(player, velocity, platforms)
             if player.top > HEIGHT:
@@ -139,7 +137,7 @@ def main(window):
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
         window.blit(hint, (22, 20))
         if won:
-            message = big_font.render("You made it!", True, INK)
+            message = big_font.render("You made it to the end!", True, INK)
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
 
         pygame.display.flip()
