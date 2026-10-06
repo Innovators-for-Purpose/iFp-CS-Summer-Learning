@@ -147,7 +147,7 @@ In this tutorial we are going to work on the following steps:
 5. Management: Load the dataset and play with it!
 6. Analyzing: We are going to understand what the collected data is telling us
 7. Visualization: We are going display the data with graphs 
-8. Interpretation: We are going to see what the graphs are telling us.
+8. Interpretation: We are going to see what the graphs are telling us
 
 ## Data Analysis Part 1: Loading our dataset
 
@@ -182,9 +182,7 @@ df = pd.read_csv("social_media_impact.csv")
 
 We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
 
-`df` is a common abbreviation for **DataFrame**.
-
-A pandas DataFrame is like a table that Python can work with.
+`df` is a common abbreviation for **DataFrame**. A pandas DataFrame is like a table that Python can work with.
 
 ### Print the dataset
 
@@ -246,20 +244,15 @@ Now run again your program.
 
 You should see something similar to:
 
-```text
+```python
 (4500, 16)
 ```
-
 The first number is the number of **rows**.
-
 The second number is the number of **columns**.
 
 So our dataset has:
-
 - 4,500 rows
 - 16 columns
-
-This is useful because it gives us a quick idea of the size of our dataset.
 
 ## Data Analysis Part 2: Start analyzing the data
 
@@ -325,6 +318,25 @@ Also in the end it mentions the amount of times one data types is repeated. Like
 This is important because different kinds of data can be analyzed in different ways.
 
 ### Check is there is any missing data
+
+Real-world datasets are not always perfect. Sometimes, when you work with big datasets information is missing. Our dataset contains some missing values, so we should check for them before making certain calculations.
+
+Add:
+```python
+print(df.isna().sum())
+```
+`isna()` checks whether a value is missing.
+`sum()` counts how many missing values there are in each column.
+
+You may notice missing values in:
+- 46 missing values in `Perceived_Stress_Score`
+- 85 missing values in `Academic_Performance_GPA`
+
+
+
+
+
+
 
 
 

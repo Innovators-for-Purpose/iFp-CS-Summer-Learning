@@ -13,8 +13,17 @@ print(df.head())
 # try to display the number of answers you want!
 print(df.head(10))
 
+# last 5 rows
+print(df.tail())
+
+#what is the size of our dataset?
+print(df.shape)
+
 # printing the column names
 print(df.columns)
 
 #more info about our DataFrame
 print(df.info())
+
+#looking for missing values
+print(df.isna().sum())
