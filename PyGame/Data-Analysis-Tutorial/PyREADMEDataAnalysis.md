@@ -192,23 +192,42 @@ Run your program.
 
 You may see a lot of rows printed in the terminal. Pandas will usually shorten the output instead of printing every row.
 
+## Data Analysis Part 1: Start managing the data
+
+Now that we have access to the 4500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
+
+In your `my-data-analysis.py` file add the following:
+
+```python
+print(df.head())
+```
+`head()` shows the first five rows of the DataFrame.
+
+We can also ask for a specific number of rows:
+
+```python
+print(df.head(10))
+```
+This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
+
+### Looking at the last rows
+
+We can also look at the end of the dataset. Add:
+
+```python
+print(df.tail())
+```
+`tail()` shows the last five rows.
+
+Try:
+
+```python
+print(df.tail(10))
+```
+
+How many rows can you see?
+
+### What is the size of our dataset?
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-## 
-
-
-what is a csv?
-what do we when we have
 
