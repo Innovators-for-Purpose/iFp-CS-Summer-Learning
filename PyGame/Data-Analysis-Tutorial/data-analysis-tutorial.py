@@ -13,4 +13,5 @@ print(df.head())
 # try to display the number of answers you want!
 print(df.head(10))
 
-
+# printing the column names
+print(df.columns)
