@@ -25,7 +25,7 @@ This tutorial is part of the **Data Analysis and AI with Python** iFp curriculum
 
 We need to make sure we have the following install in our computer:
 
-**Step 1: Install Python**
+### Step 1: Install Python
 
 Download and install [Python](https://www.python.org/downloads/) on your computer. 
 
@@ -35,7 +35,7 @@ After installing Python, open your VS Code terminal and check that it works:
 
 You should see a Python version number.
 
-**Step 2: Install pandas**
+### Step 2: Install pandas
 
 Pandas is the Python library we will use for data manipulation.
 
@@ -44,7 +44,7 @@ In the same VS Code terminal:
 `python3 -m pip install pandas`
 
 
-**Step 3: Install matplotlib**
+### Step 3: Install matplotlib
 
 Matplotlib is the Python library we will use to turn our data into graphs and visualizations.
 
@@ -52,7 +52,7 @@ In the same VS Code terminal:
 
 `python3 -m pip install matplotlib`
 
-**OPTIONAL Step 4: Install Rainbow CSV in Visual Studio Code**
+### **OPTIONAL** Step 4: Install Rainbow CSV in Visual Studio Code
 
 Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension. This extension give different colors to the colums in our CSV file.
 
@@ -93,12 +93,11 @@ You will organize your program into:
 
 ### `social_media_impact.csv`
 
-This is the dataset we will work with during the whole tutorial. This dataset was obtained from [Kaggle] (https://www.kaggle.com/), a platform where anyone around the world can upload and download datasets from diverse topics.
+This is the dataset we will work with during the whole tutorial. This dataset was obtained from [Kaggle](https://www.kaggle.com/), a platform where anyone around the world can upload and download datasets from diverse topics.
 
-The dataset we are using is called [**Impact of Social Media on Life**] (https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life) 
+The dataset we are using is called [**Impact of Social Media on Life**](https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life) 
 
-**Context**
-In recent years, the intersection of digital platform consumption, sleep hygiene, and stress has become a critical focus of behavioral and educational research. This dataset provides granular survey metrics across 4,500 students ranging from high school to postgraduate programs to analyze how digital engagement shapes daily life and well-being.
+**Here is the description of the dataset:** In recent years, the intersection of digital platform consumption, sleep hygiene, and stress has become a critical focus of behavioral and educational research. This dataset provides granular survey metrics across 4,500 students ranging from high school to postgraduate programs to analyze how digital engagement shapes daily life and well-being.
 
 In the following steps we will explore more and more the dataset.
 
@@ -134,7 +133,7 @@ Exploratory data analysis (EDA) is used by data scientists to analyze and invest
 
 In the following image you can see the steps for EDA based on Harvard School of Business:
 
-![EDA Steps](/Users/isabelasancheztaipe/Documents/iFp/iFp-CS-Summer-Learning/PyGame/Data-Analysis-Tutorial/DataLifeCycle.png)
+![DataLifeCycle](DataLifeCycle.png)
 
 Since our dataset `social_media_impact.csv` was download from the web the following steps were already done:
 
