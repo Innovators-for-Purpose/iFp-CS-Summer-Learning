@@ -2,8 +2,8 @@ import pygame
 import sys
 
 
-WIDTH, HEIGHT = 960, 600
-FPS = 60
+WIDTH, HEIGHT = 960, 700
+FPS = 90
 WORLD_WIDTH = 3600
 PLAYER_SIZE = 34
 MOVE_SPEED = 5
