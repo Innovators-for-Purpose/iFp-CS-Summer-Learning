@@ -317,7 +317,7 @@ Also in the end it mentions the amount of times one data types is repeated. Like
 
 This is important because different kinds of data can be analyzed in different ways.
 
-### Check is there is any missing data
+### Check if there is any missing data
 
 Real-world datasets are not always perfect. Sometimes, when you work with big datasets information is missing. Our dataset contains some missing values, so we should check for them before making certain calculations.
 
@@ -331,6 +331,10 @@ print(df.isna().sum())
 You may notice missing values in:
 - 46 missing values in `Perceived_Stress_Score`
 - 85 missing values in `Academic_Performance_GPA`
+
+### Whys is this important in Data Analysis?
+
+Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. We will come back to this later when we start to work with `Perceived_Stress_Score` and `Academic_Performance_GPA`.
 
 
 
