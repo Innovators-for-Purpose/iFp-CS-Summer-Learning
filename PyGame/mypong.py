@@ -1,15 +1,10 @@
 import pygame
 import sys
 
-pygame.init()
+
 
 WIDTH, HEIGHT = 800, 600
-
-pygame.init()
-window = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Pong Game")
-clock = pygame.time.Clock()
-
+FPS = 60
 # color variable, look for RGB codes
 PURPLE = (128, 0, 128)
 GREEN  = (0, 255, 0)
@@ -20,6 +15,12 @@ BALL_SPEED_Y=4
 PADDLE_WIDTH=10
 PADDLE_HEIGHT=110
 BALL_SIZE=18
+
+pygame.init()
+pygame.display.set_caption("Pong Game")
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
 
 left_paddle = pygame.Rect( 
     40,
@@ -40,13 +41,12 @@ ball = pygame.Rect(
     BALL_SIZE,
     BALL_SIZE,
 )
-
-def reset_ball (direction):
-    ball.center = (WIDTH // 2, HEIGHT // 2)
-
-reset_ball(1)
 ball_speed_x = BALL_SPEED_X
 ball_speed_y = BALL_SPEED_Y
+left_score = 0
+right_score = 0
+font = pygame.font.Font(None, 60)
+
 
 def reset_ball(direction):
     global ball_speed_x, ball_speed_y
@@ -55,76 +55,60 @@ def reset_ball(direction):
     ball_speed_x = direction * BALL_SPEED_X
     ball_speed_y = BALL_SPEED_Y
 
-def main (window):
-    clock = pygame.time.Clock()
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
 
-    while True:
-        #game code
-        clock.tick (60)
-if __name__ == "__main__":
-    pygame.init()
-    window = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Pong Game")
-    main(window)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w] and left_paddle.top > 0:
+        left_paddle.y -= PADDLE_SPEED
+    if keys [pygame.K_s] and left_paddle.bottom < HEIGHT:
+        left_paddle.y += PADDLE_SPEED
+    if keys[pygame.K_UP] and right_paddle.top > 0:
+        right_paddle.y -= PADDLE_SPEED
+    if keys[pygame.K_DOWN] and right_paddle.bottom < HEIGHT:
+        right_paddle.y += PADDLE_SPEED
+    
 
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
+    ball.x += ball_speed_x
+    ball.y += ball_speed_y
+    if ball.top <= 0 or ball.bottom >= HEIGHT:
+         ball_speed_y *= -1
 
-keys = pygame.key.get_pressed()
-if keys[pygame.K_w] and left_paddle.top > 0:
-    left_paddle.y -= PADDLE_SPEED
-if keys [pygame.K_s] and left_paddle.bottom < HEIGHT:
-    left_paddle.y += PADDLE_SPEED
+    if ball.colliderect(left_paddle) and ball_speed_x < 0:
+        ball_speed_x *= -1
+        offset = (ball.centery - left_paddle.centery) /(PADDLE_HEIGHT / 2)
+        ball_speed_y = offset * 6
 
-ball.x += ball_speed_x
-ball.y += ball_speed_y
-if ball.top <= 0 or ball.bottom >= HEIGHT:
-    ball_speed_y *= -1
+    if ball.colliderect(right_paddle) and ball_speed_x > 0:
+        ball_speed_x *= -1
+        offset = (ball.centery - right_paddle.centery) /(PADDLE_HEIGHT / 2)
+        ball_speed_y = offset * 6
 
-if ball.colliderect(left_paddle) and ball_speed_x < 0:
-    ball_speed_x *= -1
 
-offset = (ball.centery - left_paddle.centery) / (PADDLE_HEIGHT / 2)
-ball_speed_y = offset * 6
+    if ball.left <= 0:
+        right_score += 1
+        reset_ball(1)
+    elif ball.right >= WIDTH:
+        left_score += 1
+        reset_ball(-1)
 
-left_score = 0
-right_score = 0
+    screen.fill(PURPLE)
 
-if ball.left <= 0:
-    right_score += 1
-    reset_ball(1)
-elif ball.right >= WIDTH:
-    left_score += 1
-    reset_ball(-1)
+    for y in range (0, HEIGHT, 30):
+        pygame.draw.rect(screen, PURPLE, (WIDTH // 2 - 2, y, 4, 10))
 
-window.fill(BLACK)
+    pygame.draw.rect(screen, GREEN, left_paddle)
+    pygame.draw.rect(screen, GREEN, right_paddle)
+    pygame.draw.ellipse(screen, GREEN, ball)
 
-for y in range (0, HEIGHT, 30):
-    pygame.draw.rect(window, PURPLE, (WIDTH // 2 - 2, y, 4, 10))
-pygame.draw.rect(window, GREEN, left_paddle)
-pygame.draw.rect(window, GREEN, right_paddle)
-pygame.draw.ellipse(window, GREEN, ball)
+    score_text = font.render(f"{left_score} {right_score}", True, GREEN)
+    screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, 20))
 
-score_text = font.render(f"{left_score} {right_score}", True, GREEN)
-window.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, 20))
-pygame.display.flip()
-clock.tick(FPS)
 
-import pygame
-import sys
+    pygame.display.flip()
+    clock.tick(FPS)
 
-WIDTH, HEIGHT = 900, 600
-FPS = 60
-def reset_ball(direction):
-    pass
-def main(window):
-    while TRUE:
-        pass
-if __name__ == "__main__":
-    pygame.init()
-    window = pygame.display.set_mode((WIDTH, HEIGHT))
-    main(window)
-    pygame.quit()
 
