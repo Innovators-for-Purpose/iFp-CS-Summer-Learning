@@ -37,7 +37,7 @@ You should see a Python version number.
 
 **Step 2: Install pandas**
 
-Pandas is the Python library we will use to work with tables.
+Pandas is the Python library we will use for data manipulation.
 
 In the same VS Code terminal:
 
@@ -65,14 +65,40 @@ Navigate to Visual Studio Code in your applications and clone the `iFp Summer Co
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
-- `Social_media_impact_on_life.csv` : The Dataset we will work with!
+- `social_media_impact.csv` : The Dataset we will work with!
 
-### Imports
+Open `data-analysis-tutorial.py` in VS Code and look through the example.
 
-1. Open `data-analysis-tutorial.py` in VS Code and look through the example.
-3. Create a file in the same folder named `my-data-analysis.py`.
-4. Open `my-data-analysis.py` in VS Code.
-5. Add the following imports at the top of `my-data-analysis.py`:
+Then create a new file in the same folder named:
+
+```python
+my-data-analysis.py
+```
+
+Open `my-data-analysis.py` in VS Code.
+
+Each section below has an objective to help you understand both Python syntax and the structure of a small data analysis project. You are encouraged to make your own decisions and research Python, pandas, or matplotlib documentation when you are curious or stuck. Your mentors will be available to answer questions.
+
+### `my-data-analysis.py`
+
+Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
+
+You will organize your program into:
+
+1. Imports
+2. Loading the dataset
+3. Exploring the dataset
+4. Cleaning/checking the data
+5. Filtering and sorting
+6. Counting and grouping
+7. Data visualization
+8. Your own analysis
+
+---
+
+## Imports
+
+In our new file `my-data-analysis.py` write the following code at the top:
 
 ```python
 import pandas as pd
@@ -85,27 +111,104 @@ Later, when we want to use something from pandas, we can write:
 
 `pd.NAME_OF_PANDAS_FUNCTION`
 
-For example:
-
-`pd.read_csv()`
+For example: `pd.read_csv()`
 
 And when we want to use something from matplotlib, we can write:
 
 `plt.NAME_OF_MATPLOTLIB_FUNCTION`
 
-For example:
-
-`plt.show()`
+For example: `plt.show()`
 
 We will show you how to work with this in the following steps!
 
-### Data Analysis - Part 1: The DIKW Model
+### Exploratory Data Analysis (EDA)
 
-### Data Analysis - Part 1: The Dataset
+Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods.
+
+In the following image you can see the steps for EDA based on Harvard School of Business:
+
+![EDA Steps](/Users/isabelasancheztaipe/Documents/iFp/iFp-CS-Summer-Learning/PyGame/Data-Analysis-Tutorial/DataLifeCycle.png)
+
+Since our dataset `social_media_impact.csv` was download from the web the following steps were already done:
+
+1. Generation: Created a form with questions about the social media impact in students life
+2. Collection: Send the form to 4,500 students
+3. Processing: Get 4,500 answers
+4. Storage: Save the answers in a CSV file
+
+In this tutorial we are going to work on the following steps:
+
+5. Management: Organize the collected information in different columns
+6. Analyzing: We are going to understand what the collected data is telling us
+7. Visualization: We are going create display the data with graphs 
+8. Interpretation: We are going to see what the graphs are saying.
+
+## Data Analysis Part 1: Loading our dataset
+
+Before we can manage and analyze data, we need to load it into Python.
+
+### What is a CSV?
+
+CSV stans for **Comma-Separated Values**
+
+A CSV file is a common way to store data in a table.
+
+For example, a very small CSV can look like this:
+
+```text
+Name,Age,Favorite Color
+Alex,16,Blue
+Sam,17,Green
+Jordan,16,Red
+```
+
+Each row represents one record, and each column represents a piece of information about that record. Our dataset is much larger. It contains information about **4,500 students**.
+
+### Read our CSV file
+
+Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.py`.
+
+in our `my-data-analysis.py` add the following code:
+
+```python
+df = pd.read_csv("social_media_impact.csv")
+```
+
+We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
+
+`df` is a common abbreviation for **DataFrame**.
+
+A pandas DataFrame is like a table that Python can work with.
+
+### Print the dataset
+
+Let's see what our DataFrame looks like. Add the following line of code:
+
+```python
+print(df)
+```
+
+Run your program. 
+
+You may see a lot of rows printed in the terminal. Pandas will usually shorten the output instead of printing every row.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 
+
 
 what is a csv?
 what do we when we have
 
-### Data Analysis - Part 1: The Libraries
-
-### Data Analysis - Part 2: The 
