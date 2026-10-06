@@ -15,3 +15,6 @@ print(df.head(10))
 
 # printing the column names
 print(df.columns)
+
+#more info about our DataFrame
+print(df.info())

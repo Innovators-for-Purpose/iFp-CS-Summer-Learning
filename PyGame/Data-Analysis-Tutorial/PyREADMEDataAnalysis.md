@@ -75,10 +75,6 @@ Then create a new file in the same folder named:
 my-data-analysis.py
 ```
 
-Open `my-data-analysis.py` in VS Code.
-
-Each section below has an objective to help you understand both Python syntax and the structure of a small data analysis project. You are encouraged to make your own decisions and research Python, pandas, or matplotlib documentation when you are curious or stuck. Your mentors will be available to answer questions.
-
 ### `my-data-analysis.py`
 
 Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
@@ -94,7 +90,18 @@ You will organize your program into:
 7. Data visualization
 8. Your own analysis
 
----
+
+### `social_media_impact.csv`
+
+This is the dataset we will work with during the whole tutorial. This dataset was obtained from [Kaggle] (https://www.kaggle.com/), a platform where anyone around the world can upload and download datasets from diverse topics.
+
+The dataset we are using is called [**Impact of Social Media on Life**] (https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life) 
+
+**Context**
+In recent years, the intersection of digital platform consumption, sleep hygiene, and stress has become a critical focus of behavioral and educational research. This dataset provides granular survey metrics across 4,500 students ranging from high school to postgraduate programs to analyze how digital engagement shapes daily life and well-being.
+
+In the following steps we will explore more and more the dataset.
+
 
 ## Imports
 
@@ -121,7 +128,7 @@ For example: `plt.show()`
 
 We will show you how to work with this in the following steps!
 
-### Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods.
 
@@ -138,10 +145,10 @@ Since our dataset `social_media_impact.csv` was download from the web the follow
 
 In this tutorial we are going to work on the following steps:
 
-5. Management: Organize the collected information in different columns
+5. Management: Load the dataset and play with it!
 6. Analyzing: We are going to understand what the collected data is telling us
-7. Visualization: We are going create display the data with graphs 
-8. Interpretation: We are going to see what the graphs are saying.
+7. Visualization: We are going display the data with graphs 
+8. Interpretation: We are going to see what the graphs are telling us.
 
 ## Data Analysis Part 1: Loading our dataset
 
@@ -162,13 +169,13 @@ Sam,17,Green
 Jordan,16,Red
 ```
 
-Each row represents one record, and each column represents a piece of information about that record. Our dataset is much larger. It contains information about **4,500 students**.
+Each row represents one student, and each column represents a piece of information about that student. Our dataset is much larger. It contains information of **4,500 students**.
 
 ### Read our CSV file
 
 Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.py`.
 
-in our `my-data-analysis.py` add the following code:
+In our `my-data-analysis.py` add the following code:
 
 ```python
 df = pd.read_csv("social_media_impact.csv")
@@ -190,7 +197,7 @@ print(df)
 
 Run your program. 
 
-You may see a lot of rows printed in the terminal. Pandas will usually shorten the output instead of printing every row.
+You may see a lot of rows printed in the **terminal**. Pandas will usually shorten the output instead of printing every row.
 
 ## Data Analysis Part 1: Start managing the data
 
@@ -284,6 +291,41 @@ You should see the following columns names:
 - 'Academic_Performance_GPA'
 - 'Overall_Impact'
 
+### Analyze the columns
+
+Before continuing, look at the column names. What questions could we ask using this dataset?
+
+For example:
+
+- Which social media platforms appear in the dataset?
+- How many hours do students spend on social media each day?
+- Do students who use social media late at night report different sleep durations?
+- Which academic level appears most often?
+- How does social media use vary by platform?
+
+There are many questions we could investigate. Add yours to the list!
+
+Pandas can give us more information about our DataFrame. Add the following line to `my-data-analysis.py`:
+
+```python
+print(df.info())
+```
+
+`info()` gives us information such as:
+
+- RangeIndex: Number of Rows
+- Data Columns: Number and Name of columns
+- Non-Null Count: How many non-empty values each column has
+- Dtype: The type of data stored in each column. For example:
+    - `str`: the data type is text
+    - `int64`: the data type is a number
+    - `bool`: the data type is `True` or `False`
+    - `float64`: the data type is a decimal number
+Also in the end it mentions the amount of times one data types is repeated. Like: 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`
+
+This is important because different kinds of data can be analyzed in different ways.
+
+### Check is there is any missing data
 
 
 
