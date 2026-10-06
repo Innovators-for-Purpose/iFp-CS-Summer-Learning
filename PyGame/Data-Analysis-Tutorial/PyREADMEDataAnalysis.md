@@ -229,5 +229,62 @@ How many rows can you see?
 
 ### What is the size of our dataset?
 
+We know our dataset contains 4,500 answers from high school to undergraduate students, but let's ask Python!
+
+Add:
+
+```python
+print(df.shape)
+```
+Now run again your program.
+
+You should see something similar to:
+
+```text
+(4500, 16)
+```
+
+The first number is the number of **rows**.
+
+The second number is the number of **columns**.
+
+So our dataset has:
+
+- 4,500 rows
+- 16 columns
+
+This is useful because it gives us a quick idea of the size of our dataset.
+
+## Data Analysis Part 2: Start analyzing the data
+
+Now that we have access to the dataset, let's analyze it!
+The columns tell us what information is available for each student.
+
+### Printing the column names
+
+Add: 
+```python
+print(df.columns)
+```
+You should see the following columns names:
+- 'Student_ID'
+- 'Age'
+- 'Gender'
+- 'Academic_Level'
+- 'Primary_Platform'
+- 'Daily_Usage_Hours'
+- 'Weekend_Extra_Hours'
+- 'Device_Type'
+- 'Sleep_Duration_Hours'
+- 'Sleep_Quality_Score'
+- 'Late_Night_Usage'
+- 'Social_Comparison_Frequency'
+- 'Perceived_Stress_Score'
+- 'Mental_Health_Index'
+- 'Academic_Performance_GPA'
+- 'Overall_Impact'
+
+
+
 
 
