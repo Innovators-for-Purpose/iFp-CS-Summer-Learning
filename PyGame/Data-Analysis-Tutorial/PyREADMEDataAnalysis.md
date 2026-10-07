@@ -12,7 +12,6 @@ Welcome to iFp's Python coding practice 3! In this session you will practice Pyt
 ## What you'll learn
 
 Work on this project will help you to:
-
 - Improve your Python programming skills
 - Understand how Python can be used for data analysis
 - Work with CSV files using `pandas` library
@@ -33,7 +32,7 @@ After installing Python, open your VS Code terminal and check that it works:
 
 `python3 --version`
 
-You should see a Python version number.
+You should see a Python version number in the terminal.
 
 ### Step 2: Install pandas
 
@@ -67,9 +66,7 @@ Navigate to Visual Studio Code in your applications and clone the `iFp Summer Co
 
 - `social_media_impact.csv` : The Dataset we will work with!
 
-Open `data-analysis-tutorial.py` in VS Code and look through the example.
-
-Then create a new file in the same folder named:
+Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
 
 ```python
 my-data-analysis.py
@@ -90,17 +87,15 @@ You will organize your program into:
 7. Data visualization
 8. Your own analysis
 
-
 ### `social_media_impact.csv`
 
-This is the dataset we will work with during the whole tutorial. This dataset was obtained from [Kaggle](https://www.kaggle.com/), a platform where anyone around the world can upload and download datasets from diverse topics.
+This is the dataset we will work with during the whole tutorial. This dataset was obtained from [Kaggle](https://www.kaggle.com/), a platform where anyone around the world can upload and download datasets from diverse topics. I recommend you to explore tons of datasets available there!
 
 The dataset we are using is called [**Impact of Social Media on Life**](https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life) 
 
 **Here is the description of the dataset:** In recent years, the intersection of digital platform consumption, sleep hygiene, and stress has become a critical focus of behavioral and educational research. This dataset provides granular survey metrics across 4,500 students ranging from high school to postgraduate programs to analyze how digital engagement shapes daily life and well-being.
 
 In the following steps we will explore more and more the dataset.
-
 
 ## Imports
 
@@ -129,7 +124,7 @@ We will show you how to work with this in the following steps!
 
 ## Exploratory Data Analysis (EDA)
 
-Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods.
+Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods. - IBM
 
 In the following image you can see the steps for EDA based on Harvard School of Business:
 
@@ -157,9 +152,7 @@ Before we can manage and analyze data, we need to load it into Python.
 
 CSV stans for **Comma-Separated Values**
 
-A CSV file is a common way to store data in a table.
-
-For example, a very small CSV can look like this:
+A CSV file is a common way to store data in a table. For example, a very small CSV can look like this:
 
 ```text
 Name,Age,Favorite Color
@@ -182,9 +175,9 @@ df = pd.read_csv("social_media_impact.csv")
 
 We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
 
-`df` is a common abbreviation for **DataFrame**. A pandas DataFrame is like a table that Python can work with.
+`df` is a common abbreviation for **DataFrame**. A pandas DataFrame organizes the information of our CSV in a table that Python can work with.
 
-### Print the dataset
+### Print the DataFrame
 
 Let's see what our DataFrame looks like. Add the following line of code:
 
@@ -256,8 +249,7 @@ So our dataset has:
 
 ## Data Analysis Part 2: Start analyzing the data
 
-Now that we have access to the dataset, let's analyze it!
-The columns tell us what information is available for each student.
+Now that we have access to the dataset, let's analyze it! The columns tell us what information is available for each student.
 
 ### Printing the column names
 
@@ -307,13 +299,13 @@ print(df.info())
 
 - RangeIndex: Number of Rows
 - Data Columns: Number and Name of columns
-- Non-Null Count: How many non-empty values each column has
+- Non-Null Count: Number of non-empty values each column has
 - Dtype: The type of data stored in each column. For example:
     - `str`: the data type is text
     - `int64`: the data type is a number
     - `bool`: the data type is `True` or `False`
     - `float64`: the data type is a decimal number
-Also in the end it mentions the amount of times one data types is repeated. Like: 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`
+Also in the end it mentions the amount of times one data types is repeated. Like 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
 
 This is important because different kinds of data can be analyzed in different ways.
 
@@ -332,9 +324,17 @@ You may notice missing values in:
 - 46 missing values in `Perceived_Stress_Score`
 - 85 missing values in `Academic_Performance_GPA`
 
-### Whys is this important in Data Analysis?
+### Why is this important in Data Analysis?
 
-Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. We will come back to this later when we start to work with `Perceived_Stress_Score` and `Academic_Performance_GPA`.
+Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. 
+**Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. 
+
+### Our first data cleaning
+
+Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
+
+
+
 
 
 
@@ -344,10 +344,12 @@ To create this tutorial I used the following references:
 
 - Tim Stobierski, Harvard Business School ("Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning")[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
 
-- MIT IBM
+- MIT IBM, ("What is exploratory data analysis (EDA)?")[https://www.ibm.com/think/topics/exploratory-data-analysis]
+
+
+- MIT CSAIL, ("6.S079 Data Cleaning – Part 2")[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
 
 - 
-
 
 
 
