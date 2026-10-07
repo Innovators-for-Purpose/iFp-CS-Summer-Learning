@@ -338,6 +338,20 @@ Imagine we want to calculate the average GPA. If some students do not have a GPA
 
 
 
+## References:
+
+To create this tutorial I used the following references:
+
+- Tim Stobierski, Harvard Business School ("Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning")[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
+
+- MIT IBM
+
+- 
+
+
+
+
+
 
 
 
