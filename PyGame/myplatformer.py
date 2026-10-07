@@ -1,5 +1,5 @@
 
-#issue: line 30 is tuple needs to be a real number not tuple
+#issue: line 121: argument 1 must be pygame.surface.Surface, not pygame.rect.Rect
 
 
 
@@ -13,12 +13,13 @@ WIDTH, HEIGHT = 960, 600
 FPS = 60
 WORLD_WIDTH = 3600
 PLAYER_SIZE = 34
-MOVE_SPEED = 5
-JUMP_SPEED = -13
-GRAVITY = 0.6
+MOVE_SPEED = 7  #orig 5
+JUMP_SPEED = -18 #orig -13
+GRAVITY = 0.9 #orig 0.6
 
 #Questionable constant
-
+PLAYER = pygame.surface.Surface
+#SPIN = pygame.transform.rotate, 360
 
 #Color definitions
 SKY = (116, 190, 212)
@@ -117,7 +118,11 @@ def main(window):
     won = False
     font = pygame.font.Font(None, 28)
     big_font = pygame.font.Font(None, 46)
-  
+    
+    
+    SPIN_PLAYER = pygame.transform.flip(player, 0, 1)
+
+
 # key loop
     while True:
         for event in pygame.event.get():
@@ -131,7 +136,11 @@ def main(window):
                 player.topleft = (100, 470)
                 velocity.update(0,0)
                 won = False
-            #if event.type == pygame.KEYDOWN and event.key == pygame.K_p:player.center 
+            
+            #spin motion
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_p:player.centerx = 3100
+            if event.type == pygame.KEYDOWN and event.key ==pygame.K_p: SPIN_PLAYER
+            
             
         keys = pygame.key.get_pressed()
         velocity.x = (keys[pygame.K_d] or keys[pygame.K_RIGHT])*MOVE_SPEED -(keys[pygame.K_a] or keys[pygame.K_LEFT])* MOVE_SPEED - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
