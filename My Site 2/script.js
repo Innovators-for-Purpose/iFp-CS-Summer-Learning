@@ -1,3 +1,4 @@
+/*
 function showProjects() {
   document.getElementById("title").textContent = "Projects";
   document.getElementById("description").innerHTML = "I have been working with iFp during their summer sessions since 2024. In that time, I’ve worked on two main game projects: Uncover, a puzzle game set in a school where all the students have been hypnotized; and O.B.L.I.V.I.O.N., a 2D movement and combat platformer set in a dystopian city controlled by a malevolent AI.<br></br>For Uncover, I got to design and code one of the many puzzles - a color-matching cooking game where the goal is to intuit the right color for a drink recipe that will cure the students. You can try it for yourself here.<br></br>For O.B.L.I.V.I.O.N., I coded the movement mechanics for the main character, Alex, using a state machine system. This is a clip showing the core movement options - walking, running, jumping, crouching, and grappling.<br></br>I also worked on the dialogue system for the game, making sure to make each character feel different to speak to. This is a clip of a short demo conversation between Alex; his older sister, Avery; and their shared friend, Theo.<br></br>In terms of school projects, I built a robot as a part of my school’s Robotics STEMinar. It was meant to recreate the rocker-bogie movement style of the Curiosity mars rover.";
@@ -15,7 +16,7 @@ function showAbout() {
   document.getElementById("description").innerHTML = "Hello! I’m an Ethiopian-American teenage girl who loves to create. Feel free to click around and see what I’ve worked on.";
   document.getElementById("video").style.display = "none"
 }
-
+*/
 
 
 
@@ -28,9 +29,7 @@ function openDialogue() {
         dialogBox.style.display = "block";
     }
     const text = document.getElementById("answer-text")
-    const linkedin = document.getElementById("linkedin")
     text.style.display = "none"
-    linkedin.style.display = "none"
 }
 
 function showOptionOne() {

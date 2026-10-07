@@ -2,8 +2,8 @@ body {
   background-color: #652467;
   background-image: url("images/computer 2.jpg");
   background-size: cover;
-  color: #Fd8083;
-  font-family: 'Courier New', Courier, monospace;
+  color: #fd80d7;
+  font-family: "GeistPixel", 'Courier New', Courier, monospace;
   margin: 0;
   padding: 20px;
   display: flex;
@@ -23,15 +23,18 @@ h1 {
 }
 
 h2 {
-    font-family:'Coral_Pixels', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Iceland', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #070241;
     background-color: #ee39a9;
 }
 
 h3 {
-    color: #b51fba;
-    font-family: "Press_Start", 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #070241;
+    font-family: "Silkscreen", 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     size: 40px;
-    background-color: #0b0958;
+    background-color: #834eff;
+    margin: 10px 15% 10px 15%;
+    width: 70%;
     font-size: large;
     text-align: center;
 }
@@ -87,9 +90,9 @@ a {
 
 #pfp {
     position: relative;
-    max-width: 50px;
-    width: fit-content;
-    height: auto;
+    width: 20%;
+    max-width: 75px;
+    height: proportional;
     margin: 10px;
     border-width: 3px;
     border-color: #df57d4;
@@ -134,7 +137,7 @@ a {
 
 button {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: rgb(255, 100, 53);
+  background-color: #FF6435;
   border-width: 2px;
   border-color: #498099;
   border-style: solid;
@@ -196,6 +199,7 @@ button:hover {
 }
 
 #openDialogue {
+    font: "Press_Start", Geneva, Tahoma, sans-serif;
     font-size: 100%;
     border-color: #fc6bdf;
     border-width: 4px;
@@ -299,4 +303,22 @@ button:hover {
     font-family: "VT";
     font-style: normal;
     src: url("websitefonts/VT323-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Silkscreen";
+    font-style: normal;
+    src: url("websitefonts/Silkscreen.woff2");
+}
+
+@font-face {
+    font-family: "Iceland";
+    font-style: normal;
+    src: url("websitefonts/Iceland.woff2");
+}
+
+@font-face {
+    font-family: "GeistPixel";
+    font-style: normal;
+    src: url("websitefonts/GeistPixel.woff2");
 }
