@@ -137,7 +137,7 @@ def main(window):
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
         window.blit(hint, (22, 20))
         if won:
-            message = big_font.render("You made it to the end!", True, INK)
+            message = big_font.render("Your princess is in another castle!", True, INK)
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
 
         pygame.display.flip()
