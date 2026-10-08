@@ -64,4 +64,50 @@ def draw_background(surface, camera_x):
         for world_x in range(-200, WORLD_WIDTH + 400, 260):
             screen_x = world_x - int(camera_x * offset)
             points.extend(((screen_x, HEIGHT - height), (screen_x + 130, HEIGHT - height - 85), (screen_x + 260, HEIGHT - height)))
-        pygame.draw.polygon(surface, color, points)
+    points.append((WIDTH + 200, HEIGHT))
+    pygame.draw.polygon(surface, color, points)
+
+def move_player(player, velocity, platforms):
+    player.x += velocity.x
+    player.x = max(0,min(player.x, WORLD_WIDTH - PLAYER_SIZE))
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.x > 0:
+                player.right = platform.left
+            elif velocity.x < 0:
+                player.left = platform.right
+
+    velocity.y += GRAVITY
+    player.y += velocity.y
+    on_ground = False
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.y > 0:
+                player.bottom = platform.top
+                velocity.y = 0
+                on_ground = True
+            elif velocity.y < 0:
+                player.top = platform.bottom
+                velocity.y = 0
+
+    return on_ground
+
+def main(window):
+    platforms = make_platforms()
+    player = pygame.Rect(100, 470, PLAYER_SIZE, PLAYER_SIZE)
+    velocity = pygame.Vector2(0, 0)
+    camera_x = 0
+    on_ground = False
+    won = False
+    font = pygame.font.Font(None, 28)
+    big_font = pygame.font.Font(None, 46)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN and event.key in (pygame.K_SPACE, pygame.K_w, pygame.K_UP):
+                if on_ground and not won:
+                    velocity.y = JUMP_SPEED
+    
