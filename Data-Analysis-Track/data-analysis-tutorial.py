@@ -28,4 +28,11 @@ print(df.info())
 #looking for missing values
 print(df.isna().sum())
 
-#fill out the missing values
+#data cleaning
+#part 1: find the mean of the Perceived_Stress_Score column
+average_stress = df["Perceived_Stress_Score"].mean()
+print(average_stress)
+
+#part 2: find the mean of the Academic_Performance_GPA column
+average_gpa = df["Academic_Performance_GPA"].mean()
+print(average_gpa)

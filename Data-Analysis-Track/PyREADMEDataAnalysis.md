@@ -329,37 +329,96 @@ You may notice missing values in:
 Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. 
 **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. 
 
-### Our first data cleaning
+## What is Data Cleaning?
 
-Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
+In data analysis, data cleaning means preparing our data so that we can analyze it more reliably. Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
 
-There is diverse techniques to deal with missing values:
+There are different ways to handle missing data. For example:
 
-- Listwise deletion
-- Mean substitution
-- Dummy variable adjustment
-- Maximum Likelihood Estimation
-- and more...
+- Remove rows that contain missing values
+- Replace missing values with another value
+- Use a statistical method to estimate the missing value
 
-In this tutorial we will use mean substitution
+For this tutorial, we will use the technique called Mean Substitution.
 
+### Data Cleaning Technique: Mean Substitution
 
+Mean substitution means replacing a missing numerical value with the mean (average) of the available values in that column.
 
+For example, let's imagine we have a column in our dataframe called "test scores":
+```python
+test scores,
+80,
+90,
+70,
+missing,
+100,
+```
+First, we calculate the mean of the values that we do have:
 
+`(80 + 90 + 70 + 100) / 4 = 85`
+
+The missing value would then be replaced with 85. Our data would become:
+
+```python
+test scores,
+80,
+90,
+70,
+85,
+100,
+```
+We are using information from the other values in the same column to fill in the missing value.
+
+For this project, we will use mean substitution so we can practice an important data cleaning technique with pandas.
+
+### Cleaning Perceived_Stress_Score
+
+Pandas can calculate the mean for us using .mean().
+
+In your `my-data-analysis.py` file add:
+
+```python
+average_stress = df["Perceived_Stress_Score"].mean()
+
+print(average_stress)
+```
+
+`df["Perceived_Stress_Score"]` selects the `Perceived_Stress_Score` column of our dataframe.
+
+`.mean()` calculates the average of all the values in the column.
+
+After we got the mean we save the result in the variable called `average_stress`. When we `print(average_stress)` it will show the mean result in the terminal.
+
+### YOUR TURN: Cleaning Academic_Performance_GPA
+
+As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA`. Now it is your turn to find the mean for `Academic_Performance_GPA` column.
+
+Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`. HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
+
+```python
+average_gpa = ______________________________ 
+
+print(average_gpa)
+
+```
+
+### Replacing the missing values with the mean
+
+Next, we can use the mean to replace the missing values in our dataset. Pandas provides a function called fillna() for this.
 
 
 ## References:
 
 To create this tutorial I used the following references:
 
-- Tim Stobierski, Harvard Business School ("Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning")[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
+- Tim Stobierski, Harvard Business School (Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning)[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
 
-- MIT IBM, ("What is exploratory data analysis (EDA)?")[https://www.ibm.com/think/topics/exploratory-data-analysis]
+- MIT IBM, (What is exploratory data analysis (EDA)?)[https://www.ibm.com/think/topics/exploratory-data-analysis]
 
 
-- MIT CSAIL, ("6.S079 Data Cleaning – Part 2")[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
+- MIT CSAIL, (6.S079 Data Cleaning – Part 2)[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
 
-- 
 
 
 
