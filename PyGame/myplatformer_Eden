@@ -81,5 +81,58 @@ for world_x in range (-200, WORLD_WIDTH + 400, 260):
     points.extend((
         (screen_x, HEIGHT - height),
         (screen_x + 130, HEIGHT - height - 85)
-        (screen_x + 260, HEIGHT - height)
-    ))
+        (screen_x + 260, HEIGHT - height)))
+    points.append((WIDTH + 200, HEIGHT))
+    pygame.draw.polygon(surface, color, points)
+
+  def move_player(plater, velocity, platforms):
+    player.x += velocity.x
+    player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))
+    for platform in platforms:
+        if player.colliderect(platform):
+            if velocity.x > 0:
+                player.right = platform.left
+            elif velocity.x <0:
+                player.left = platform.right
+
+    velocity.y += GRAVITY
+    player.y += velocity.y
+    on_ground = False
+    for platform in platforms: 
+        if player.colliderect(platform):
+            if velocity.y > 0:
+                player.bottom = platform.top
+                velocity.y = 0
+                on_ground = True
+            elif velocity.y < 0:
+                player.top = platform.bottom
+                velocity.y = 0
+    return on_ground
+
+def main(window):
+    platforms = make_platforms()
+    player = pygame.Rect(100, 470, PLAYER_SIZE, PLAYER_SIZE)
+    velocity = pygame.Vector2(0, 0)
+    camera_x = 0
+    on_ground = False
+    won = False
+    font = pygame.font.Font(None, 28)
+    big_font = pygame.font.Font(None, 46)
+
+    velocity.x = (
+    (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * MOVE_SPEED - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
+)
+
+    if not won:
+    on_ground = move_player(player, velocity, platforms)
+
+    python
+    if player.top > HEIGHT:
+        player.topleft = (100, 470)
+        velocity.update(0, 0)
+
+        `player.topleft = (100, 470)`
+        `velocity.update(0, 0)`
+
+if player.right >= WORLD_WIDTH - 180:
+    won - True
