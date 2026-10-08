@@ -392,7 +392,7 @@ After we got the mean we save the result in the variable called `average_stress`
 
 ### YOUR TURN: Cleaning Academic_Performance_GPA
 
-As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA`. Now it is your turn to find the mean for `Academic_Performance_GPA` column.
+As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA`. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
 
 Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`. HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
 
@@ -405,19 +405,19 @@ print(average_gpa)
 
 ### Replacing the missing values with the mean
 
-Next, we can use the mean to replace the missing values in our dataset. Pandas provides a function called fillna() for this.
+Next, we can use the mean to replace the missing values in our dataset. Pandas provides a function called `fillna()` for this.
 
 
 ## References:
 
 To create this tutorial I used the following references:
 
-- Tim Stobierski, Harvard Business School (Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning)[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
+- Tim Stobierski, Harvard Business School [Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning](https://online.hbs.edu/blog/post/exploratory-data-analysis), May 28, 2026
 
-- MIT IBM, (What is exploratory data analysis (EDA)?)[https://www.ibm.com/think/topics/exploratory-data-analysis]
+- MIT IBM, [What is exploratory data analysis (EDA)?](https://www.ibm.com/think/topics/exploratory-data-analysis)
 
 
-- MIT CSAIL, (6.S079 Data Cleaning – Part 2)[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
+- MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf)
 
 
 
