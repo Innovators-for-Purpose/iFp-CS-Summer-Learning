@@ -27,3 +27,5 @@ print(df.info())
 
 #looking for missing values
 print(df.isna().sum())
+
+#fill out the missing values

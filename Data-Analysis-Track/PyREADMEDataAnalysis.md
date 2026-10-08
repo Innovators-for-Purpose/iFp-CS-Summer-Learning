@@ -333,6 +333,16 @@ Imagine we want to calculate the average GPA. If some students do not have a GPA
 
 Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
 
+There is diverse techniques to deal with missing values:
+
+- Listwise deletion
+- Mean substitution
+- Dummy variable adjustment
+- Maximum Likelihood Estimation
+- and more...
+
+In this tutorial we will use mean substitution
+
 
 
 
