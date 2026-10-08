@@ -3,7 +3,11 @@
 Welcome to iFp's Python coding practice 3! In this session you will practice Python by analyzing and visualizing the dataset of "Social Media Impact of Life."
 
 ## What you'll do
+<<<<<<< HEAD
 - Build your own version of `my-data-analysis.ipynb`
+=======
+- Build your own version of `my-data-analysis.py`
+>>>>>>> 76a0163 (moving folders around)
 - Load and explore a CSV dataset with information of 4,500 students
 - Filter, sort, count, and group data to answer questions
 - Investigate patterns in the data
@@ -42,6 +46,10 @@ In the same VS Code terminal:
 
 `python3 -m pip install pandas`
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 76a0163 (moving folders around)
 ### Step 3: Install matplotlib
 
 Matplotlib is the Python library we will use to turn our data into graphs and visualizations.
@@ -50,26 +58,37 @@ In the same VS Code terminal:
 
 `python3 -m pip install matplotlib`
 
+<<<<<<< HEAD
 ### Step 4: Install Jupyter Notebook extension
 
 Go to VS Code and click on the extensions tab. Search the **Jupyter** extension and install it. This extension allows you to create a Jupyter Notebook file where you can write python code that manages big amounts of data and run it in one single file.
 
 
 ### **OPTIONAL** Step 5: Install Rainbow CSV in Visual Studio Code
+=======
+### **OPTIONAL** Step 4: Install Rainbow CSV in Visual Studio Code
+>>>>>>> 76a0163 (moving folders around)
 
 Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension. This extension give different colors to the colums in our CSV file.
 
 
 ## Start coding!
 
+<<<<<<< HEAD
 Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
 - `my-jupyter-data-analysis.ipynb`:  The provided reference sample. This file will contain the structure and behavior of your data analysis.
+=======
+Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
+
+- `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
+>>>>>>> 76a0163 (moving folders around)
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
 - `social_media_impact.csv` : The Dataset we will work with!
 
+<<<<<<< HEAD
 - `DataLifeCycle.png`: This is an image of the data analysis cycle, and it will be explained on the following tutorial.
 
 Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
@@ -81,6 +100,17 @@ my-data-analysis.ipynb
 ### `my-data-analysis.ipynb`
 
 Your `my-data-analysis.ipynb` file will contain the code you write throughout this tutorial.
+=======
+Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
+
+```python
+my-data-analysis.py
+```
+
+### `my-data-analysis.py`
+
+Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
+>>>>>>> 76a0163 (moving folders around)
 
 You will organize your program into:
 
@@ -105,13 +135,20 @@ In the following steps we will explore more and more the dataset.
 
 ## Imports
 
+<<<<<<< HEAD
 In our new file `my-data-analysis.ipynb` write the following code at the top:
+=======
+In our new file `my-data-analysis.py` write the following code at the top:
+>>>>>>> 76a0163 (moving folders around)
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
+<<<<<<< HEAD
 Run it!
+=======
+>>>>>>> 76a0163 (moving folders around)
 
 `import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. In the world of programming, this shorter names are called aliases.
 
@@ -133,7 +170,11 @@ We will show you how to work with this in the following steps!
 
 Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods. - IBM
 
+<<<<<<< HEAD
 In the following image you can see the steps for EDA based on Harvard Business School:
+=======
+In the following image you can see the steps for EDA based on Harvard School of Business:
+>>>>>>> 76a0163 (moving folders around)
 
 ![DataLifeCycle](DataLifeCycle.png)
 
@@ -149,9 +190,15 @@ In this tutorial we are going to work on the following steps:
 5. Management: Load the dataset and play with it!
 6. Analyzing: We are going to understand what the collected data is telling us
 7. Visualization: We are going display the data with graphs 
+<<<<<<< HEAD
 8. Interpretation: We assign meaning to our data, and explain findings!
 
 ## Data Management: Loading our dataset
+=======
+8. Interpretation: We are going to see what the graphs are telling us
+
+## Data Analysis Part 1: Loading our dataset
+>>>>>>> 76a0163 (moving folders around)
 
 Before we can manage and analyze data, we need to load it into Python.
 
@@ -163,23 +210,38 @@ A CSV file is a common way to store data in a table. For example, a very small C
 
 ```text
 Name,Age,Favorite Color
+<<<<<<< HEAD
 Alex,19,Yellow
 Adina,19,Blue
 Andres,16,Orange
+=======
+Alex,16,Blue
+Sam,17,Green
+Jordan,16,Red
+>>>>>>> 76a0163 (moving folders around)
 ```
 
 Each row represents one student, and each column represents a piece of information about that student. Our dataset is much larger. It contains information of **4,500 students**.
 
 ### Read our CSV file
 
+<<<<<<< HEAD
 Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.ipynb`.
 
 In our `my-data-analysis.ipynb` add the following code:
+=======
+Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.py`.
+
+In our `my-data-analysis.py` add the following code:
+>>>>>>> 76a0163 (moving folders around)
 
 ```python
 df = pd.read_csv("social_media_impact.csv")
 ```
+<<<<<<< HEAD
 Run it!
+=======
+>>>>>>> 76a0163 (moving folders around)
 
 We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
 
@@ -193,6 +255,7 @@ Let's see what our DataFrame looks like. Add the following line of code:
 print(df)
 ```
 
+<<<<<<< HEAD
 Now run your program! 
 **IMPORTANT:** Everytime you add a piece of code in your `my-data-analysis.ipynb` file, you should run your code to see the new functions working!
 
@@ -216,6 +279,20 @@ In your `my-data-analysis.ipynb` file add the following:
 ```python
 print(df.head())
 display(df.head())
+=======
+Run your program. 
+
+You may see a lot of rows printed in the **terminal**. Pandas will usually shorten the output instead of printing every row.
+
+## Data Analysis Part 1: Start managing the data
+
+Now that we have access to the 4500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
+
+In your `my-data-analysis.py` file add the following:
+
+```python
+print(df.head())
+>>>>>>> 76a0163 (moving folders around)
 ```
 `head()` shows the first five rows of the DataFrame.
 
@@ -223,6 +300,7 @@ We can also ask for a specific number of rows:
 
 ```python
 print(df.head(10))
+<<<<<<< HEAD
 display(df.head(10))
 ```
 This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
@@ -236,13 +314,21 @@ print(df.head(10))
 ```
 **This is a good practice tip, you decide if you want to add it to your code!**
 
+=======
+```
+This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
+
+>>>>>>> 76a0163 (moving folders around)
 ### Looking at the last rows
 
 We can also look at the end of the dataset. Add:
 
 ```python
 print(df.tail())
+<<<<<<< HEAD
 display(df.tail())
+=======
+>>>>>>> 76a0163 (moving folders around)
 ```
 `tail()` shows the last five rows.
 
@@ -250,7 +336,10 @@ Try:
 
 ```python
 print(df.tail(10))
+<<<<<<< HEAD
 display(df.tail(10))
+=======
+>>>>>>> 76a0163 (moving folders around)
 ```
 
 How many rows can you see?
@@ -271,11 +360,22 @@ You should see something similar to:
 ```python
 (4500, 16)
 ```
+<<<<<<< HEAD
 The first number is the number of **rows**. The second number is the number of **columns**. So our dataset has:
 - 4,500 rows
 - 16 columns
 
 ## Data Analysis: What is the data telling us?
+=======
+The first number is the number of **rows**.
+The second number is the number of **columns**.
+
+So our dataset has:
+- 4,500 rows
+- 16 columns
+
+## Data Analysis Part 2: Start analyzing the data
+>>>>>>> 76a0163 (moving folders around)
 
 Now that we have access to the dataset, let's analyze it! The columns tell us what information is available for each student.
 
@@ -305,7 +405,11 @@ You should see the following columns names:
 
 ### Analyze the columns
 
+<<<<<<< HEAD
 Look at the column names. What questions could we ask using this dataset?
+=======
+Before continuing, look at the column names. What questions could we ask using this dataset?
+>>>>>>> 76a0163 (moving folders around)
 
 For example:
 
@@ -317,7 +421,11 @@ For example:
 
 There are many questions we could investigate. Add yours to the list!
 
+<<<<<<< HEAD
 Pandas can give us more information about our DataFrame. Add the following line:
+=======
+Pandas can give us more information about our DataFrame. Add the following line to `my-data-analysis.py`:
+>>>>>>> 76a0163 (moving folders around)
 
 ```python
 print(df.info())
@@ -333,8 +441,12 @@ print(df.info())
     - `int64`: the data type is a number
     - `bool`: the data type is `True` or `False`
     - `float64`: the data type is a decimal number
+<<<<<<< HEAD
 
 Also in the end it mentions the amount of times one data types are repeated. We have 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
+=======
+Also in the end it mentions the amount of times one data types is repeated. Like 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
+>>>>>>> 76a0163 (moving folders around)
 
 This is important because different kinds of data can be analyzed in different ways.
 
@@ -349,7 +461,11 @@ print(df.isna().sum())
 `isna()` checks whether a value is missing.
 `sum()` counts how many missing values there are in each column.
 
+<<<<<<< HEAD
 In your terminal you should be able see that we have:
+=======
+You may notice missing values in:
+>>>>>>> 76a0163 (moving folders around)
 - 46 missing values in `Perceived_Stress_Score`
 - 85 missing values in `Academic_Performance_GPA`
 
@@ -358,6 +474,7 @@ In your terminal you should be able see that we have:
 Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. 
 **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. 
 
+<<<<<<< HEAD
 ## Data Cleaning: What do we do when there is missing values in our dataset?
 
 In data analysis, data cleaning means preparing our data so that we can analyze it more reliably. Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
@@ -926,6 +1043,39 @@ To create this tutorial I used the following references:
 - Pavlos Protopapas and Natesh Pillai, Harvard SEAS, [CS109a Introduction to PANDAS](https://harvard-iacs.github.io/2021-CS109A/lectures/lecture02/notebook-3/), Fall 2021
 
 
+=======
+### Our first data cleaning
+
+Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
+
+There is diverse techniques to deal with missing values:
+
+- Listwise deletion
+- Mean substitution
+- Dummy variable adjustment
+- Maximum Likelihood Estimation
+- and more...
+
+In this tutorial we will use mean substitution
+
+
+
+
+
+
+## References:
+
+To create this tutorial I used the following references:
+
+- Tim Stobierski, Harvard Business School ("Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning")[https://online.hbs.edu/blog/post/exploratory-data-analysis], May 28, 2026
+
+- MIT IBM, ("What is exploratory data analysis (EDA)?")[https://www.ibm.com/think/topics/exploratory-data-analysis]
+
+
+- MIT CSAIL, ("6.S079 Data Cleaning – Part 2")[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
+
+- 
+>>>>>>> 76a0163 (moving folders around)
 
 
 
