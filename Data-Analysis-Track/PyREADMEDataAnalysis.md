@@ -185,7 +185,8 @@ Let's see what our DataFrame looks like. Add the following line of code:
 print(df)
 ```
 
-Now run your program! ***IMPORTANT: Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!**
+Now run your program! 
+**IMPORTANT:** Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!
 
 You may see a lot of rows printed in the **terminal**. Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
@@ -466,6 +467,7 @@ Now add it again to your file and run it! Check the data display in your termina
 **GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
 
 ## Data Analysis: Working with numerical data
+
 
 
 ## References:
