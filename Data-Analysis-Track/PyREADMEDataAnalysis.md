@@ -144,7 +144,7 @@ In this tutorial we are going to work on the following steps:
 7. Visualization: We are going display the data with graphs 
 8. Interpretation: We assign meaning to our data, and explain findings!
 
-## Data Analysis Part 1: Loading our dataset
+## Data Management: Loading our dataset
 
 Before we can manage and analyze data, we need to load it into Python.
 
@@ -189,7 +189,7 @@ Now run your program! ***IMPORTANT: Everytime you add a `print()` piece of code 
 
 You may see a lot of rows printed in the **terminal**. Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
-## Data Analysis Part 1: Start managing the data
+## Data Management: Explore and handle the data
 
 Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
 
@@ -253,7 +253,7 @@ The first number is the number of **rows**. The second number is the number of *
 - 4,500 rows
 - 16 columns
 
-## Data Analysis Part 2: Start analyzing the data
+## Data Analysis: What is the data telling us?
 
 Now that we have access to the dataset, let's analyze it! The columns tell us what information is available for each student.
 
@@ -336,7 +336,7 @@ In your terminal you should be able see that we have:
 Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. 
 **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. 
 
-## What is Data Cleaning?
+## Data Cleaning: What do we do when there is missing values in our dataset?
 
 In data analysis, data cleaning means preparing our data so that we can analyze it more reliably. Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
 
@@ -348,7 +348,7 @@ There are different ways to handle missing data. For example:
 
 For this tutorial, we will use the technique called Mean Substitution.
 
-### Data Cleaning Technique: Mean Substitution
+### Data Cleaning: Mean Substitution Technique
 
 Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
 
@@ -465,7 +465,8 @@ Now add it again to your file and run it! Check the data display in your termina
 
 **GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
 
-## Data Analysis Part 3: Managing numerical data
+## Data Analysis: Working with numerical data
+
 
 ## References:
 
