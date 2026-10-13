@@ -11,7 +11,7 @@ print(df)
 print(df.head())
 
 # try to display the number of answers you want!
-print("first 10 rows of the dataset: ")
+#print("first 10 rows of the dataset: ")
 print(df.head(10))
 
 # last 5 rows
@@ -47,3 +47,13 @@ df["Academic_Performance_GPA"] = df["Academic_Performance_GPA"].fillna(average_g
 #part 4: check our data again!
 #print("checking if we clean data correctly:")
 print(df.isna().sum())
+
+#Analyzing quantitative data per column. First example: `Age` column
+age_column = df["Age"]
+print(age_column)
+
+#using describe()
+print(age_column.describe())
+
+#Analyzing qualitative date per column
+
