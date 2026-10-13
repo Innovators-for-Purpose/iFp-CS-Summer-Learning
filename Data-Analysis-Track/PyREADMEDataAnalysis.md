@@ -126,7 +126,7 @@ We will show you how to work with this in the following steps!
 
 Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods. - IBM
 
-In the following image you can see the steps for EDA based on Harvard School of Business:
+In the following image you can see the steps for EDA based on Harvard Business School:
 
 ![DataLifeCycle](DataLifeCycle.png)
 
@@ -142,7 +142,7 @@ In this tutorial we are going to work on the following steps:
 5. Management: Load the dataset and play with it!
 6. Analyzing: We are going to understand what the collected data is telling us
 7. Visualization: We are going display the data with graphs 
-8. Interpretation: We are going to see what the graphs are telling us
+8. Interpretation: We assign meaning to our data, and explain findings!
 
 ## Data Analysis Part 1: Loading our dataset
 
@@ -156,9 +156,9 @@ A CSV file is a common way to store data in a table. For example, a very small C
 
 ```text
 Name,Age,Favorite Color
-Alex,16,Blue
-Sam,17,Green
-Jordan,16,Red
+Alex,19,Yellow
+Adina,19,Blue
+Andres,16,Orange
 ```
 
 Each row represents one student, and each column represents a piece of information about that student. Our dataset is much larger. It contains information of **4,500 students**.
@@ -185,13 +185,13 @@ Let's see what our DataFrame looks like. Add the following line of code:
 print(df)
 ```
 
-Run your program. 
+Now run your program! ***IMPORTANT: Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!**
 
-You may see a lot of rows printed in the **terminal**. Pandas will usually shorten the output instead of printing every row.
+You may see a lot of rows printed in the **terminal**. Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
 ## Data Analysis Part 1: Start managing the data
 
-Now that we have access to the 4500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
+Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
 
 In your `my-data-analysis.py` file add the following:
 
@@ -206,6 +206,15 @@ We can also ask for a specific number of rows:
 print(df.head(10))
 ```
 This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
+
+**GOOD PRACTICE TIP:** At this point, you may have notice we are going to be using `print()` a LOT! Everytime you add a new `print()` line, make sure you also print a small line describing what are you doing.
+
+**For example:**
+```python
+print("First ten rows of data set: ") #this printing line describing what you will see in the terminal.
+print(df.head(10))
+```
+**This is a good practice tip, you decide if you want to add it to your code!**
 
 ### Looking at the last rows
 
@@ -240,10 +249,7 @@ You should see something similar to:
 ```python
 (4500, 16)
 ```
-The first number is the number of **rows**.
-The second number is the number of **columns**.
-
-So our dataset has:
+The first number is the number of **rows**. The second number is the number of **columns**. So our dataset has:
 - 4,500 rows
 - 16 columns
 
@@ -277,7 +283,7 @@ You should see the following columns names:
 
 ### Analyze the columns
 
-Before continuing, look at the column names. What questions could we ask using this dataset?
+Look at the column names. What questions could we ask using this dataset?
 
 For example:
 
@@ -289,7 +295,7 @@ For example:
 
 There are many questions we could investigate. Add yours to the list!
 
-Pandas can give us more information about our DataFrame. Add the following line to `my-data-analysis.py`:
+Pandas can give us more information about our DataFrame. Add the following line:
 
 ```python
 print(df.info())
@@ -305,7 +311,8 @@ print(df.info())
     - `int64`: the data type is a number
     - `bool`: the data type is `True` or `False`
     - `float64`: the data type is a decimal number
-Also in the end it mentions the amount of times one data types is repeated. Like 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
+
+Also in the end it mentions the amount of times one data types are repeated. We have 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
 
 This is important because different kinds of data can be analyzed in different ways.
 
@@ -320,7 +327,7 @@ print(df.isna().sum())
 `isna()` checks whether a value is missing.
 `sum()` counts how many missing values there are in each column.
 
-You may notice missing values in:
+In your terminal you should be able see that we have:
 - 46 missing values in `Perceived_Stress_Score`
 - 85 missing values in `Academic_Performance_GPA`
 
@@ -343,7 +350,7 @@ For this tutorial, we will use the technique called Mean Substitution.
 
 ### Data Cleaning Technique: Mean Substitution
 
-Mean substitution means replacing a missing numerical value with the mean (average) of the available values in that column.
+Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
 
 For example, let's imagine we have a column in our dataframe called "test scores":
 ```python
@@ -354,7 +361,7 @@ test scores,
 missing,
 100,
 ```
-First, we calculate the mean of the values that we do have:
+First, we calculate the mean of the values that we **do** have:
 
 `(80 + 90 + 70 + 100) / 4 = 85`
 
@@ -374,7 +381,7 @@ For this project, we will use mean substitution so we can practice an important 
 
 ### Cleaning Perceived_Stress_Score
 
-Pandas can calculate the mean for us using .mean().
+Pandas can calculate the mean for us using `.mean()`.
 
 In your `my-data-analysis.py` file add:
 
@@ -392,7 +399,7 @@ After we got the mean we save the result in the variable called `average_stress`
 
 ### YOUR TURN: Cleaning Academic_Performance_GPA
 
-As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA`. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
+As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA` columns. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
 
 Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`. HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
 
@@ -405,8 +412,60 @@ print(average_gpa)
 
 ### Replacing the missing values with the mean
 
-Next, we can use the mean to replace the missing values in our dataset. Pandas provides a function called `fillna()` for this.
+Next, we can use the mean to replace the missing values in our dataset. 
 
+`fillna()` is a pandas function that fills in the missing values.
+
+Add the following code:
+
+```python
+df["Perceived_Stress_Score"] = df["Perceived_Stress_Score"].fillna(average_stress)
+```
+
+That looks like a huge code sentence! Let's break it little by little.
+
+`df["Perceived_Stress_Score"]` selects the column we want to clean.
+
+`.fillna(average_stress)` tells pandas that wherever there is a missing value, replace it with the value stored in `average_stress`.
+
+Finally: 
+```python
+df["Perceived_Stress_Score"] = ...
+```
+stores the cleaned column back in our DataFrame.
+
+### YOUR TURN: Fill the missing Academic_Performance_GPA values!
+
+Two steps ago you created a variable called: `average_gpa` where you store the mean of the `Academic_Performance_GPA` column. It should look like this:
+
+```python
+average_gpa = df["Academic_Performance_GPA"].mean()
+
+print(average_gpa)
+```
+
+Now use that mean to fill the missing values:
+HINT: review what we did to replace the missing values of `Perceived_Stress_Score`!!!
+
+```python
+df["Academic_Performance_GPA"] = ___
+```
+
+Now both columns have been cleaned!
+
+### Check our data again
+
+Whenever we change our data, it is a good idea to check whether our change worked. Remember how we checked for missing values earlier?
+We used:
+```python
+print(df.isna().sum())
+```
+
+Now add it again to your file and run it! Check the data display in your terminal. `Perceived_Stress_Score` & `Academic_Performance_GPA` should now be at 0.
+
+**GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
+
+## Data Analysis Part 3: Managing numerical data
 
 ## References:
 
@@ -416,8 +475,7 @@ To create this tutorial I used the following references:
 
 - MIT IBM, [What is exploratory data analysis (EDA)?](https://www.ibm.com/think/topics/exploratory-data-analysis)
 
-
-- MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf)
+- MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf), Fall 2022
 
 
 
