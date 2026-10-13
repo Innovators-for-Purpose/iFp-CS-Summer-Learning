@@ -380,7 +380,7 @@ We are using information from the other values in the same column to fill in the
 
 For this project, we will use mean substitution so we can practice an important data cleaning technique with pandas.
 
-### Cleaning Perceived_Stress_Score
+### Cleaning `Perceived_Stress_Score`
 
 Pandas can calculate the mean for us using `.mean()`.
 
@@ -398,7 +398,7 @@ print(average_stress)
 
 After we got the mean we save the result in the variable called `average_stress`. When we `print(average_stress)` it will show the mean result in the terminal.
 
-### YOUR TURN: Cleaning Academic_Performance_GPA
+### YOUR TURN: Cleaning `Academic_Performance_GPA`
 
 As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA` columns. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
 
@@ -435,7 +435,7 @@ df["Perceived_Stress_Score"] = ...
 ```
 stores the cleaned column back in our DataFrame.
 
-### YOUR TURN: Fill the missing Academic_Performance_GPA values!
+### YOUR TURN: Fill the missing values in `Academic_Performance_GPA`!
 
 Two steps ago you created a variable called: `average_gpa` where you store the mean of the `Academic_Performance_GPA` column. It should look like this:
 
@@ -466,8 +466,56 @@ Now add it again to your file and run it! Check the data display in your termina
 
 **GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
 
-## Data Analysis: Working with numerical data
+## Data Analysis: Working with quantitative data
 
+We can ask pandas to summarize numerical columns for us. 
+
+`describe()` give us statistics like:
+- count: Number of values of the column
+- mean: Average of the column
+- standard deviation: Number that explains how "spread out" the values are.
+- minimum and maximum: lowest and highest value of the column
+- quartiles: 25%, 50%, 75% (50% represents the median)
+ 
+We can use `describe()` to get an overview of the columns that we want to explore!
+
+### Analyzing stadistics of `Age` column
+
+Let's start use `describe()` to explore our the information that `Age` column is giving us.
+
+First let's select our column:
+```python
+age_column = df["Age"]
+print(age_column)
+```
+
+Now let's use `describe()`
+```python
+print(age_column.describe())
+```
+Now you can see the statistic information of the `Age` column!
+
+**IMPORTANT:** We can only use `describe()` with columns that have numerical values. 
+
+### YOUR TURN: Get the statistics of the following columns!
+
+In this dataset the columns that have integer and float values are:
+- `Age` **(We already got the information of this one)**
+- `Daily_Usage_Hours`
+- `Weekend_Extra_Hours`
+- `Sleep_Duration_Hours`
+- `Sleep_Quality_Score`
+- `Perceived_Stress_Score`
+- `Mental_Health_Index`
+- `Academic_Performance_GPA`
+
+Now it is your turn to:
+- Create a variable to save and select the column information
+- Use the `describe()` function on each variable
+
+**HINT**: Check the code that we used for `Age` column!
+
+## Data Analysis: Working with qualitative data
 
 
 ## References:
