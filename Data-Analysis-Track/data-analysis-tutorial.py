@@ -11,6 +11,7 @@ print(df)
 print(df.head())
 
 # try to display the number of answers you want!
+print("first 10 rows of the dataset: ")
 print(df.head(10))
 
 # last 5 rows
@@ -36,3 +37,13 @@ print(average_stress)
 #part 2: find the mean of the Academic_Performance_GPA column
 average_gpa = df["Academic_Performance_GPA"].mean()
 print(average_gpa)
+
+#part 3: fill the missing values in Percieved_Stress_Column with the mean.
+df["Perceived_Stress_Score"] = df["Perceived_Stress_Score"].fillna(average_stress)
+
+#part 3.2: fill the missing values in Academic_Performance_GPA with the mean.
+df["Academic_Performance_GPA"] = df["Academic_Performance_GPA"].fillna(average_gpa)
+
+#part 4: check our data again!
+#print("checking if we clean data correctly:")
+print(df.isna().sum())
