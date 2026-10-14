@@ -468,14 +468,21 @@ Now add it again to your file and run it! Check the data display in your termina
 
 ## Data Analysis: Working with quantitative data
 
-We can ask pandas to summarize numerical columns for us. 
+Our dataset has 8 columns with numerical values. The columns have information that can be measured or counted. That is what we call **quantitative data**. 
 
-`describe()` give us statistics like:
-- count: Number of values of the column
-- mean: Average of the column
-- standard deviation: Number that explains how "spread out" the values are.
-- minimum and maximum: lowest and highest value of the column
-- quartiles: 25%, 50%, 75% (50% represents the median)
+In this dataset the numerical values that we found are 2 types:
+
+- `int`: Short for integer. An integer is a whole number(with no decimal point!) It can be positive, negative, or zero. Examples: 10, -3, 0, 42
+
+- `float`: Short for floating-point number. A float is a number that has a decimal point. Examples: 3.14, -2.5, 0.0, 10.75
+
+The `describe()` pandas method can help us get the following statistics information:
+
+- `count`: Number of values of the column
+- `mean`: Average of the column
+- `standard deviation`: Number that explains how "spread out" the values are
+- `minimum` and `maximum`: lowest and highest value of the column
+- `quartiles`: 25%, 50%, 75% (50% represents the median)
  
 We can use `describe()` to get an overview of the columns that we want to explore!
 
@@ -510,12 +517,59 @@ In this dataset the columns that have integer and float values are:
 - `Academic_Performance_GPA`
 
 Now it is your turn to:
-- Create a variable to save and select the column information
-- Use the `describe()` function on each variable
+- Create one variable per each column where you can save and select the column information
+- Use the `describe()` method on each variable
+- Print and analyze the statistics!
 
 **HINT**: Check the code that we used for `Age` column!
 
 ## Data Analysis: Working with qualitative data
+
+There are 16 columns in our dataset, 8 of them contained numerical values and the rest have non-numerical values that describe qualities, characteristics, categories, opinions, and experiences. This is what we called **qualitative data**. 
+
+In this dataset the non-numerical values that we found are 2 types:
+
+- `str`: Short for string. A string is text, such as words, sentences, or even one single character. In Python, strings are written inside quotation marks. Examples: "Hello!", "Bela", "123"
+
+- `bool`: Short for boolean. A boolean is a value that can only be one of two things: True or False. Example: whether a player has won a game.
+
+We can use multiple panda methods to analyze qualitative data. Some columns contain categories, we can count how often each category appears with the `value_counts()` pandas method.
+
+### Counting categories of `Primary_Platform` column
+
+First, just like we did with our numeric columns, let's select our column:
+
+```python
+primaty_platform_column = df["Primary_Platform"]
+print(primaty_platform_column)
+```
+Now let's use `value_counts()`:
+
+```python
+print(primaty_platform_column.value_counts())
+```
+Now you can see the what was the primary platform that most of the students use!
+
+### YOUR TURN: Use `value_counts()` method with other categorical columns!
+
+In this dataset the 8 columns that have string and boolean values are:
+- `Student_ID`
+- `Gender`
+- `Academic_Level` 
+- `Primary_Platform` **(We already got the information of this one)**
+- `Device_Type`
+- `Late_Night_Usage`
+- `Social_Comparison_Frequency`
+- `Overall_Impact`
+
+Check the CSV file, which are the other columns that have categorical values? how many do we have?
+
+Once you identified the other columns, it is your turn to:
+- Create one variable per each column where you can save and select the column information
+- Use the `value_counts()` method on each variable
+- Print and analyze the results!
+
+**HINT**: Check the code that we used for the `Primary_Platform` column!
 
 
 ## References:

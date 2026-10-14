@@ -55,5 +55,13 @@ print(age_column)
 #using describe()
 print(age_column.describe())
 
-#Analyzing qualitative date per column
+#Analyzing qualitative date per column. First example: `Primary_Platform` column
+primaty_platform_column = df["Primary_Platform"]
+print(primaty_platform_column)
+
+#using value_counts()
+print(primaty_platform_column.value_counts())
+
+
+
 
