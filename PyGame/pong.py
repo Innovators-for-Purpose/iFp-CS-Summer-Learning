@@ -13,7 +13,7 @@ PADDLE_IMAGE = pygame.transform.scale(
 BALL_SIZE = 20
 PADDLE_SPEED = 12
 BALL_SPEED_X = 10
-BALL_SPEED_Y = 8z
+BALL_SPEED_Y = 8
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (30, 30, 30)
@@ -21,7 +21,7 @@ GRAY = (30, 30, 30)
 pygame.init()
 pygame.display.set_caption("Pong")
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() 
 
 # --- Game Objects ---
 left_paddle = PADDLE_IMAGE.get_rect(topleft=(40, HEIGHT // 2 - PADDLE_HEIGHT // 2))
