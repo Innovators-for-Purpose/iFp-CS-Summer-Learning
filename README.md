@@ -1,4 +1,4 @@
-# iFp Summer Coding Practice
+# iFp Web Coding Practice
 
 Welcome to iFp's summer coding practice! Over the next two weeks, you will learn to code in a more interactive way using a small webpage project.
 
