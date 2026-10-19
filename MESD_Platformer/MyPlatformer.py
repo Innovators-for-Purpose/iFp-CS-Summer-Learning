@@ -6,24 +6,24 @@ import sys
 
 Width, Height = 900, 600
 FPS = 60
-World_Width = 3600
-Player_Size = 37
-Move_Speed = 5
-Jump_Speed = -13
+World_Width = 10000
+Player_Size = 100
+Move_Speed = 25
+Jump_Speed = -14
 Gravity = 0.6
 
 
-Sky = (95, 126, 160)
+Sky = (0, 0, 0)
 Cloud = (255, 255, 255)
-Sun = (207, 255, 4)
-Hill_Far = (144, 238, 144)
-Hill_Near = (10, 221, 8)
+Moon = (255, 255, 255)
+Hill_Far = (191, 191, 191)
+Hill_Near = (64, 64, 64)
 Ground = (115, 115, 208)
 Platform_Top = (255, 255, 255)
 Platform_Side = (115, 115, 208)
-Player_Color = (255, 142, 87)
-Player_Face = (255, 255, 255)
-Ink = (0, 0, 0)
+Player_Color = (255, 0, 0)
+Player_Face = (0, 0, 0)
+Ink = (255, 0, 255)
 
 
 
@@ -34,18 +34,23 @@ clock = pygame.time.Clock()
 
 def make_platforms():
     return [
-        pygame.Rect(0, 530, 720, 70),
-        pygame.Rect(800, 530, 620, 70),
-        pygame.Rect(1510, 530, 720, 70),
-        pygame.Rect(2320, 530, 1280, 70),
-        pygame.Rect(420, 430, 180, 22),
-        pygame.Rect(960, 390, 190, 22),
-        pygame.Rect(1240, 470, 150, 22),
-        pygame.Rect(1660, 410, 210, 22),
-        pygame.Rect(1980, 330, 180, 22),
-        pygame.Rect(2470, 420, 210, 22),
-        pygame.Rect(2860, 350, 180, 22),
-        pygame.Rect(3200, 455, 190, 22),
+        #ground 1
+        pygame.Rect(0, 530, 10000, 70),
+        # ground 2
+        pygame.Rect(2100, 530, 6000, 70),
+        pygame.Rect(500, 390, 190, 22),
+        pygame.Rect(800, 470, 150, 22),
+        pygame.Rect(1200, 410, 210, 22),
+        pygame.Rect(1500, 330, 180, 22),
+        pygame.Rect(1800, 420, 210, 22),
+        pygame.Rect(2100, 350, 180, 22),
+        pygame.Rect(2400, 455, 190, 22),
+        pygame.Rect(2750, 342, 244, 22),
+        pygame.Rect(3000, 400, 250, 22),
+        pygame.Rect(3600, 279, 192, 22),
+        pygame.Rect(4200, 375, 391, 252),
+        
+
 
     ]
 
@@ -59,7 +64,7 @@ def draw_player(Surface, Player_Rect, Camera_X):
 
 def draw_background(Surface, Camera_X):
     Surface.fill(Sky)
-    pygame.draw.circle(Surface, Sun, (Width - 110, 90), 50)
+    pygame.draw.circle(Surface, Moon, (Width - 110, 90), 50)
     
     
     for Cloud_X, Cloud_Y in ((150, 105), (540, 170), (830, 90)):
@@ -126,35 +131,34 @@ def main(window):
                 Velocity.update(0, 0)
                 won = False
 
-            keys = pygame.key.get_pressed()
-            Velocity.x = (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed
-            if not won:
-                On_Ground = Move_Player(Player, Velocity, Platforms)
+        keys = pygame.key.get_pressed()
+        Velocity.x = (keys[pygame.K_d] or keys[pygame.K_RIGHT]) * Move_Speed - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * Move_Speed
+        if not won:
+            On_Ground = Move_Player(Player, Velocity, Platforms)
             if Player.top > Height:
                 Player.topleft = (100, 470)
                 Velocity.update(0, 0)
             if Player.right >= World_Width - 180:
                 won = True
-                
 
 
-            Camera_X = max(0, min(Player.centerx - Width // 2, World_Width - Width))
-            draw_background(window, Camera_X)
-            for platform in Platforms:
-                visible = platform.move(-Camera_X, 0)
-                pygame.draw.rect(window, Platform_Side, visible)
-                pygame.draw.rect(window, Platform_Top, (visible.x, visible.y, visible.width, 5))
-                draw_player(window, Player, Camera_X)
+
+        Camera_X = max(0, min(Player.centerx - Width // 2, World_Width - Width))
+        draw_background(window, Camera_X)
+        for platform in Platforms:
+            visible = platform.move(-Camera_X, 0)
+            pygame.draw.rect(window, Platform_Side, visible)
+            pygame.draw.rect(window, Platform_Top, (visible.x, visible.y, visible.width, 2))
+        draw_player(window, Player, Camera_X)
 
 
-            hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, Ink)
-            window.blit(hint, (22, 20))
-
-            if won: 
-                message = Big_Font.render("You Win!", True, Ink)
-                window.blit(message, (Width // 2 - message.get_width() // 2, 76))
-            pygame.display.flip()
-            clock.tick(FPS)
+        hint = font.render("Good Luck!", True, Ink)
+        window.blit(hint, (22, 20))
+        if won: 
+            message = Big_Font.render("You Win!", True, Ink)
+            window.blit(message, (Width // 2 - message.get_width() // 2, 76))
+        pygame.display.flip()
+        clock.tick(FPS)
            
            
            
