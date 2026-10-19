@@ -178,7 +178,7 @@ Now that we have the world game, let's create a function to draw our player.
 
 ```python
 def draw_player(surface, player_rect, camera_x):
-    screen_rect = player_rect.move(-camera_x, 0)
+    screen_rect = player_rect.move(-cameddra_x, 0)
 
     pygame.draw.ellipse(surface, PLAYER_COLOR, screen_rect)
 
