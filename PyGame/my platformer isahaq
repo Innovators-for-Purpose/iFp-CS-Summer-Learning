@@ -3,12 +3,12 @@ import sys
 
 
 WIDTH, HEIGHT = 960, 700
-FPS = 90
-WORLD_WIDTH = 3600
+FPS = 120
+WORLD_WIDTH = 3900
 PLAYER_SIZE = 34
 MOVE_SPEED = 5
-JUMP_SPEED = -13
-GRAVITY = 0.6
+JUMP_SPEED = -10
+GRAVITY = 0.1
 
 SKY = (116, 190, 212)
 SUN = (255, 220, 132)
@@ -18,15 +18,14 @@ HILL_NEAR = (72, 135, 119)
 GROUND = (50, 77, 68)
 PLATFORM_TOP = (226, 183, 91)
 PLATFORM_SIDE = (157, 103, 61)
-PLAYER_COLOR = (239, 91, 91)
+PLAYER_COLOR = (9, 144, 17)
 PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
-
 pygame.init()
-pygame.display.set_caption("isahaq")
+pygame.display.set_caption("isahaq platformer")
 clock = pygame.time.Clock()
 
-
+ pygame.Rect(0, 530, 720, 70),
 def make_platforms():
     return [
         pygame.Rect(0, 530, 720, 70),
@@ -41,9 +40,11 @@ def make_platforms():
         pygame.Rect(2470, 420, 210, 22),
         pygame.Rect(2860, 350, 180, 22),
         pygame.Rect(3200, 455, 190, 22),
+        pygame.Rect(3450, 480, 200, 22),
+        pygame.Rect(3700, 510, 230, 24),
     ]
 
-
+ pygame.Rect(3900, 530, 210, 24),
 def draw_player(surface, player_rect, camera_x):
     """Draw the placeholder character; replace this function with sprite blitting later."""
     screen_rect = player_rect.move(-camera_x, 0)
@@ -70,7 +71,7 @@ def draw_background(surface, camera_x):
         points.append((WIDTH + 200, HEIGHT))
         pygame.draw.polygon(surface, color, points)
 
-
+pygame
 def move_player(player, velocity, platforms):
     player.x += velocity.x
     player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))
@@ -138,9 +139,9 @@ def main(window):
         draw_player(window, player, camera_x)
 
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
-        window.blit(hint, (22, 20))
+        window.blit(hint, (20, 20))
         if won:
-            message = big_font.render("You made it!", True, INK)
+            message = big_font.render("U WON!!!!!!!", True, INK)
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
 
         pygame.display.flip()
