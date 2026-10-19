@@ -3,7 +3,7 @@
 Welcome to iFp's Python coding practice 3! In this session you will practice Python by analyzing and visualizing the dataset of "Social Media Impact of Life."
 
 ## What you'll do
-- Build your own version of `my-data-analysis.py`
+- Build your own version of `my-data-analysis.ipynb`
 - Load and explore a CSV dataset with information of 4,500 students
 - Filter, sort, count, and group data to answer questions
 - Investigate patterns in the data
@@ -51,30 +51,39 @@ In the same VS Code terminal:
 
 `python3 -m pip install matplotlib`
 
-### **OPTIONAL** Step 4: Install Rainbow CSV in Visual Studio Code
+### Step 4: Install Jupyter Notebook extension
+
+Go to VS Code and click on the extensions tab. Search the **Jupyter** extension and install it. This extension allows you to create a Jupyter Notebook file where you can write python code that manages big amounts of data and run it in one single file.
+
+
+### **OPTIONAL** Step 5: Install Rainbow CSV in Visual Studio Code
 
 Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension. This extension give different colors to the colums in our CSV file.
 
 
 ## Start coding!
 
-Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
+Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
 - `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
+
+- `my-jupyter-data-analysis.ipynb`: The Jupyter version of `data-analysis-tutorial.py`
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
 - `social_media_impact.csv` : The Dataset we will work with!
 
+- `DataLifeCycle.png`: This is an image of the data analysis cycle, and it will be explained on the following tutorial.
+
 Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
 
 ```python
-my-data-analysis.py
+my-data-analysis.ipynb
 ```
 
-### `my-data-analysis.py`
+### `my-data-analysis.ipynb`
 
-Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
+Your `my-data-analysis.ipynb` file will contain the code you write throughout this tutorial.
 
 You will organize your program into:
 
@@ -99,12 +108,13 @@ In the following steps we will explore more and more the dataset.
 
 ## Imports
 
-In our new file `my-data-analysis.py` write the following code at the top:
+In our new file `my-data-analysis.ipynb` write the following code at the top:
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
+Run it!
 
 `import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. In the world of programming, this shorter names are called aliases.
 
@@ -165,13 +175,14 @@ Each row represents one student, and each column represents a piece of informati
 
 ### Read our CSV file
 
-Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.py`.
+Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.ipynb`.
 
-In our `my-data-analysis.py` add the following code:
+In our `my-data-analysis.ipynb` add the following code:
 
 ```python
 df = pd.read_csv("social_media_impact.csv")
 ```
+Run it!
 
 We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
 
@@ -186,15 +197,15 @@ print(df)
 ```
 
 Now run your program! 
-**IMPORTANT:** Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!
+**IMPORTANT:** Everytime you add a piece of code in your `my-data-analysis.ipynb` file, you should run your code to see the new functions working!
 
-You may see a lot of rows printed in the **terminal**. Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
+Another thing to **remember**: Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
 ## Data Management: Explore and handle the data
 
 Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
 
-In your `my-data-analysis.py` file add the following:
+In your `my-data-analysis.ipynb` file add the following:
 
 ```python
 print(df.head())
@@ -384,7 +395,7 @@ For this project, we will use mean substitution so we can practice an important 
 
 Pandas can calculate the mean for us using `.mean()`.
 
-In your `my-data-analysis.py` file add:
+In your `my-data-analysis.ipynb` file add:
 
 ```python
 average_stress = df["Perceived_Stress_Score"].mean()
@@ -570,6 +581,14 @@ Once you identified the other columns, it is your turn to:
 - Print and analyze the results!
 
 **HINT**: Check the code that we used for the `Primary_Platform` column!
+
+### Reflect on results
+
+Before we continue playing with qualitative and quantitative data, it is always great to reflect on what the data is telling us. 
+
+## Data Analysis: Filtering data
+
+🚧This part of the tutorial is under construction!!!🚧
 
 
 ## References:
