@@ -3,11 +3,7 @@
 Welcome to iFp's Python coding practice 3! In this session you will practice Python by analyzing and visualizing the dataset of "Social Media Impact of Life."
 
 ## What you'll do
-<<<<<<< HEAD
-- Build your own version of `my-data-analysis.py`
-=======
 - Build your own version of `my-data-analysis.ipynb`
->>>>>>> main
 - Load and explore a CSV dataset with information of 4,500 students
 - Filter, sort, count, and group data to answer questions
 - Investigate patterns in the data
