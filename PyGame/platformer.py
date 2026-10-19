@@ -78,6 +78,7 @@ def move_player(player, velocity, platforms):
         if player.colliderect(platform):
             if velocity.x > 0:
                    player.right = platform.left
+                   player.right = platform.left
             elif velocity.x < 0:
                 player.left = platform.right
 
@@ -141,11 +142,12 @@ def main(window):
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", Tru
 =======
         draw_player(window, player, camera_x)
-        hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
->>>>>>> f18b442 (Finish!!!!)
+
+        hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", Tru
         window.blit(hint, (22, 20))
         if won:
             message = big_font.render("You made it!", True, INK)
+            window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76)) 
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76)) 
         pygame.display.flip()
         clock.tick(FPS)
