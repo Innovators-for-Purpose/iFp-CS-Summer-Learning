@@ -148,8 +148,13 @@ def main(window):
 =======
 
         draw_player(window, player, camera_x)
+<<<<<<< HEAD
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
 >>>>>>> f18b442 (Finish!!!!)
+=======
+
+        hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", Tru
+>>>>>>> fa9a3b4 (Pushing last changes before data)
         window.blit(hint, (22, 20))
         if won:
             message = big_font.render("You made it!", True, INK)
