@@ -1,5 +1,5 @@
 
-#issue: line 121: argument 1 must be pygame.surface.Surface, not pygame.rect.Rect
+#issue: line 121: put into player movment not loop
 
 
 
@@ -118,10 +118,9 @@ def main(window):
     won = False
     font = pygame.font.Font(None, 28)
     big_font = pygame.font.Font(None, 46)
-    
-    
-    SPIN_PLAYER = pygame.transform.flip(player, 0, 1)
+    spin_player = pygame.transform.flip(PLAYER, False, True)
 
+    
 
 # key loop
     while True:
@@ -139,7 +138,7 @@ def main(window):
             
             #spin motion
             if event.type == pygame.KEYDOWN and event.key == pygame.K_p:player.centerx = 3100
-            if event.type == pygame.KEYDOWN and event.key ==pygame.K_p: SPIN_PLAYER
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_p:spin_player
             
             
         keys = pygame.key.get_pressed()
@@ -165,7 +164,7 @@ def main(window):
         hint = font.render("A / D or arrows: move  SPACE: jump  R: restart", True, INK)
         window.blit(hint, (22, 20))
         if won:
-            message = big_font.render("Good job..... what where you expecting a reward? If so press P", True, INK)
+            message = big_font.render("Good job..... what where you expecting a reward? maybe press P", True, INK)
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
         
         pygame.display.flip()
