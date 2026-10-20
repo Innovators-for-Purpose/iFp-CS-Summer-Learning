@@ -7,7 +7,6 @@ import pygame
 import sys
 
 
-
 # Constants
 WIDTH, HEIGHT = 960, 600
 FPS = 60
