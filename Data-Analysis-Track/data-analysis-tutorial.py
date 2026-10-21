@@ -62,6 +62,23 @@ print(primaty_platform_column)
 #using value_counts()
 print(primaty_platform_column.value_counts())
 
+#filtering data
+# part 1: select column
+daily_usage_hours_column = df["Daily_Usage_Hours"]
+print(daily_usage_hours_column)
+
+# create filter and save it in a variable
+bigger_than_8 = df[daily_usage_hours_column > 8]
+
+#see your filter data!
+print(bigger_than_8)
+
+#filter by text
+#part 1: access `Primary_Platform` values
+primary_platform_column = df["Primary_Platform"]
+print(primary_platform_column)
+
+
 
 
 
