@@ -13,7 +13,7 @@ FPS = 60
 WORLD_WIDTH = 3600
 PLAYER_SIZE = 34
 MOVE_SPEED = 7  #orig 5
-JUMP_SPEED = -18 #orig -13
+JUMP_SPEED = -22 #orig -13
 GRAVITY = 0.9 #orig 0.6
 
 #Questionable constant
@@ -34,7 +34,7 @@ PLAYER_FACE = (255, 232, 188)
 INK = (35, 45, 48)
 
 pygame.init()
-pygame.display.set_caption("My Platformer")
+pygame.display.set_caption("Jumper")
 clock = pygame.time.Clock()
 
 
@@ -84,6 +84,8 @@ def draw_background(surface, camera_x):
 def move_player(player, velocity, platforms):
     player.x += velocity.x
     player.x = max(0, min(player.x, WORLD_WIDTH - PLAYER_SIZE))
+   # if pygame.KEYDOWN and event.key == pygame.K_p:player.centerx = 3100
+   # if pygame.KEYDOWN and event.key == pygame.K_p:spin_player
     for platform in platforms:
         if player.colliderect(platform):
             if velocity.x > 0:
@@ -117,7 +119,7 @@ def main(window):
     won = False
     font = pygame.font.Font(None, 28)
     big_font = pygame.font.Font(None, 46)
-    spin_player = pygame.transform.flip(PLAYER, False, True)
+    #spin_player = pygame.transform.rotozoom(PLAYER, 160,7)
 
     
 
@@ -134,12 +136,6 @@ def main(window):
                 player.topleft = (100, 470)
                 velocity.update(0,0)
                 won = False
-            
-            #spin motion
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_p:player.centerx = 3100
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_p:spin_player
-            
-            
         keys = pygame.key.get_pressed()
         velocity.x = (keys[pygame.K_d] or keys[pygame.K_RIGHT])*MOVE_SPEED -(keys[pygame.K_a] or keys[pygame.K_LEFT])* MOVE_SPEED - (keys[pygame.K_a] or keys[pygame.K_LEFT]) * MOVE_SPEED
         if not won:
@@ -163,7 +159,7 @@ def main(window):
         hint = font.render("A / D or arrows: move  SPACE: jump  R: restart", True, INK)
         window.blit(hint, (22, 20))
         if won:
-            message = big_font.render("Good job..... what where you expecting a reward? maybe press P", True, INK)
+            message = big_font.render("Good job..... what where you expecting a reward?", True, INK)
             window.blit(message, (WIDTH // 2 - message.get_width() // 2, 76))
         
         pygame.display.flip()
