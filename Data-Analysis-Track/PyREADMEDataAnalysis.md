@@ -704,6 +704,29 @@ print(tiktok_users.shape[0])
 
 ### Filtering with multiple conditions
 
+We learn how to filter data with numerical and text values, now let's combine conditions!
+
+For example, maybe we are curious to know:
+***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
+
+In the past example we created the variable `more_than_8h_online`, this variable has our first conditon ready to use. 
+
+Let's create a variable for our second condition:
+
+```python
+sleep_less_than_6h = (df["Sleep_Duration_Hours"] < 6)
+```
+Now we have our 2 conditions ready to be combined! Remember: when combining conditions in pandas, put each condition inside parentheses.
+
+```python
+#feel free to change the names of the variables
+two_conditions = df[
+    (more_than_8h_online) & (sleep_less_than_6h)
+    ]
+print(two_conditions)
+```
+In this condition, the `&` operator means `AND`.
+
 🚧This part of the tutorial is under construction!!!🚧
 
 ### YOUR TURN: Create your own filters!!!
