@@ -68,15 +68,25 @@ daily_usage_hours_column = df["Daily_Usage_Hours"]
 print(daily_usage_hours_column)
 
 # create filter and save it in a variable
-bigger_than_8 = df[daily_usage_hours_column > 8]
+more_than_8h_online = df[daily_usage_hours_column > 8]
 
 #see your filter data!
-print(bigger_than_8)
+print(more_than_8h_online)
+#count how many students spend more than 8h online
+print(more_than_8h_online.shape)
+
 
 #filter by text
 #part 1: access `Primary_Platform` values
 primary_platform_column = df["Primary_Platform"]
 print(primary_platform_column)
+
+#Part 2: filter based on students that have TikTok as their primary platform
+tiktok_users = df[primary_platform_column == "TikTok"]
+print(tiktok_users)
+
+#part 3: count how many checks the condition
+print(tiktok_users.shape[0])
 
 
 

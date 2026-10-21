@@ -588,66 +588,122 @@ Before we continue playing with qualitative and quantitative data, it is always 
 
 ## Data Analysis: Filtering data
 
-One of the most useful things we can do with pandas is **filter** data. **Filtering** means selecting only the values that match one condition.
+One of the most useful things we can do with pandas is **filter** data. **Filtering** means selecting only the rows that match a condition.
 
-### Filter with numerical values 
+### Filter numerical values 
 
-First, we need to make sure we select the column we want to filter. For this first example, we will work with the `Daily_Usage_Hours` column. If you created a variable to access the values of that column before, you can **jump to the next step** and **use your own variable**. If this is your first time working with the `Daily_Usage_Hours` column add the following code:
+Let's start with a question:
+
+***How many students spend more than 8 hours a day on social media?***
+
+To answer this question, we'll work with the `Daily_Usage_Hours` column.
+
+### Select the column
+
+If you already created a variable for this column, you can skip this step and reuse it. Otherwise, add the following:
 
 ```python
 daily_usage_hours_column = df["Daily_Usage_Hours"]
-#if you want to see how the values of this column look like you can print it!
 print(daily_usage_hours_column)
 ```
+Now that we created the `daily_usage_hours_column` variable we have access to all the values in the column. The **next step** is to define a condition for the filtering.
 
-Now that we created the `daily_usage_hours_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
+### Create a filter condition
 
-We can frame our condition to answer a question!
+We want to filter **students whose daily social media usage is greater than 8 hours**.
 
-For example... 
-Question: **How many students use social media for more than 8 hours?**
-Condition: **Filter the students' `Daily_Usage_Hours` that are greater than 8 hours.**
-
-Pandas creates a series of `True` and `False` values based on the condition you give.
+This is the general structure of a filter in pandas:
 
 ```python
 df[condition]
 ```
-This keeps only the rows where the condition is `True`.
 
-Let's create a variable and assign our filter condition:
+Let's break it down:
+
+- `df`: the DataFrame containing our dataset
+- `[condition]`: a rule that determines which rows to keep. Pandas checks each row against the condition and returns `True` or `False`. Only rows where the condition is `True` are included in the filtered DataFrame.
+
+This is how our condition would look like:
 
 ```python
-bigger_than_8 = df[daily_usage_hours_column > 8]
-print(bigger_than_8)
+df[daily_usage_hours_column > 8]
 ```
-After you run this code in your jupyter notebook you will be able to see all the students whose `Daily_Usage_Hours` is bigger than 8. 
 
-Congrats! You created your first filter!!!!
+The `>` operator means greater than. This filter keeps only the rows where students' daily social media usage is greater than 8 hours.
+
+### Filter the rows
+
+We can use the condition inside `df[...]` to keep only the rows that meet it.
+
+```python
+more_than_8h_online = df[daily_usage_hours_column > 8]
+print(more_than_8h_online)
+```
+
+Congrats!!! You've created your first filter! The variable `more_than_8h_online` now contains only the students who spend more than 8 hours a day on social media.
 
 ### Count the filter rows
 
-Now let's use `.shape`, a pandas method that can help us count how many rows (which means how many students) meet our condition.
+How many students meet our condition?
 
-Add:
+We can use `.shape` to find the dimensions of a DataFrame. It returns a **tuple** containing the number of rows and columns. The first value of the tuple, `shape[0]`, tells us how many rows there are.
+
+Add the following code:
+
 ```python
-print(bigger_than_8.shape)
+print(more_than_8h_online.shape[0])
 ```
-Now we know that 632 rows have a `Daily_Usage_Hours` value bigger than 8.
+Now we know that out of the 4,500 students, ***632 students spend more than 8 hours*** in social media everyday.
 
-Out of the 4,500 students, **632 students spend more than 8 hours** in social media everyday.
+### Filter with text values
 
-### Filter with string values
+We can also filter data using text values, for example social media platform names. 
 
-We can also filter based on categories. For example, in the column `Primary_Platform` all the values are names of social media.
+Let's answer a new question:
 
-Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. If this is your first time working with the `Primary_Platform` column add the following code:
+***How many students use TikTok as their primary social media platform?***
+
+Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
 
 ```python
 primary_platform_column = df["Primary_Platform"]
 #if you would like to see the values of this column you can print it!
 print(primary_platform_column)
 ```
+
+Now that we created the `primary_platform_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
+
+### A new filter condition
+
+This time, we want to find rows where the primary platform is TikTok.
+```python
+primary_platform_column == "TikTok"
+```
+
+The `==` operator checks whether a value is equal to another value. Just like our numerical filter, this condition returns `True` or `False` for each row.
+
+Let's apply the condition to our DataFrame:
+```python
+tiktok_users = df[primary_platform_column == "TikTok"]
+print(tiktok_users)
+```
+
+This displays only the rows where `Primary_Platform` is `"TikTok"`. To count these students, we can use:
+```python
+print(tiktok_users.shape[0])
+```
+
+**IMPORTANT**: When comparing a column's text values, we need to remember two things...
+
+1) **Use quotation marks** around text, for example `"TikTok"`, so Python recognizes it as a string.
+2) **Match the text in your dataset exactly** including spaces and capitalization.
+    Our code:
+    ```python
+    primary_platform_column == "TikTok"
+    ```
+    checks for the exact text `"TikTok"`. Writing `primary_platform_column == TikTok` without quotation marks makes Python interpret `TikTok` as a variable name which can cause a `NameError` if that variable hasn't been defined.
+
+    If you write `"Tik Tok"` with a space instead, Python treats it as a string, but it won't match rows containing `"TikTok"`. The filter will simply return no matching rows if that exact value doesn't exist in the column.
 
 
 🚧This part of the tutorial is under construction!!!🚧
