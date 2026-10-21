@@ -588,7 +588,83 @@ Before we continue playing with qualitative and quantitative data, it is always 
 
 ## Data Analysis: Filtering data
 
+One of the most useful things we can do with pandas is **filter** data. **Filtering** means selecting only the values that match one condition.
+
+### Filter with numerical values 
+
+First, we need to make sure we select the column we want to filter. For this first example, we will work with the `Daily_Usage_Hours` column. If you created a variable to access the values of that column before, you can **jump to the next step** and **use your own variable**. If this is your first time working with the `Daily_Usage_Hours` column add the following code:
+
+```python
+daily_usage_hours_column = df["Daily_Usage_Hours"]
+#if you want to see how the values of this column look like you can print it!
+print(daily_usage_hours_column)
+```
+
+Now that we created the `daily_usage_hours_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
+
+We can frame our condition to answer a question!
+
+For example... 
+Question: **How many students use social media for more than 8 hours?**
+Condition: **Filter the students' `Daily_Usage_Hours` that are greater than 8 hours.**
+
+Pandas creates a series of `True` and `False` values based on the condition you give.
+
+```python
+df[condition]
+```
+This keeps only the rows where the condition is `True`.
+
+Let's create a variable and assign our filter condition:
+
+```python
+bigger_than_8 = df[daily_usage_hours_column > 8]
+print(bigger_than_8)
+```
+After you run this code in your jupyter notebook you will be able to see all the students whose `Daily_Usage_Hours` is bigger than 8. 
+
+Congrats! You created your first filter!!!!
+
+### Count the filter rows
+
+Now let's use `.shape`, a pandas method that can help us count how many rows (which means how many students) meet our condition.
+
+Add:
+```python
+print(bigger_than_8.shape)
+```
+Now we know that 632 rows have a `Daily_Usage_Hours` value bigger than 8.
+
+Out of the 4,500 students, **632 students spend more than 8 hours** in social media everyday.
+
+### Filter with string values
+
+We can also filter based on categories. For example, in the column `Primary_Platform` all the values are names of social media.
+
+Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. If this is your first time working with the `Primary_Platform` column add the following code:
+
+```python
+primary_platform_column = df["Primary_Platform"]
+#if you would like to see the values of this column you can print it!
+print(primary_platform_column)
+```
+
+
 🚧This part of the tutorial is under construction!!!🚧
+
+### YOUR TURN: Create your own filters!!!
+
+Let's practice our filter skills! Create a filter condition that answers the following questions:
+
+- How many students use social media for less than 3 hours per day?
+- How many students use social media for more than 14 hours per day?
+- question on primary platform
+- question on primary platform
+
+Other columns you can create filters on:
+- columnname:
+- columnname:
+- columnname:
 
 
 ## References:
