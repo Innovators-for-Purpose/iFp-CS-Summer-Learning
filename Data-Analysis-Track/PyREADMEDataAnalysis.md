@@ -360,7 +360,7 @@ There are different ways to handle missing data. For example:
 
 For this tutorial, we will use the technique called Mean Substitution.
 
-### Data Cleaning: Mean Substitution Technique
+### Mean Substitution Technique
 
 Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
 
@@ -598,7 +598,7 @@ Let's start with a question:
 
 To answer this question, we'll work with the `Daily_Usage_Hours` column.
 
-### Select the column
+#### Select the column
 
 If you already created a variable for this column, you can skip this step and reuse it. Otherwise, add the following:
 
@@ -608,7 +608,7 @@ print(daily_usage_hours_column)
 ```
 Now that we created the `daily_usage_hours_column` variable we have access to all the values in the column. The **next step** is to define a condition for the filtering.
 
-### Create a filter condition
+#### Create a filter condition
 
 We want to filter **students whose daily social media usage is greater than 8 hours**.
 
@@ -631,7 +631,7 @@ df[daily_usage_hours_column > 8]
 
 The `>` operator means greater than. This filter keeps only the rows where students' daily social media usage is greater than 8 hours.
 
-### Filter the rows
+#### Filter the rows
 
 We can use the condition inside `df[...]` to keep only the rows that meet it.
 
@@ -642,7 +642,7 @@ print(more_than_8h_online)
 
 Congrats!!! You've created your first filter! The variable `more_than_8h_online` now contains only the students who spend more than 8 hours a day on social media.
 
-### Count the filter rows
+#### Count the filter rows
 
 How many students meet our condition?
 
@@ -664,7 +664,6 @@ Let's answer a new question:
 ***How many students use TikTok as their primary social media platform?***
 
 Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
-
 ```python
 primary_platform_column = df["Primary_Platform"]
 #if you would like to see the values of this column you can print it!
@@ -672,8 +671,6 @@ print(primary_platform_column)
 ```
 
 Now that we created the `primary_platform_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
-
-### A new filter condition
 
 This time, we want to find rows where the primary platform is TikTok.
 ```python
@@ -693,7 +690,7 @@ This displays only the rows where `Primary_Platform` is `"TikTok"`. To count the
 print(tiktok_users.shape[0])
 ```
 
-**IMPORTANT**: When comparing a column's text values, we need to remember two things...
+### When comparing a column's text values, we need to remember...
 
 1) **Use quotation marks** around text, for example `"TikTok"`, so Python recognizes it as a string.
 2) **Match the text in your dataset exactly** including spaces and capitalization.
@@ -705,6 +702,7 @@ print(tiktok_users.shape[0])
 
     If you write `"Tik Tok"` with a space instead, Python treats it as a string, but it won't match rows containing `"TikTok"`. The filter will simply return no matching rows if that exact value doesn't exist in the column.
 
+### Filtering with multiple conditions
 
 🚧This part of the tutorial is under construction!!!🚧
 
