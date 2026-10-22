@@ -119,7 +119,7 @@ while True:
         right_paddle.y += PADDLE_SPEED
 
     # Move ball
-    ball.x += ball_speed_x
+    ball.x += ball_speed_x 
     ball.y += ball_speed_y
 
     # Ball collisions with top/bottom walls
@@ -156,7 +156,7 @@ while True:
     pygame.draw.ellipse(screen, WHITE, ball)
 
     score_text = font.render(f"{left_score}  {right_score}", True, WHITE)
-    screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, 20))
+    screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, 40))
 
     pygame.display.flip()
     clock.tick(FPS)

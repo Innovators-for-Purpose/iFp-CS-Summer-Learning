@@ -166,7 +166,7 @@ def make_platforms():
         pygame.Rect(1980, 330, 180, 22),
         pygame.Rect(2470, 420, 210, 22),
         pygame.Rect(2860, 350, 180, 22),
-        pygame.Rect(3200, 455, 190, 22),
+        pygame.Rect(3200, 455, 190, 22), 
     ]
 ```
 
