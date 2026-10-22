@@ -14,6 +14,7 @@ WHITE = (20, 40, 60)
 BLACK = (0, 0, 0)
 GRAY = (30, 60 90)
 
+
 pygame.init()
 pygame.display.set_caption("Pong")
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
