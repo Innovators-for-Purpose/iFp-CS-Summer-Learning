@@ -42,7 +42,6 @@ In the same VS Code terminal:
 
 `python3 -m pip install pandas`
 
-
 ### Step 3: Install matplotlib
 
 Matplotlib is the Python library we will use to turn our data into graphs and visualizations.
@@ -65,9 +64,7 @@ Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension
 
 Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
-- `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
-
-- `my-jupyter-data-analysis.ipynb`: The Jupyter version of `data-analysis-tutorial.py`
+- `my-jupyter-data-analysis.ipynb`:  The provided reference sample. This file will contain the structure and behavior of your data analysis.
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
@@ -201,6 +198,15 @@ Now run your program!
 
 Another thing to **remember**: Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
+### Display the DataFrame
+
+We can use `display()` function to see our  Jupyter notebook DataFrames in a clean and interactive HTML version. 
+
+```python
+display(df)
+```
+Try using this function along side `print()` in the next steps!
+
 ## Data Management: Explore and handle the data
 
 Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
@@ -209,6 +215,7 @@ In your `my-data-analysis.ipynb` file add the following:
 
 ```python
 print(df.head())
+display(df.head())
 ```
 `head()` shows the first five rows of the DataFrame.
 
@@ -216,6 +223,7 @@ We can also ask for a specific number of rows:
 
 ```python
 print(df.head(10))
+display(df.head(10))
 ```
 This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
 
@@ -234,6 +242,7 @@ We can also look at the end of the dataset. Add:
 
 ```python
 print(df.tail())
+display(df.tail())
 ```
 `tail()` shows the last five rows.
 
@@ -241,6 +250,7 @@ Try:
 
 ```python
 print(df.tail(10))
+display(df.tail(10))
 ```
 
 How many rows can you see?
@@ -360,7 +370,7 @@ There are different ways to handle missing data. For example:
 
 For this tutorial, we will use the technique called Mean Substitution.
 
-### Data Cleaning: Mean Substitution Technique
+### Mean Substitution Technique
 
 Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
 
@@ -588,7 +598,162 @@ Before we continue playing with qualitative and quantitative data, it is always 
 
 ## Data Analysis: Filtering data
 
+One of the most useful things we can do with pandas is **filter** data. **Filtering** means selecting only the rows that match a condition.
+
+### Filter numerical values 
+
+Let's start with a question:
+
+***How many students spend more than 8 hours a day on social media?***
+
+To answer this question, we'll work with the `Daily_Usage_Hours` column.
+
+#### Select the column
+
+If you already created a variable for this column, you can skip this step and reuse it. Otherwise, add the following:
+
+```python
+daily_usage_hours_column = df["Daily_Usage_Hours"]
+print(daily_usage_hours_column)
+```
+Now that we created the `daily_usage_hours_column` variable we have access to all the values in the column. The **next step** is to define a condition for the filtering.
+
+#### Create a filter condition
+
+We want to filter **students whose daily social media usage is greater than 8 hours**.
+
+This is the general structure of a filter in pandas:
+
+```python
+df[condition]
+```
+
+Let's break it down:
+
+- `df`: the DataFrame containing our dataset
+- `[condition]`: a rule that determines which rows to keep. Pandas checks each row against the condition and returns `True` or `False`. Only rows where the condition is `True` are included in the filtered DataFrame.
+
+This is how our condition would look like:
+
+```python
+df[daily_usage_hours_column > 8]
+```
+
+The `>` operator means greater than. This filter keeps only the rows where students' daily social media usage is greater than 8 hours.
+
+#### Filter the rows
+
+We can use the condition inside `df[...]` to keep only the rows that meet it.
+
+```python
+more_than_8h_online = df[daily_usage_hours_column > 8]
+print(more_than_8h_online)
+```
+
+Congrats!!! You've created your first filter! The variable `more_than_8h_online` now contains only the students who spend more than 8 hours a day on social media.
+
+#### Count the filter rows
+
+How many students meet our condition?
+
+We can use `.shape` to find the dimensions of a DataFrame. It returns a **tuple** containing the number of rows and columns. The first value of the tuple, `shape[0]`, tells us how many rows there are.
+
+Add the following code:
+
+```python
+print(more_than_8h_online.shape[0])
+```
+Now we know that out of the 4,500 students, ***632 students spend more than 8 hours*** in social media everyday.
+
+### Filter with text values
+
+We can also filter data using text values, for example social media platform names. 
+
+Let's answer a new question:
+
+***How many students use TikTok as their primary social media platform?***
+
+Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
+```python
+primary_platform_column = df["Primary_Platform"]
+#if you would like to see the values of this column you can print it!
+print(primary_platform_column)
+```
+
+Now that we created the `primary_platform_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
+
+This time, we want to find rows where the primary platform is TikTok.
+```python
+primary_platform_column == "TikTok"
+```
+
+The `==` operator checks whether a value is equal to another value. Just like our numerical filter, this condition returns `True` or `False` for each row.
+
+Let's apply the condition to our DataFrame:
+```python
+tiktok_users = df[primary_platform_column == "TikTok"]
+print(tiktok_users)
+```
+
+This displays only the rows where `Primary_Platform` is `"TikTok"`. To count these students, we can use:
+```python
+print(tiktok_users.shape[0])
+```
+
+### When comparing a column's text values, we need to remember...
+
+1) **Use quotation marks** around text, for example `"TikTok"`, so Python recognizes it as a string.
+2) **Match the text in your dataset exactly** including spaces and capitalization.
+    Our code:
+    ```python
+    primary_platform_column == "TikTok"
+    ```
+    checks for the exact text `"TikTok"`. Writing `primary_platform_column == TikTok` without quotation marks makes Python interpret `TikTok` as a variable name which can cause a `NameError` if that variable hasn't been defined.
+
+    If you write `"Tik Tok"` with a space instead, Python treats it as a string, but it won't match rows containing `"TikTok"`. The filter will simply return no matching rows if that exact value doesn't exist in the column.
+
+### Filtering with multiple conditions
+
+We learn how to filter data with numerical and text values, now let's combine conditions!
+
+For example, maybe we are curious to know:
+***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
+
+Remember: when combining conditions in pandas, put each condition inside parentheses.
+
+```python
+#feel free to change the names of the variables
+two_conditions = df[(df["Daily_Usage_Hours"] > 8) & 
+    (df["Sleep_Duration_Hours"] < 6)]
+
+print(two_conditions)
+#you can also display it!
+display(two_conditions)
+```
+In this condition, the `&` operator means `AND`.
+
+Let's count how many students accomplished our conditions. **how many students use social media more than 8 hours per day `AND` sleep less than 6 hours per night.**
+
+```python
+print(two_conditions.shape[0])
+```
+Now we know **518 students** use social media *more than 8 hours per day* `AND` *sleep less than 6 hours per night.*
+
 🚧This part of the tutorial is under construction!!!🚧
+
+### YOUR TURN: Create your own filters!!!
+
+Let's practice our filter skills! Create a filter condition that answers the following questions:
+
+- How many students use social media for less than 3 hours per day?
+- How many students use social media for more than 14 hours per day?
+- question on primary platform
+- question on primary platform
+
+Other columns you can create filters on:
+- columnname:
+- columnname:
+- columnname:
 
 
 ## References:
