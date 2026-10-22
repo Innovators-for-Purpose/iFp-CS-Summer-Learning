@@ -42,7 +42,6 @@ In the same VS Code terminal:
 
 `python3 -m pip install pandas`
 
-
 ### Step 3: Install matplotlib
 
 Matplotlib is the Python library we will use to turn our data into graphs and visualizations.
@@ -65,9 +64,7 @@ Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension
 
 Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
-- `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
-
-- `my-jupyter-data-analysis.ipynb`: The Jupyter version of `data-analysis-tutorial.py`
+- `my-jupyter-data-analysis.ipynb`:  The provided reference sample. This file will contain the structure and behavior of your data analysis.
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
@@ -201,6 +198,15 @@ Now run your program!
 
 Another thing to **remember**: Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
 
+### Display the DataFrame
+
+We can use `display()` function to see our  Jupyter notebook DataFrames in a clean and interactive HTML version. 
+
+```python
+display(df)
+```
+Try using this function along side `print()` in the next steps!
+
 ## Data Management: Explore and handle the data
 
 Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
@@ -209,6 +215,7 @@ In your `my-data-analysis.ipynb` file add the following:
 
 ```python
 print(df.head())
+display(df.head())
 ```
 `head()` shows the first five rows of the DataFrame.
 
@@ -216,6 +223,7 @@ We can also ask for a specific number of rows:
 
 ```python
 print(df.head(10))
+display(df.head(10))
 ```
 This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
 
@@ -234,6 +242,7 @@ We can also look at the end of the dataset. Add:
 
 ```python
 print(df.tail())
+display(df.tail())
 ```
 `tail()` shows the last five rows.
 
@@ -241,6 +250,7 @@ Try:
 
 ```python
 print(df.tail(10))
+display(df.tail(10))
 ```
 
 How many rows can you see?
@@ -709,23 +719,25 @@ We learn how to filter data with numerical and text values, now let's combine co
 For example, maybe we are curious to know:
 ***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
 
-In the past example we created the variable `more_than_8h_online`, this variable has our first conditon ready to use. 
-
-Let's create a variable for our second condition:
-
-```python
-sleep_less_than_6h = (df["Sleep_Duration_Hours"] < 6)
-```
-Now we have our 2 conditions ready to be combined! Remember: when combining conditions in pandas, put each condition inside parentheses.
+Remember: when combining conditions in pandas, put each condition inside parentheses.
 
 ```python
 #feel free to change the names of the variables
-two_conditions = df[
-    (more_than_8h_online) & (sleep_less_than_6h)
-    ]
+two_conditions = df[(df["Daily_Usage_Hours"] > 8) & 
+    (df["Sleep_Duration_Hours"] < 6)]
+
 print(two_conditions)
+#you can also display it!
+display(two_conditions)
 ```
 In this condition, the `&` operator means `AND`.
+
+Let's count how many students accomplished our conditions. **how many students use social media more than 8 hours per day `AND` sleep less than 6 hours per night.**
+
+```python
+print(two_conditions.shape[0])
+```
+Now we know **518 students** use social media *more than 8 hours per day* `AND` *sleep less than 6 hours per night.*
 
 🚧This part of the tutorial is under construction!!!🚧
 
