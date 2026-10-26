@@ -770,14 +770,39 @@ Create a multiple condition filter that can answer this question:
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
 
-#### Filter 5: 4 conditions challenge
+#### Filter 5: Challenge!
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
 ## Data Analysis: Sorting data
 
+We have learned how to explore, clean and filter our dataser. Now, let's learn how to **sort data**!
 
+**Sorting** means organizing the rows of our DataFrame in a particular order. For example, we might want to arrange the students from youngest to oldest or from students who spend more time on social media and students who spend less time.
 
+### Sorting numerical values
+
+Let's start with a question:
+- Which students spend **the most hours** on social media each day?
+
+We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`. By default, `sort_values()` arranges numerical values in **ascending order**, from the smallest to the largest.
+
+Add the following code to you jupyter notebook:
+
+```python
+sorted_daily_usage_hours = df.sort_values("Daily_Usage_Hours")
+
+print(sorted_daily_usage_hours)
+display(sorted_daily_usage_hours)
+```
+
+That line of code looks kind of long, let's break it down:
+- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame.
+- `df`: The DataFrame containing our dataset.
+- `.sort_values()`: The pandas method that sorts the rows.
+- `"Daily_Usage_Hours"`: The column we want to use to sort the data.
+
+s
 
 🚧This part of the tutorial is under construction!!!🚧
 
@@ -811,6 +836,11 @@ Your `my-data-analysis.ipynb` file should now contain code for:
 Congrats!!! Look how much you learn!!!! Now you are ready to create data analysis with your own data!
 
 ## Future Steps
+
+Now you can use all this knowledge to:
+- Create your own data analysis and visualization
+- Start learning about Machine Learning models
+Check the next tutorial soon!
 
 ## References
 
