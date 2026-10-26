@@ -727,7 +727,7 @@ two_conditions = df[(df["Daily_Usage_Hours"] > 8) &
     (df["Sleep_Duration_Hours"] < 6)]
 
 print(two_conditions)
-#you can also display it!
+#you can also display it! 
 display(two_conditions)
 ```
 In this condition, the `&` operator means `AND`.
@@ -739,22 +739,47 @@ print(two_conditions.shape[0])
 ```
 Now we know **518 students** use social media *more than 8 hours per day* `AND` *sleep less than 6 hours per night.*
 
+### YOUR TURN: Create 5 multiple condition filters!!!
+
+Let's practice our filter skills! Create a filter condition that answers the following questions. Remember:
+
+- Create a new variable to store your filtered DataFrame
+- Use `&` when you want **both conditions** to be true
+- Put each conditions inside parentheses
+- Use `df[condition]` to filter the rows
+- Use `print()` and `display()` to show the filtered results
+- Use `.shape[0]` to count how many students meet your conditions
+- For each challenge:
+
+#### Filter 1: Social media AND Sleep duration
+
+Create a multiple condition filter that can answer this question: ***How many students use social media for more than 6 hours per day AND sleep for less than 7 hours per night?***
+
+#### Filter 2: Social media AND Mental health
+
+Create a multiple condition filter that can answer this question: ***How many students use social media for more than 5 hours per day AND have a mental health score greater than 7?***
+
+#### Filter 3: Prefered platform AND Daily usage
+
+Create a multiple condition filter that can answer this question: ***How many students use social media for more than 6 hours per day AND use Instagram as their primary social media platform?***
+
+#### Filter 4: Social media AND Academic performance
+
+Create a multiple condition filter that can answer this question: ***How many students use social media for less than 3 hours per day AND have an academic performance score greater than 7?***
+
+#### Filter 5: 4 conditions challenge
+Create a multiple condition filter that can answer this question: ***How many students use social media for more than 5 hours per day, sleep for less than 7 hours per night, have a mental health score greater than 5, AND have Youtube as their primary social media platform?***
+
 🚧This part of the tutorial is under construction!!!🚧
+## Data Analysis: Sorting data
 
-### YOUR TURN: Create your own filters!!!
 
-Let's practice our filter skills! Create a filter condition that answers the following questions:
 
-- How many students use social media for less than 3 hours per day?
-- How many students use social media for more than 14 hours per day?
-- question on primary platform
-- question on primary platform
+## Data Analysis: Grouping data
 
-Other columns you can create filters on:
-- columnname:
-- columnname:
-- columnname:
 
+
+## Data Visualization!
 
 ## References:
 
