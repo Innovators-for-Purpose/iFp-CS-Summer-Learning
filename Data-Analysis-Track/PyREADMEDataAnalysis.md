@@ -1599,6 +1599,7 @@ Create a multiple condition filter that can answer this question:
 
 
 
+
 🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Analysis: Grouping data
@@ -1607,34 +1608,32 @@ Create a multiple condition filter that can answer this question:
 
 ## Data Visualization!
 
-## Data Interpretation: What the graphics can tell us?
+## Data Interpretation: What the graphs can tell us?
 
-## Putting It Together
+## Putting It Together!
 
 Your `my-data-analysis.ipynb` file should now contain code for:
 
 1. Importing pandas and matplotlib
-2. Loading the CSV dataset
-3. Exploring the first and last rows
-4. Checking theß size of the dataset
-5. Looking at column names
-6. Checking the data types
-7. Cleaning the missing values
-8. Calculating summary statistics
-9. Selecting columns
-10. Calculating averages
-11. Counting categories
-12. Filtering rows
-13. Sorting data
-14. Grouping data
-15. Creating visualizations
-16. Asking and investigating your own question
+2. Data Management: Loading the CSV dataset
+3. Data Management: Exploring the first and last rows
+4. Data Management: Checking theß size of the dataset
+5. Data Analysis: Looking at column names
+6. Data Analysis: Checking the data types
+7. Data Cleaning: Handle the missing values
+8. Data Analysis: Calculating summary statistics
+9. Data Analysis: Counting categories
+10. Data Analysis: Filtering rows
+11. Data Analysis: Sorting data
+12. Data Analysis: Grouping data
+13. Data Visualization: Creating your own graphs!
+14. Data Interpretation: Understanding the data from our graphs
 
-Congrats!!! Look how much you learn!!!!
+Congrats!!! Look how much you learn!!!! Now you are ready to create data analysis with your own data!
 
-## Your Challenge
+## Future Steps
 
-## References:
+## References
 
 To create this tutorial I used the following references:
 
@@ -1660,7 +1659,13 @@ To create this tutorial I used the following references:
 =======
 - MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf), Fall 2022
 
+<<<<<<< HEAD
 >>>>>>> 9924c9b (finish with data cleaning strategy)
+=======
+- Pavlos Protopapas and Natesh Pillai, Harvard SEAS, [CS109a Introduction to PANDAS](https://harvard-iacs.github.io/2021-CS109A/lectures/lecture02/notebook-3/), Fall 2021
+
+
+>>>>>>> 0fe1a18 (Start sorting + update references + draft of next steps)
 
 
 
