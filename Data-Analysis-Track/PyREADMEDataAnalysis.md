@@ -754,25 +754,26 @@ Let's practice our filter skills! Create a filter condition that answers the fol
 #### Filter 1: Social media AND Sleep duration
 
 Create a multiple condition filter that can answer this question: 
-*How many students use **social media for more than 6 hours** per day AND **sleep for less than 7 hours** per night?*
+- *How many students use **social media for more than 6 hours** per day AND **sleep for less than 7 hours** per night?*
 
 #### Filter 2: Social media AND Mental health
 
 Create a multiple condition filter that can answer this question: 
-*How many students use **social media for more than 5 hours** per day AND have a **mental health score greater than 7**?*
+- *How many students use **social media for more than 5 hours** per day AND have a **mental health score greater than 7**?*
 
 #### Filter 3: Prefered platform AND Daily usage
 
 Create a multiple condition filter that can answer this question: 
-*How many students use **social media for more than 6 hours** per day AND use **Instagram as their primary social media** platform?*
+- *How many students use **social media for more than 6 hours** per day AND use **Instagram as their primary social media** platform?*
 
 #### Filter 4: Social media AND Academic performance
 
 Create a multiple condition filter that can answer this question: 
-*How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
+- *How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
 
 #### Filter 5: 4 conditions challenge
-Create a multiple condition filter that can answer this question: *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
+Create a multiple condition filter that can answer this question: 
+- *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
 🚧This part of the tutorial is under construction!!!🚧
 ## Data Analysis: Sorting data
