@@ -749,7 +749,6 @@ Let's practice our filter skills! Create a filter condition that answers the fol
 - Use `df[condition]` to filter the rows
 - Use `print()` and `display()` to show the filtered results
 - Use `.shape[0]` to count how many students meet your conditions
-- For each challenge:
 
 #### Filter 1: Social media AND Sleep duration
 
@@ -775,16 +774,44 @@ Create a multiple condition filter that can answer this question:
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
-🚧This part of the tutorial is under construction!!!🚧
 ## Data Analysis: Sorting data
 
 
+
+🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Analysis: Grouping data
 
 
 
 ## Data Visualization!
+
+## Data Interpretation: What the graphics can tell us?
+
+## Putting It Together
+
+Your `my-data-analysis.ipynb` file should now contain code for:
+
+1. Importing pandas and matplotlib
+2. Loading the CSV dataset
+3. Exploring the first and last rows
+4. Checking theß size of the dataset
+5. Looking at column names
+6. Checking the data types
+7. Cleaning the missing values
+8. Calculating summary statistics
+9. Selecting columns
+10. Calculating averages
+11. Counting categories
+12. Filtering rows
+13. Sorting data
+14. Grouping data
+15. Creating visualizations
+16. Asking and investigating your own question
+
+Congrats!!! Look how much you learn!!!!
+
+## Your Challenge
 
 ## References:
 
