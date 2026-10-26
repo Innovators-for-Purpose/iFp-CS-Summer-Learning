@@ -74,7 +74,7 @@ my-data-analysis.py
 
 ### `my-data-analysis.py`
 
-Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
+Your `my-data-analysis.ipynb` file will contain the code you write throughout this tutorial.
 
 You will organize your program into:
 
