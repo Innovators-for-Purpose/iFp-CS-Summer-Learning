@@ -61,6 +61,7 @@ def draw_background(surface, camera_x):
         pygame.draw.circle(surface, CLOUD, (x, cloud_y), 25)
         pygame.draw.circle(surface, CLOUD, (x + 28, cloud_y - 10), 34)
         pygame.draw.circle(surface, CLOUD, (x + 60, cloud_y), 25)
+    #offset
     for offset, color, height in ((0.18, HILL_FAR, 110), (0.32, HILL_NEAR, 160)):
         points = [(-200, HEIGHT), (-200, HEIGHT - height)]
         for world_x in range(-200, WORLD_WIDTH + 400, 260):
