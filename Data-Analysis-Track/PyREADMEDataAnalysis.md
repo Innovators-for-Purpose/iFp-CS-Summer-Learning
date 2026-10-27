@@ -785,7 +785,7 @@ We have learned how to explore, clean and filter our dataser. Now, let's learn h
 Let's start with a question:
 - Which students spend **the most hours** on social media each day?
 
-We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`. By default, `sort_values()` arranges numerical values in **ascending order**, from the smallest to the largest.
+We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`.
 
 Add the following code to you jupyter notebook:
 
@@ -797,12 +797,12 @@ display(sorted_daily_usage_hours)
 ```
 
 That line of code looks kind of long, let's break it down:
-- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame.
-- `df`: The DataFrame containing our dataset.
-- `.sort_values()`: The pandas method that sorts the rows.
-- `"Daily_Usage_Hours"`: The column we want to use to sort the data.
+- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame
+- `df`: The DataFrame containing our dataset
+- `.sort_values()`: The pandas method that sorts the rows
+- `"Daily_Usage_Hours"`: The column we want to use to sort the data
 
-s
+We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
 
 🚧This part of the tutorial is under construction!!!🚧
 
