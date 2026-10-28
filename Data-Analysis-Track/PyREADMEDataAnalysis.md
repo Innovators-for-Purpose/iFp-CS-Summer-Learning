@@ -804,6 +804,38 @@ That line of code looks kind of long, let's break it down:
 
 We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
 
+Let's make our filter in **descending order**, from the largest to the smallest daily usage hours:
+
+```python
+descending_daily_usage_hours = df.sort_values(
+    "Daily_Usage_Hours",
+    ascending=False
+)
+
+print(descending_daily_usage_hours)
+display(descending_daily_usage_hours)
+```
+
+The parameter `ascending=False` tells pandas to sort the values in **descending order**, from the largest to the smallest. Now, students who spend the most hours on social media appear first!
+
+**REMEMBER:**
+- `ascending=True`: Smallest to largest (the default)
+- `ascending=False`: Largest to smallest
+
+### Sorting text values
+
+We can also sort text values. For example, we can arrange the student's answers based on their primary social media platform.
+
+```python
+sorted_platforms = df.sort_values("Primary_Platform")
+
+print(sorted_platforms)
+display(sorted_platforms)
+```
+By default, pandas arranges text values alphabetically. When you run this code, first you will see all the students whose `Primary_Platform` is Instagram.
+
+### YOUR TURN: Practice sorting data!
+
 🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Analysis: Grouping data
