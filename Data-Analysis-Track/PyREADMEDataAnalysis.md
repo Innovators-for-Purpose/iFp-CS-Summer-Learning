@@ -824,6 +824,18 @@ The parameter `ascending=False` tells pandas to sort the values in **descending 
 
 ### Sorting text values
 
+We can also sort text values. For example, we can arrange the student's answers based on their primary social media platform.
+
+```python
+sorted_platforms = df.sort_values("Primary_Platform")
+
+print(sorted_platforms)
+display(sorted_platforms)
+```
+By default, pandas arranges text values alphabetically. When you run this code, first you will see all the students whose `Primary_Platform` is Instagram.
+
+### YOUR TURN: Practice sorting data!
+
 🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Analysis: Grouping data
