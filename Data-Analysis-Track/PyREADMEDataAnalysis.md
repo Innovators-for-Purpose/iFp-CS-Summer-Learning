@@ -750,27 +750,27 @@ Let's practice our filter skills! Create a filter condition that answers the fol
 - Use `print()` and `display()` to show the filtered results
 - Use `.shape[0]` to count how many students meet your conditions
 
-#### Filter 1: Social media AND Sleep duration
+#### Challenge 1: Social media AND Sleep duration
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 6 hours** per day AND **sleep for less than 7 hours** per night?*
 
-#### Filter 2: Social media AND Mental health
+#### Challenge 2: Social media AND Mental health
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day AND have a **mental health score greater than 7**?*
 
-#### Filter 3: Prefered platform AND Daily usage
+#### Challenge 3: Prefered platform AND Daily usage
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 6 hours** per day AND use **Instagram as their primary social media** platform?*
 
-#### Filter 4: Social media AND Academic performance
+#### Challenge 4: Social media AND Academic performance
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
 
-#### Filter 5: Challenge!
+#### Challenge 5: Challenge!
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
@@ -834,12 +834,51 @@ display(sorted_platforms)
 ```
 By default, pandas arranges text values alphabetically. When you run this code, first you will see all the students whose `Primary_Platform` is Instagram.
 
-### YOUR TURN: Practice sorting data!
+### YOUR TURN: Practice sorting data
 
-🚧This part of the tutorial is under construction!!!🚧
+Let's practice our sorting skills! Create a new variable for each question and use `sort_values()` to arrange the rows.
+
+#### Challenge 1: Sorting daily social media usage
+
+Sort the dataset by `Daily_Usage_Hours` in ascending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
+
+- What is the `Student_ID` of the student that appears first in the dataframe? 
+- How much time its their daily usage hour? 
+- What is the lowest daily usage value?
+
+#### Challenge 2: Sorting sleep duration
+
+Sort the dataset by `Sleep_Duration_Hours` in descending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
+- What is the `Student_ID` of the student that appears first in the dataframe? 
+- What is the highest sleep duration?
+- What is the lowest sleep duration?
+
+#### Challenge 3: Sorting academic performance
+
+Sort the dataset by `Academic_Performance_GPA` in descending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
+- What is the `Student_ID` of the student that has the highest GPA and it is a High School student? 
+- What is the `Student_ID` of the student that has the highest GPA and it is an Undergraduate student? 
+- What is the `Student_ID` of the student that has the highest GPA and it is an Postgraduate student? 
+
+#### Challenge 4: Sorting social media prefered platforms
+
+Sort the dataset alphabetically by `Primary_Platform`. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
+- Which platform appears first alphabetically?
+
+Try sorting again `Primary_Platform` but now in descending order! Remember to use: 
+```python
+ascending=False
+```
+- Which platform appears first now?
+
+#### Challenge 5: First 10 rows
+
+Can you sort `Daily_Usage_Hours` in descending order and then display only the first 10 rows? 
+**HINT**: Review the `head()` method!
 
 ## Data Analysis: Grouping data
 
+🚧This part of the tutorial is under construction!!!🚧
 
 
 ## Data Visualization!
