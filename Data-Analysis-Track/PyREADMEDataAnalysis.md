@@ -878,6 +878,12 @@ Can you sort `Daily_Usage_Hours` in descending order and then display only the f
 
 ## Data Analysis: Grouping data
 
+Now that we know how to sort our data, let's learn how to **group** it!
+
+**Grouping** means organizing rows that share the same value in a column. This helps us compare categories and discover patterns in our dataset.
+
+
+
 🚧This part of the tutorial is under construction!!!🚧
 
 
