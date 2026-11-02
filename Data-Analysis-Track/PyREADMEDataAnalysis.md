@@ -948,9 +948,29 @@ Now we can compare the average daily social media usage across different platfor
 
 ### Using grouping to count
 
+Sometimes instead of calculating averages, we just want to know how many students belong to each group.
 
+For example:
 
+- How many **students** belong to **each academic level**?
 
+We can use `groupby()` together with `.size()` to count the number of rows in each group.
+```python
+group_by_level = df.groupby("Academic_Level").size()
+print(group_by_level)
+```
+
+Let's break it down:
+- `group_by_level`: The variable where we store the results.
+- `df`: The DataFrame containing our dataset.
+- `.groupby("Academic_Level")`: Groups students according to their academic level.
+- `.size()`: Counts how many rows (students) belong to each group.
+
+Now we can see how many students are in each academic level!
+
+**GOOD PRACTICE:** Remember that we previously learned about `value_counts()`. That method can also count how many times each category appears in a column. However, `groupby()` is especially useful when we want to organize our data into groups and perform additional calculations, such as finding averages or maximum values.
+
+### YOUR TURN: Practice grouping data!
 
 
 🚧This part of the tutorial is under construction!!!🚧
