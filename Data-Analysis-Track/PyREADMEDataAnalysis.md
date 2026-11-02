@@ -1071,21 +1071,27 @@ Look at your graph! ***Which platform has the tallest bar? Which has the shortes
 
 #### Challenge 1: Primary social media platforms
 
-#### Challenge 2: 
+#### Challenge 2: Academic levels
 
-#### Challenge 3: 
+#### Challenge 3: Daily social media usage
 
-#### Challenge 4: 
+#### Challenge 4: Sleep duration
 
-#### Challenge 5: 
-
-
+#### Challenge 5: Compare average usage across platforms
 
 
 
 🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Interpretation: What the graphs can tell us?
+
+Take a moment to reflect on the graphs you created:
+- What patterns did you notice?
+- Which results surprised you?
+- Did any graph help you answer a question more clearly than a table?
+- What additional questions would you like to investigate?
+
+**REMEMBER:** Visualizations help us explore patterns, but they do not automatically explain why those patterns exist. We need to interpret our results carefully and avoid assuming that one factor causes another just because they appear related.
 
 ## Putting It Together!
 
