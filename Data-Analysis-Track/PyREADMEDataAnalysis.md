@@ -1098,19 +1098,40 @@ In a histogram, each bar represents a range of numerical values. The height of e
 
 ### YOUR TURN: Create your own visualizations!
 
+Now it is your turn to communicate what you have learned through graphs! For each challenge, write the code to create a visualization. Remember to include a title, labels for the axes, and `plt.show()`.
+
 #### Challenge 1: Primary social media platforms
+Create a bar chart showing the number of students who use each `Primary_Platform`.
+
+- Which platform has the most students?
+- Which platform has the fewest students?
 
 #### Challenge 2: Academic levels
+Create a bar chart showing the number of students in each `Academic_Level`.
+
+- Which academic level appears most often in the dataset?
 
 #### Challenge 3: Daily social media usage
+Create a histogram using the `Daily_Usage_Hours` column.
+
+- Which range of daily usage hours appears most frequently?
+- Are most students concentrated in a small range of values, or are the values spread out?
 
 #### Challenge 4: Sleep duration
+Create a histogram using the `Sleep_Duration_Hours` column.
+
+- What can you observe about students' sleep duration?
+- Does the distribution look similar to the distribution of daily social media usage?
 
 #### Challenge 5: Compare average usage across platforms
+Create a bar chart showing the average `Daily_Usage_Hours` for each `Primary_Platform`.
 
+Hint: You can combine the methods you have learned:
 
-
-🚧This part of the tutorial is under construction!!!🚧
+1. Group the data by `Primary_Platform`.
+2. Calculate the mean of `Daily_Usage_Hours`.
+3. Use `.plot(kind="bar")` to create your graph.
+4. Add a title and axis labels.
 
 ## Data Interpretation: What the graphs can tell us?
 
