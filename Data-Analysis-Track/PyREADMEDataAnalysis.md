@@ -972,6 +972,24 @@ Now we can see how many students are in each academic level!
 
 ### YOUR TURN: Practice grouping data!
 
+Let's practice our grouping skills! For each challenge:
+
+- Create a new variable to store your grouped results.
+- Use `groupby()` to organize your data.
+- Choose the appropriate pandas method to calculate the results.
+- Use `print()` to display your results.
+- Analyze what the data is telling you!
+
+#### Challenge 1: Grouping students by academic level
+
+#### Challenge 2: Grouping social media usage by platform
+
+#### Challenge 3: Grouping sleep duration by academic level
+
+#### Challenge 4: Grouping mental health scores by gender
+
+#### Challenge 5: Big Challenge
+
 
 🚧This part of the tutorial is under construction!!!🚧
 ## Data Visualization!
