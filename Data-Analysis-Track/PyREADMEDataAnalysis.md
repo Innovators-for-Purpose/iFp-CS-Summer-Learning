@@ -3,17 +3,10 @@
 Welcome to iFp's Python coding practice 3! In this session you will practice Python by analyzing and visualizing the dataset of "Social Media Impact of Life."
 
 ## What you'll do
-<<<<<<< HEAD
-- Build your own version of `my-data-analysis.ipynb`
-- Load and explore a CSV dataset with information of 4,500 students
-- Filter, sort, count, and group data to answer questions
-- Investigate patterns in the data
-=======
 - Build your own version of `my-data-analysis.ipynb`,
 - Load and explore a CSV dataset with information of 4,500 students.
 - Filter, sort, count, and group data to answer questions.
 - Investigate patterns in the data.
->>>>>>> bela
 - Create your own data analysis!
 
 ## What you'll learn
@@ -610,12 +603,7 @@ One of the most useful things we can do with pandas is **filter** data. **Filter
 ### Filter numerical values 
 
 Let's start with a question:
-<<<<<<< HEAD
-
-***How many students spend more than 8 hours a day on social media?***
-=======
 - **How many students spend more than 8 hours a day on social media?**
->>>>>>> bela
 
 To answer this question, we'll work with the `Daily_Usage_Hours` column.
 
@@ -641,11 +629,7 @@ df[condition]
 
 Let's break it down:
 
-<<<<<<< HEAD
-- `df`: the DataFrame containing our dataset
-=======
 - `df`: the DataFrame containing our dataset.
->>>>>>> bela
 - `[condition]`: a rule that determines which rows to keep. Pandas checks each row against the condition and returns `True` or `False`. Only rows where the condition is `True` are included in the filtered DataFrame.
 
 This is how our condition would look like:
@@ -685,12 +669,7 @@ Now we know that out of the 4,500 students, ***632 students spend more than 8 ho
 We can also filter data using text values, for example social media platform names. 
 
 Let's answer a new question:
-<<<<<<< HEAD
-
-***How many students use TikTok as their primary social media platform?***
-=======
 - **How many students use TikTok as their primary social media platform?**
->>>>>>> bela
 
 Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
 ```python
@@ -736,11 +715,7 @@ print(tiktok_users.shape[0])
 We learn how to filter data with numerical and text values, now let's combine conditions!
 
 For example, maybe we are curious to know:
-<<<<<<< HEAD
-***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
-=======
 - **How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night**
->>>>>>> bela
 
 Remember: when combining conditions in pandas, put each condition inside parentheses.
 
@@ -766,16 +741,6 @@ Now we know **518 students** use social media *more than 8 hours per day* `AND` 
 
 Let's practice our filter skills! Create a filter condition that answers the following questions. Remember:
 
-<<<<<<< HEAD
-- Create a new variable to store your filtered DataFrame
-- Use `&` when you want **both conditions** to be true
-- Put each conditions inside parentheses
-- Use `df[condition]` to filter the rows
-- Use `print()` and `display()` to show the filtered results
-- Use `.shape[0]` to count how many students meet your conditions
-
-#### Filter 1: Social media AND Sleep duration
-=======
 - Create a new variable to store your filtered DataFrame.
 - Use `&` when you want **both conditions** to be true.
 - Put each conditions inside parentheses.
@@ -784,43 +749,26 @@ Let's practice our filter skills! Create a filter condition that answers the fol
 - Use `.shape[0]` to count how many students meet your conditions.
 
 #### Challenge 1: Social media AND Sleep duration
->>>>>>> bela
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 6 hours** per day AND **sleep for less than 7 hours** per night?*
 
-<<<<<<< HEAD
-#### Filter 2: Social media AND Mental health
-=======
 #### Challenge 2: Social media AND Mental health
->>>>>>> bela
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day AND have a **mental health score greater than 7**?*
 
-<<<<<<< HEAD
-#### Filter 3: Prefered platform AND Daily usage
-=======
 #### Challenge 3: Prefered platform AND Daily usage
->>>>>>> bela
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 6 hours** per day AND use **Instagram as their primary social media** platform?*
 
-<<<<<<< HEAD
-#### Filter 4: Social media AND Academic performance
-=======
 #### Challenge 4: Social media AND Academic performance
->>>>>>> bela
 
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
 
-<<<<<<< HEAD
-#### Filter 5: Challenge!
-=======
 #### Challenge 5: Challenge!
->>>>>>> bela
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
@@ -835,11 +783,7 @@ We have learned how to explore, clean and filter our dataser. Now, let's learn h
 Let's start with a question:
 - Which students spend **the most hours** on social media each day?
 
-<<<<<<< HEAD
-We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`. By default, `sort_values()` arranges numerical values in **ascending order**, from the smallest to the largest.
-=======
 We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`.
->>>>>>> bela
 
 Add the following code to you jupyter notebook:
 
@@ -856,27 +800,12 @@ That line of code looks kind of long, let's break it down:
 - `.sort_values()`: The pandas method that sorts the rows.
 - `"Daily_Usage_Hours"`: The column we want to use to sort the data.
 
-<<<<<<< HEAD
-s
-
-🚧This part of the tutorial is under construction!!!🚧
-
-## Data Analysis: Grouping data
-
-
-
-## Data Visualization!
-
-## Data Interpretation: What the graphs can tell us?
-
-=======
 We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
 
 Let's make our filter in **descending order**, from the largest to the smallest daily usage hours:
 
 ```python
-descending_daily_usage_hours = df.sort_values(
-    "Daily_Usage_Hours",
+descending_daily_usage_hours = df.sort_values( "Daily_Usage_Hours",
     ascending=False
 )
 
@@ -1228,7 +1157,6 @@ plt.savefig("my-data-analysis.png")
 plt.show()
 ```
 
->>>>>>> bela
 ## Putting It Together!
 
 Your `my-data-analysis.ipynb` file should now contain code for:
@@ -1253,13 +1181,8 @@ Congrats!!! Look how much you learn!!!! Now you are ready to create data analysi
 ## Future Steps
 
 Now you can use all this knowledge to:
-<<<<<<< HEAD
-- Create your own data analysis and visualization
-- Start learning about Machine Learning models
-=======
 - Create your own data analysis and visualization.
 - Start learning about Machine Learning models.
->>>>>>> bela
 Check the next tutorial soon!
 
 ## References
