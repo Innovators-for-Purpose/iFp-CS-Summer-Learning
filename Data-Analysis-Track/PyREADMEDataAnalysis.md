@@ -1065,6 +1065,19 @@ In a bar chart, each bar represents a category. The height of each bar represent
 
 Look at your graph! ***Which platform has the tallest bar? Which has the shortest?***
 
+### Creating a histogram
+
+### YOUR TURN: Create your own visualizations!
+
+#### Challenge 1: Primary social media platforms
+
+#### Challenge 2: 
+
+#### Challenge 3: 
+
+#### Challenge 4: 
+
+#### Challenge 5: 
 
 
 
