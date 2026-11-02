@@ -1022,8 +1022,55 @@ Let's investigate the relationship between late-night social media usage and sle
 
 REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
-🚧This part of the tutorial is under construction!!!🚧
 ## Data Visualization!
+
+We have learned how to explore, clean, filter, sort, and group our dataset. Now, let's turn our results into **visualizations**!
+
+A **data visualization** is a visual representation of information, such as a bar chart, histogram, or line graph. Visualizations can help us identify patterns, compare categories, and communicate our findings more clearly.
+
+In this tutorial, we will use the `matplotlib` library to create graphs. Remember that **we imported matplotlib** at the beginning of our notebook! We assigned the shorter name `plt` to matplotlib so we can use its functions more easily.
+
+### Creating a bar chart
+
+Let's start with a question:
+- Which **primary social media platforms** are **most common** among the students in our dataset?
+
+Earlier in the tutorial, we used `value_counts()` to count how often each category appeared in a column. We can use those results to create a bar chart!
+
+Add the following code:
+```python
+platform_counts = df["Primary_Platform"].value_counts()
+
+platform_counts.plot(kind="bar")
+
+plt.title("Students by Primary Social Media Platform")
+plt.xlabel("Social Media Platform")
+plt.ylabel("Number of Students")
+
+plt.show()
+```
+
+Run the code and look at the graph!
+This count is kind of long, let's understand what each line does:
+
+- `platform_counts`: The variable where we store our counting.
+- `df["Primary_Platform"].value_counts()`: Counts how many students use each platform as their primary platform.
+- `platform_counts.plot(kind="bar")`: Creates a bar chart from the counts.
+- `plt.title()`: Adds a title to the graph.
+- `plt.xlabel()`: Adds a label to the horizontal axis (the x-axis).
+- `plt.ylabel()`: Adds a label to the vertical axis (the y-axis).
+- `plt.show()`: Displays the graph.
+
+In a bar chart, each bar represents a category. The height of each bar represents the number of students in that category. 
+
+Look at your graph! ***Which platform has the tallest bar? Which has the shortest?***
+
+
+
+
+
+
+🚧This part of the tutorial is under construction!!!🚧
 
 ## Data Interpretation: What the graphs can tell us?
 
