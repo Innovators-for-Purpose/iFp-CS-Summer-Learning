@@ -981,15 +981,46 @@ Let's practice our grouping skills! For each challenge:
 - Analyze what the data is telling you!
 
 #### Challenge 1: Grouping students by academic level
+Let's explore the academic levels represented in our dataset. Use `groupby()` and `.size()` to answer the following questions:
+
+- How many High School students are in the dataset?
+- How many Undergraduate students are in the dataset?
+- How many Postgraduate students are in the dataset?
+
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 #### Challenge 2: Grouping social media usage by platform
+Let's investigate the relationship between social media platforms and daily usage. Group the students by `Primary_Platform` and calculate the average `Daily_Usage_Hours` for each platform. Answer the following questions:
+
+- Which social media platform has the highest average daily usage?
+- Which platform has the lowest average daily usage?
+
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 #### Challenge 3: Grouping sleep duration by academic level
+Let's investigate how sleep duration compares across different academic levels. Group students by `Academic_Level` and calculate the average `Sleep_Duration_Hours` for each group. Answer the following questions:
+
+- Which academic level has the highest average sleep duration?
+- Which academic level has the lowest average sleep duration?
+
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 #### Challenge 4: Grouping mental health scores by gender
+Let's explore the average mental health scores across different gender groups.Group students by `Gender` and calculate the average `Mental_Health_Index` for each group. Answer the following questions:
+
+- What is the average mental health index for each gender group?
+- Which group has the highest average score?
+
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 #### Challenge 5: Big Challenge
+Let's investigate the relationship between late-night social media usage and sleep duration! Group students by `Late_Night_Usage` and calculate the average `Sleep_Duration_Hours` for each group. Answer the following questions:
 
+- What is the average sleep duration for students who use social media late at night?
+- What is the average sleep duration for students who do not use social media late at night?
+- Which group has the higher average sleep duration?
+
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 🚧This part of the tutorial is under construction!!!🚧
 ## Data Visualization!
