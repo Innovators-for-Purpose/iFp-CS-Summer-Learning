@@ -910,6 +910,8 @@ I know this may look like a lot of code, so let's break it down:
 
 **IMPORTANT:** We are grouping students using the `Age` column, but calculating the average using the `Daily_Usage_Hours` column!
 
+#### Use new methods within the group data
+
 We can also use other mathematical methods after grouping our data:
 - `.mean()`: Calculates the average.
 - `.sum()`: Adds all the values together.
@@ -922,13 +924,36 @@ For example, if we want to know the highest daily social media usage recorded fo
 highest_usage_by_age = df.groupby("Age")["Daily_Usage_Hours"].max()
 display(highest_usage_by_age)
 ```
+### Grouping text values
 
-### Using grouping to 
+We can also group data using text values! For example, we might be curious to know:
+
+- How many **hours** do students who use **each social media platform** spend online **every day**?
+
+This time, we will group students according to their primary social media platform. Let's look at the columns we will use:
+```python
+print(df[["Primary_Platform", "Daily_Usage_Hours"]])
+```
+
+Now let's use `groupby()` again:
+```python
+group_by_platform = df.groupby("Primary_Platform")["Daily_Usage_Hours"].mean()
+
+print(group_by_platform)
+```
+
+Now we can compare the average daily social media usage across different platforms! Notice that our code looks almost the same as the previous example. The only difference is that we are grouping students using `Primary_Platform` instead of `Age`.
+
+**IMPORTANT:** We can group our data using both numerical and text columns. What matters is choosing the column that will help us answer our question!
+
+### Using grouping to count
+
+
+
+
 
 
 🚧This part of the tutorial is under construction!!!🚧
-
-
 ## Data Visualization!
 
 ## Data Interpretation: What the graphs can tell us?
