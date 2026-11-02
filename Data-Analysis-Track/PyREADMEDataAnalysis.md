@@ -1066,6 +1066,35 @@ In a bar chart, each bar represents a category. The height of each bar represent
 Look at your graph! ***Which platform has the tallest bar? Which has the shortest?***
 
 ### Creating a histogram
+Bar charts are useful for comparing categories but... what if we want to understand how a numerical variable is distributed?
+
+For example:
+- How many hours do students typically spend on social media each day, and how are those values distributed?
+
+We can make a **histogram** to explore this question!
+
+Add the following code:
+```python
+plt.hist(df["Daily_Usage_Hours"], bins=10)
+
+plt.title("Distribution of Daily Social Media Usage")
+plt.xlabel("Daily Usage (Hours)")
+plt.ylabel("Number of Students")
+
+plt.show()
+```
+Let's break it down:
+- `plt.hist()`: Creates a histogram.
+- `df["Daily_Usage_Hours"]`: The numerical column we want to explore.
+- `bins=10`: Divides the range of values into 10 intervals, or bins.
+- `plt.title()`: Adds a title to the graph.
+- `plt.xlabel()`: Adds a label to the horizontal axis (the x-axis).
+- `plt.ylabel()`: Adds a label to the vertical axis (the y-axis).
+- `plt.show()`: Displays the graph.
+
+In a histogram, each bar represents a range of numerical values. The height of each bar shows how many students' values fall within that range. For example, a bar might represent students who spend between 4 and 5 hours on social media per day.
+
+**REMEMBER:** A bar chart compares categories, while a histogram shows the distribution of numerical values.
 
 ### YOUR TURN: Create your own visualizations!
 
@@ -1092,6 +1121,21 @@ Take a moment to reflect on the graphs you created:
 - What additional questions would you like to investigate?
 
 **REMEMBER:** Visualizations help us explore patterns, but they do not automatically explain why those patterns exist. We need to interpret our results carefully and avoid assuming that one factor causes another just because they appear related.
+
+### Saving a graph
+
+After creating your graphs, you can always save the visualizations as an image file!
+
+For example:
+```python
+plt.savefig("my-data-analysis.png")
+```
+You can use this to save a graph for your presentation or portfolio. Make sure you call `savefig()` before `plt.show()`:
+
+```python
+plt.savefig("my-data-analysis.png")
+plt.show()
+```
 
 ## Putting It Together!
 
