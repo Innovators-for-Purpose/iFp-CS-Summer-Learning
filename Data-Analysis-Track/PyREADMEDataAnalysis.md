@@ -3,28 +3,20 @@
 Welcome to iFp's Python coding practice 3! In this session you will practice Python by analyzing and visualizing the dataset of "Social Media Impact of Life."
 
 ## What you'll do
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Build your own version of `my-data-analysis.ipynb`
-=======
-- Build your own version of `my-data-analysis.py`
->>>>>>> 76a0163 (moving folders around)
-=======
-- Build your own version of `my-data-analysis.ipynb`
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
-- Load and explore a CSV dataset with information of 4,500 students
-- Filter, sort, count, and group data to answer questions
-- Investigate patterns in the data
+- Build your own version of `my-data-analysis.ipynb`,
+- Load and explore a CSV dataset with information of 4,500 students.
+- Filter, sort, count, and group data to answer questions.
+- Investigate patterns in the data.
 - Create your own data analysis!
 
 ## What you'll learn
 
 Work on this project will help you to:
-- Improve your Python programming skills
-- Understand how Python can be used for data analysis
-- Work with CSV files using `pandas` library
-- Create visualizations using `matplotlib` library
-- Learn what data can show us and what it can't
+- Improve your Python programming skills.
+- Understand how Python can be used for data analysis.
+- Work with CSV files using `pandas` library.
+- Create visualizations using `matplotlib` library.
+- Learn what data can show us and what it can't.
 
 This tutorial is part of the **Data Analysis and AI with Python** iFp curriculum.
 
@@ -50,13 +42,6 @@ In the same VS Code terminal:
 
 `python3 -m pip install pandas`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 76a0163 (moving folders around)
-=======
->>>>>>> 718c13b (adding display + filtering part 5)
 ### Step 3: Install matplotlib
 
 Matplotlib is the Python library we will use to turn our data into graphs and visualizations.
@@ -65,53 +50,26 @@ In the same VS Code terminal:
 
 `python3 -m pip install matplotlib`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 ### Step 4: Install Jupyter Notebook extension
 
 Go to VS Code and click on the extensions tab. Search the **Jupyter** extension and install it. This extension allows you to create a Jupyter Notebook file where you can write python code that manages big amounts of data and run it in one single file.
 
 
 ### **OPTIONAL** Step 5: Install Rainbow CSV in Visual Studio Code
-<<<<<<< HEAD
-=======
-### **OPTIONAL** Step 4: Install Rainbow CSV in Visual Studio Code
->>>>>>> 76a0163 (moving folders around)
-=======
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 Go to VS Code and click on the extensions tab. Install the Rainbow CSV extension. This extension give different colors to the colums in our CSV file.
 
 
 ## Start coding!
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
 
 - `my-jupyter-data-analysis.ipynb`:  The provided reference sample. This file will contain the structure and behavior of your data analysis.
-<<<<<<< HEAD
-=======
-Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the `PyGame` folder and then the`Data-Analysis-Tutorial` folder. You should be able to see the following files:
-=======
-Navigate to Visual Studio Code in your applications and clone the `iFp Summer Coding Practice folder` from the iFp Github repository. Open the the `Data-Analysis-Tutorial` folder. You should be able to see the following files:
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
-
-- `data-analysis-tutorial.py`: The provided reference sample. This file will contain the structure and behavior of your data analysis.
->>>>>>> 76a0163 (moving folders around)
-
-- `my-jupyter-data-analysis.ipynb`: The Jupyter version of `data-analysis-tutorial.py`
-=======
->>>>>>> 718c13b (adding display + filtering part 5)
 
 - `PyREADMEDataAnalysis.md` : You are reading the file right now! This file contains the tutorial instructions. 
 
 - `social_media_impact.csv` : The Dataset we will work with!
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `DataLifeCycle.png`: This is an image of the data analysis cycle, and it will be explained on the following tutorial.
 
 Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
@@ -123,25 +81,6 @@ my-data-analysis.ipynb
 ### `my-data-analysis.ipynb`
 
 Your `my-data-analysis.ipynb` file will contain the code you write throughout this tutorial.
-=======
-=======
-- `DataLifeCycle.png`: This is an image of the data analysis cycle, and it will be explained on the following tutorial.
-
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
-Open `data-analysis-tutorial.py` in VS Code and look through the example. Then create a new file in the same folder named:
-
-```python
-my-data-analysis.ipynb
-```
-
-### `my-data-analysis.ipynb`
-
-<<<<<<< HEAD
-Your `my-data-analysis.py` file will contain the code you write throughout this tutorial.
->>>>>>> 76a0163 (moving folders around)
-=======
-Your `my-data-analysis.ipynb` file will contain the code you write throughout this tutorial.
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 You will organize your program into:
 
@@ -166,28 +105,13 @@ In the following steps we will explore more and more the dataset.
 
 ## Imports
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 In our new file `my-data-analysis.ipynb` write the following code at the top:
-=======
-In our new file `my-data-analysis.py` write the following code at the top:
->>>>>>> 76a0163 (moving folders around)
-=======
-In our new file `my-data-analysis.ipynb` write the following code at the top:
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 Run it!
-=======
->>>>>>> 76a0163 (moving folders around)
-=======
-Run it!
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 `import` allows us to use code from a Python library in our program. We are assigning `pandas` the shorter name `pd` and `matplotlib` the shorter name `plt`. In the world of programming, this shorter names are called aliases.
 
@@ -209,46 +133,25 @@ We will show you how to work with this in the following steps!
 
 Exploratory data analysis (EDA) is used by data scientists to analyze and investigate datasets and summarize their main characteristics, often employing data visualization methods. - IBM
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 In the following image you can see the steps for EDA based on Harvard Business School:
-=======
-In the following image you can see the steps for EDA based on Harvard School of Business:
->>>>>>> 76a0163 (moving folders around)
-=======
-In the following image you can see the steps for EDA based on Harvard Business School:
->>>>>>> 9924c9b (finish with data cleaning strategy)
 
 ![DataLifeCycle](DataLifeCycle.png)
 
 Since our dataset `social_media_impact.csv` was download from the web the following steps were already done:
 
-1. Generation: Created a form with questions about the social media impact in students life
-2. Collection: Send the form to 4,500 students
-3. Processing: Get 4,500 answers
-4. Storage: Save the answers in a CSV file
+1. Generation: Create a form with questions about the social media impact in students life.
+2. Collection: Send the form to 4,500 students.
+3. Processing: Get 4,500 answers.
+4. Storage: Save the answers in a CSV file.
 
 In this tutorial we are going to work on the following steps:
 
 5. Management: Load the dataset and play with it!
-6. Analyzing: We are going to understand what the collected data is telling us
-7. Visualization: We are going display the data with graphs 
-<<<<<<< HEAD
-<<<<<<< HEAD
+6. Analyzing: We are going to understand what the collected data is telling us.
+7. Visualization: We are going display the data with graphs.
 8. Interpretation: We assign meaning to our data, and explain findings!
 
 ## Data Management: Loading our dataset
-<<<<<<< HEAD
-=======
-8. Interpretation: We are going to see what the graphs are telling us
-=======
-8. Interpretation: We assign meaning to our data, and explain findings!
->>>>>>> 9924c9b (finish with data cleaning strategy)
-
-## Data Analysis Part 1: Loading our dataset
->>>>>>> 76a0163 (moving folders around)
-=======
->>>>>>> 932bf0d (change titles to EDA)
 
 Before we can manage and analyze data, we need to load it into Python.
 
@@ -260,54 +163,23 @@ A CSV file is a common way to store data in a table. For example, a very small C
 
 ```text
 Name,Age,Favorite Color
-<<<<<<< HEAD
-<<<<<<< HEAD
 Alex,19,Yellow
 Adina,19,Blue
 Andres,16,Orange
-=======
-Alex,16,Blue
-Sam,17,Green
-Jordan,16,Red
->>>>>>> 76a0163 (moving folders around)
-=======
-Alex,19,Yellow
-Adina,19,Blue
-Andres,16,Orange
->>>>>>> 9924c9b (finish with data cleaning strategy)
 ```
 
 Each row represents one student, and each column represents a piece of information about that student. Our dataset is much larger. It contains information of **4,500 students**.
 
 ### Read our CSV file
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.ipynb`.
 
 In our `my-data-analysis.ipynb` add the following code:
-=======
-Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.py`.
-
-In our `my-data-analysis.py` add the following code:
->>>>>>> 76a0163 (moving folders around)
-=======
-Make sure `social_media_impact.csv` is in the same folder as `my-data-analysis.ipynb`.
-
-In our `my-data-analysis.ipynb` add the following code:
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 ```python
 df = pd.read_csv("social_media_impact.csv")
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 Run it!
-=======
->>>>>>> 76a0163 (moving folders around)
-=======
-Run it!
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
 
 We are using `pd.read_csv()` to read the CSV file. We are storing the dataset in a variable called `df`.
 
@@ -321,9 +193,6 @@ Let's see what our DataFrame looks like. Add the following line of code:
 print(df)
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Now run your program! 
 **IMPORTANT:** Everytime you add a piece of code in your `my-data-analysis.ipynb` file, you should run your code to see the new functions working!
 
@@ -338,7 +207,6 @@ display(df)
 ```
 Try using this function along side `print()` in the next steps!
 
-<<<<<<< HEAD
 ## Data Management: Explore and handle the data
 
 Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
@@ -348,37 +216,6 @@ In your `my-data-analysis.ipynb` file add the following:
 ```python
 print(df.head())
 display(df.head())
-=======
-Run your program. 
-=======
-Now run your program! ***IMPORTANT: Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!**
->>>>>>> 9924c9b (finish with data cleaning strategy)
-=======
-Now run your program! 
-<<<<<<< HEAD
-**IMPORTANT:** Everytime you add a `print()` piece of code in your `my-data-analysis.py` file, you should run your code to see the new functions working on your terminal!
->>>>>>> 81c817a (formating change)
-=======
-**IMPORTANT:** Everytime you add a piece of code in your `my-data-analysis.ipynb` file, you should run your code to see the new functions working!
->>>>>>> 68312f4 (change from python file to jupyter notebook!)
-
-Another thing to **remember**: Since you have 4,500 rows, pandas will usually shorten the output instead of printing every row.
-
-=======
->>>>>>> 718c13b (adding display + filtering part 5)
-## Data Management: Explore and handle the data
-
-Now that we have access to the 4,500 answers, let's start learning what is the information they provide. Let's print the first 5 rows to see the information of the first 5 students.
-
-In your `my-data-analysis.ipynb` file add the following:
-
-```python
-print(df.head())
-<<<<<<< HEAD
->>>>>>> 76a0163 (moving folders around)
-=======
-display(df.head())
->>>>>>> 718c13b (adding display + filtering part 5)
 ```
 `head()` shows the first five rows of the DataFrame.
 
@@ -386,10 +223,6 @@ We can also ask for a specific number of rows:
 
 ```python
 print(df.head(10))
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 718c13b (adding display + filtering part 5)
 display(df.head(10))
 ```
 This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
@@ -403,28 +236,13 @@ print(df.head(10))
 ```
 **This is a good practice tip, you decide if you want to add it to your code!**
 
-<<<<<<< HEAD
-=======
-```
-This shows the first 10 rows! Now it is **your turn**. Try changing `10` to another number. What happens?
-
->>>>>>> 76a0163 (moving folders around)
-=======
->>>>>>> 9924c9b (finish with data cleaning strategy)
 ### Looking at the last rows
 
 We can also look at the end of the dataset. Add:
 
 ```python
 print(df.tail())
-<<<<<<< HEAD
-<<<<<<< HEAD
 display(df.tail())
-=======
->>>>>>> 76a0163 (moving folders around)
-=======
-display(df.tail())
->>>>>>> 718c13b (adding display + filtering part 5)
 ```
 `tail()` shows the last five rows.
 
@@ -432,14 +250,7 @@ Try:
 
 ```python
 print(df.tail(10))
-<<<<<<< HEAD
-<<<<<<< HEAD
 display(df.tail(10))
-=======
->>>>>>> 76a0163 (moving folders around)
-=======
-display(df.tail(10))
->>>>>>> 718c13b (adding display + filtering part 5)
 ```
 
 How many rows can you see?
@@ -460,29 +271,11 @@ You should see something similar to:
 ```python
 (4500, 16)
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 The first number is the number of **rows**. The second number is the number of **columns**. So our dataset has:
 - 4,500 rows
 - 16 columns
 
 ## Data Analysis: What is the data telling us?
-<<<<<<< HEAD
-=======
-The first number is the number of **rows**.
-The second number is the number of **columns**.
-
-So our dataset has:
-=======
-The first number is the number of **rows**. The second number is the number of **columns**. So our dataset has:
->>>>>>> 9924c9b (finish with data cleaning strategy)
-- 4,500 rows
-- 16 columns
-
-## Data Analysis Part 2: Start analyzing the data
->>>>>>> 76a0163 (moving folders around)
-=======
->>>>>>> 932bf0d (change titles to EDA)
 
 Now that we have access to the dataset, let's analyze it! The columns tell us what information is available for each student.
 
@@ -512,15 +305,7 @@ You should see the following columns names:
 
 ### Analyze the columns
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Look at the column names. What questions could we ask using this dataset?
-=======
-Before continuing, look at the column names. What questions could we ask using this dataset?
->>>>>>> 76a0163 (moving folders around)
-=======
-Look at the column names. What questions could we ask using this dataset?
->>>>>>> 9924c9b (finish with data cleaning strategy)
 
 For example:
 
@@ -532,15 +317,7 @@ For example:
 
 There are many questions we could investigate. Add yours to the list!
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Pandas can give us more information about our DataFrame. Add the following line:
-=======
-Pandas can give us more information about our DataFrame. Add the following line to `my-data-analysis.py`:
->>>>>>> 76a0163 (moving folders around)
-=======
-Pandas can give us more information about our DataFrame. Add the following line:
->>>>>>> 9924c9b (finish with data cleaning strategy)
 
 ```python
 print(df.info())
@@ -548,25 +325,16 @@ print(df.info())
 
 `info()` gives us information such as:
 
-- RangeIndex: Number of Rows
-- Data Columns: Number and Name of columns
-- Non-Null Count: Number of non-empty values each column has
+- RangeIndex: Number of Rows.
+- Data Columns: Number and Name of columns.
+- Non-Null Count: Number of non-empty values each column has.
 - Dtype: The type of data stored in each column. For example:
-    - `str`: the data type is text
-    - `int64`: the data type is a number
-    - `bool`: the data type is `True` or `False`
-    - `float64`: the data type is a decimal number
-<<<<<<< HEAD
-<<<<<<< HEAD
+    - `str`: the data type is text.
+    - `int64`: the data type is a number.
+    - `bool`: the data type is `True` or `False`.
+    - `float64`: the data type is a decimal number.
 
 Also in the end it mentions the amount of times one data types are repeated. We have 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
-=======
-Also in the end it mentions the amount of times one data types is repeated. Like 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
->>>>>>> 76a0163 (moving folders around)
-=======
-
-Also in the end it mentions the amount of times one data types are repeated. We have 1 `bool`, 5 `float64`, 3 `int64`, 7 `str`.
->>>>>>> 9924c9b (finish with data cleaning strategy)
 
 This is important because different kinds of data can be analyzed in different ways.
 
@@ -581,40 +349,28 @@ print(df.isna().sum())
 `isna()` checks whether a value is missing.
 `sum()` counts how many missing values there are in each column.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 In your terminal you should be able see that we have:
-=======
-You may notice missing values in:
->>>>>>> 76a0163 (moving folders around)
-=======
-In your terminal you should be able see that we have:
->>>>>>> 9924c9b (finish with data cleaning strategy)
-- 46 missing values in `Perceived_Stress_Score`
-- 85 missing values in `Academic_Performance_GPA`
+- 46 missing values in `Perceived_Stress_Score`.
+- 85 missing values in `Academic_Performance_GPA`.
 
 ### Why is this important in Data Analysis?
 
 Imagine we want to calculate the average GPA. If some students do not have a GPA recorded, we need to know that before interpreting our results. 
 **Missing data does not mean that the dataset is bad.** It means we need to pay attention to what information is available. 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Data Cleaning: What do we do when there is missing values in our dataset?
 
 In data analysis, data cleaning means preparing our data so that we can analyze it more reliably. Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
 
 There are different ways to handle missing data. For example:
 
-- Remove rows that contain missing values
-- Replace missing values with another value
-- Use a statistical method to estimate the missing value
+- Remove rows that contain missing values.
+- Replace missing values with another value.
+- Use a statistical method to estimate the missing value.
 
 For this tutorial, we will use the technique called Mean Substitution.
 
 ### Mean Substitution Technique
-<<<<<<< HEAD
 
 Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
 
@@ -743,11 +499,11 @@ In this dataset the numerical values that we found are 2 types:
 
 The `describe()` pandas method can help us get the following statistics information:
 
-- `count`: Number of values of the column
-- `mean`: Average of the column
-- `standard deviation`: Number that explains how "spread out" the values are
-- `minimum` and `maximum`: lowest and highest value of the column
-- `quartiles`: 25%, 50%, 75% (50% represents the median)
+- `count`: Number of values of the column.
+- `mean`: Average of the column.
+- `standard deviation`: Number that explains how "spread out" the values are.
+- `minimum` and `maximum`: lowest and highest value of the column.
+- `quartiles`: 25%, 50%, 75% (50% represents the median).
  
 We can use `describe()` to get an overview of the columns that we want to explore!
 
@@ -782,7 +538,7 @@ In this dataset the columns that have integer and float values are:
 - `Academic_Performance_GPA`
 
 Now it is your turn to:
-- Create one variable per each column where you can save and select the column information
+- Create one variable per each column where you can save and select the column information.
 - Use the `describe()` method on each variable
 - Print and analyze the statistics!
 
@@ -830,8 +586,8 @@ In this dataset the 8 columns that have string and boolean values are:
 Check the CSV file, which are the other columns that have categorical values? how many do we have?
 
 Once you identified the other columns, it is your turn to:
-- Create one variable per each column where you can save and select the column information
-- Use the `value_counts()` method on each variable
+- Create one variable per each column where you can save and select the column information.
+- Use the `value_counts()` method on each variable.
 - Print and analyze the results!
 
 **HINT**: Check the code that we used for the `Primary_Platform` column!
@@ -847,8 +603,7 @@ One of the most useful things we can do with pandas is **filter** data. **Filter
 ### Filter numerical values 
 
 Let's start with a question:
-
-***How many students spend more than 8 hours a day on social media?***
+- **How many students spend more than 8 hours a day on social media?**
 
 To answer this question, we'll work with the `Daily_Usage_Hours` column.
 
@@ -874,7 +629,7 @@ df[condition]
 
 Let's break it down:
 
-- `df`: the DataFrame containing our dataset
+- `df`: the DataFrame containing our dataset.
 - `[condition]`: a rule that determines which rows to keep. Pandas checks each row against the condition and returns `True` or `False`. Only rows where the condition is `True` are included in the filtered DataFrame.
 
 This is how our condition would look like:
@@ -914,8 +669,7 @@ Now we know that out of the 4,500 students, ***632 students spend more than 8 ho
 We can also filter data using text values, for example social media platform names. 
 
 Let's answer a new question:
-
-***How many students use TikTok as their primary social media platform?***
+- **How many students use TikTok as their primary social media platform?**
 
 Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
 ```python
@@ -961,7 +715,7 @@ print(tiktok_users.shape[0])
 We learn how to filter data with numerical and text values, now let's combine conditions!
 
 For example, maybe we are curious to know:
-***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
+- **How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night**
 
 Remember: when combining conditions in pandas, put each condition inside parentheses.
 
@@ -987,12 +741,12 @@ Now we know **518 students** use social media *more than 8 hours per day* `AND` 
 
 Let's practice our filter skills! Create a filter condition that answers the following questions. Remember:
 
-- Create a new variable to store your filtered DataFrame
-- Use `&` when you want **both conditions** to be true
-- Put each conditions inside parentheses
-- Use `df[condition]` to filter the rows
-- Use `print()` and `display()` to show the filtered results
-- Use `.shape[0]` to count how many students meet your conditions
+- Create a new variable to store your filtered DataFrame.
+- Use `&` when you want **both conditions** to be true.
+- Put each conditions inside parentheses.
+- Use `df[condition]` to filter the rows.
+- Use `print()` and `display()` to show the filtered results.
+- Use `.shape[0]` to count how many students meet your conditions.
 
 #### Challenge 1: Social media AND Sleep duration
 
@@ -1041,10 +795,10 @@ display(sorted_daily_usage_hours)
 ```
 
 That line of code looks kind of long, let's break it down:
-- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame
-- `df`: The DataFrame containing our dataset
-- `.sort_values()`: The pandas method that sorts the rows
-- `"Daily_Usage_Hours"`: The column we want to use to sort the data
+- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame.
+- `df`: The DataFrame containing our dataset.
+- `.sort_values()`: The pandas method that sorts the rows.
+- `"Daily_Usage_Hours"`: The column we want to use to sort the data.
 
 We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
 
@@ -1063,8 +817,8 @@ display(descending_daily_usage_hours)
 The parameter `ascending=False` tells pandas to sort the values in **descending order**, from the largest to the smallest. Now, students who spend the most hours on social media appear first!
 
 **REMEMBER:**
-- `ascending=True`: Smallest to largest (the default)
-- `ascending=False`: Largest to smallest
+- `ascending=True`: Smallest to largest (the default).
+- `ascending=False`: Largest to smallest.
 
 ### Sorting text values
 
@@ -1122,589 +876,287 @@ Can you sort `Daily_Usage_Hours` in descending order and then display only the f
 
 ## Data Analysis: Grouping data
 
-🚧This part of the tutorial is under construction!!!🚧
+Now that we know how to sort our data, let's learn how to **group** it!
 
+**Grouping** means organizing rows that share the same value in a column. This helps us compare categories and discover patterns in our dataset. Instead of looking at all the 4,500 students individually, we could group them by their academic level and calculate the average number of hours they spend on social media.
 
-## Data Visualization!
-
-## Data Interpretation: What the graphs can tell us?
-
-## Putting It Together!
-
-Your `my-data-analysis.ipynb` file should now contain code for:
-
-1. Importing pandas and matplotlib
-2. Data Management: Loading the CSV dataset
-3. Data Management: Exploring the first and last rows
-4. Data Management: Checking theß size of the dataset
-5. Data Analysis: Looking at column names
-6. Data Analysis: Checking the data types
-7. Data Cleaning: Handle the missing values
-8. Data Analysis: Calculating summary statistics
-9. Data Analysis: Counting categories
-10. Data Analysis: Filtering rows
-11. Data Analysis: Sorting data
-12. Data Analysis: Grouping data
-13. Data Visualization: Creating your own graphs!
-14. Data Interpretation: Understanding the data from our graphs
-
-Congrats!!! Look how much you learn!!!! Now you are ready to create data analysis with your own data!
-
-## Future Steps
-
-Now you can use all this knowledge to:
-- Create your own data analysis and visualization
-- Start learning about Machine Learning models
-Check the next tutorial soon!
-
-## References
-
-To create this tutorial I used the following references:
-
-- Tim Stobierski, Harvard Business School [Why Exploratory Data Analysis (EDA) Is Essential to Machine Learning](https://online.hbs.edu/blog/post/exploratory-data-analysis), May 28, 2026
-
-- MIT IBM, [What is exploratory data analysis (EDA)?](https://www.ibm.com/think/topics/exploratory-data-analysis)
-
-- MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf), Fall 2022
-
-- Pavlos Protopapas and Natesh Pillai, Harvard SEAS, [CS109a Introduction to PANDAS](https://harvard-iacs.github.io/2021-CS109A/lectures/lecture02/notebook-3/), Fall 2021
-
-
-=======
-### Our first data cleaning
-=======
-## What is Data Cleaning?
->>>>>>> a2855aa (data cleaning part 3)
-=======
-## Data Cleaning: What do we do when there is missing values in our dataset?
->>>>>>> 932bf0d (change titles to EDA)
-
-In data analysis, data cleaning means preparing our data so that we can analyze it more reliably. Before starting playing and analyzing numerica data let's make sure we clean the missing data we found in `Perceived_Stress_Score` and `Academic_Performance_GPA`.
-
-There are different ways to handle missing data. For example:
-
-- Remove rows that contain missing values
-- Replace missing values with another value
-- Use a statistical method to estimate the missing value
-
-For this tutorial, we will use the technique called Mean Substitution.
-
-### Data Cleaning: Mean Substitution Technique
-=======
->>>>>>> c6ecea1 (filter part 3)
-
-Mean substitution replaces a missing numerical value with the mean (average) of the available values in that column.
-
-For example, let's imagine we have a column in our dataframe called "test scores":
-```python
-test scores,
-80,
-90,
-70,
-missing,
-100,
-```
-First, we calculate the mean of the values that we **do** have:
-
-`(80 + 90 + 70 + 100) / 4 = 85`
-
-The missing value would then be replaced with 85. Our data would become:
-
-```python
-test scores,
-80,
-90,
-70,
-85,
-100,
-```
-We are using information from the other values in the same column to fill in the missing value.
-
-For this project, we will use mean substitution so we can practice an important data cleaning technique with pandas.
-
-### Cleaning `Perceived_Stress_Score`
-
-Pandas can calculate the mean for us using `.mean()`.
-
-In your `my-data-analysis.ipynb` file add:
-
-```python
-average_stress = df["Perceived_Stress_Score"].mean()
-
-print(average_stress)
-```
-
-`df["Perceived_Stress_Score"]` selects the `Perceived_Stress_Score` column of our dataframe.
-
-`.mean()` calculates the average of all the values in the column.
-
-After we got the mean we save the result in the variable called `average_stress`. When we `print(average_stress)` it will show the mean result in the terminal.
-
-### YOUR TURN: Cleaning `Academic_Performance_GPA`
-
-As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA` columns. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
-
-Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`. HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
-
-```python
-average_gpa = ______________________________ 
-
-print(average_gpa)
-
-```
-
-### Replacing the missing values with the mean
-
-Next, we can use the mean to replace the missing values in our dataset. 
-
-`fillna()` is a pandas function that fills in the missing values.
-
-Add the following code:
-
-```python
-df["Perceived_Stress_Score"] = df["Perceived_Stress_Score"].fillna(average_stress)
-```
-
-That looks like a huge code sentence! Let's break it little by little.
-
-`df["Perceived_Stress_Score"]` selects the column we want to clean.
-
-`.fillna(average_stress)` tells pandas that wherever there is a missing value, replace it with the value stored in `average_stress`.
-
-Finally: 
-```python
-df["Perceived_Stress_Score"] = ...
-```
-stores the cleaned column back in our DataFrame.
-
-### YOUR TURN: Fill the missing values in `Academic_Performance_GPA`!
-
-Two steps ago you created a variable called: `average_gpa` where you store the mean of the `Academic_Performance_GPA` column. It should look like this:
-
-```python
-average_gpa = df["Academic_Performance_GPA"].mean()
-
-print(average_gpa)
-```
-
-Now use that mean to fill the missing values:
-HINT: review what we did to replace the missing values of `Perceived_Stress_Score`!!!
-
-```python
-df["Academic_Performance_GPA"] = ___
-```
-
-Now both columns have been cleaned!
-
-### Check our data again
-
-Whenever we change our data, it is a good idea to check whether our change worked. Remember how we checked for missing values earlier?
-We used:
-```python
-print(df.isna().sum())
-```
-
-Now add it again to your file and run it! Check the data display in your terminal. `Perceived_Stress_Score` & `Academic_Performance_GPA` should now be at 0.
-
-**GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
-
-## Data Analysis: Working with quantitative data
-
-Our dataset has 8 columns with numerical values. The columns have information that can be measured or counted. That is what we call **quantitative data**. 
-
-In this dataset the numerical values that we found are 2 types:
-
-- `int`: Short for integer. An integer is a whole number(with no decimal point!) It can be positive, negative, or zero. Examples: 10, -3, 0, 42
-
-- `float`: Short for floating-point number. A float is a number that has a decimal point. Examples: 3.14, -2.5, 0.0, 10.75
-
-The `describe()` pandas method can help us get the following statistics information:
-
-- `count`: Number of values of the column
-- `mean`: Average of the column
-- `standard deviation`: Number that explains how "spread out" the values are
-- `minimum` and `maximum`: lowest and highest value of the column
-- `quartiles`: 25%, 50%, 75% (50% represents the median)
- 
-We can use `describe()` to get an overview of the columns that we want to explore!
-
-### Analyzing stadistics of `Age` column
-
-Let's start use `describe()` to explore our the information that `Age` column is giving us.
-
-First let's select our column:
-```python
-age_column = df["Age"]
-print(age_column)
-```
-
-Now let's use `describe()`
-```python
-print(age_column.describe())
-```
-Now you can see the statistic information of the `Age` column!
-
-**IMPORTANT:** We can only use `describe()` with columns that have numerical values. 
-
-### YOUR TURN: Get the statistics of the following columns!
-
-In this dataset the columns that have integer and float values are:
-- `Age` **(We already got the information of this one)**
-- `Daily_Usage_Hours`
-- `Weekend_Extra_Hours`
-- `Sleep_Duration_Hours`
-- `Sleep_Quality_Score`
-- `Perceived_Stress_Score`
-- `Mental_Health_Index`
-- `Academic_Performance_GPA`
-
-Now it is your turn to:
-- Create one variable per each column where you can save and select the column information
-- Use the `describe()` method on each variable
-- Print and analyze the statistics!
-
-**HINT**: Check the code that we used for `Age` column!
-
-## Data Analysis: Working with qualitative data
-
-There are 16 columns in our dataset, 8 of them contained numerical values and the rest have non-numerical values that describe qualities, characteristics, categories, opinions, and experiences. This is what we called **qualitative data**. 
-
-In this dataset the non-numerical values that we found are 2 types:
-
-- `str`: Short for string. A string is text, such as words, sentences, or even one single character. In Python, strings are written inside quotation marks. Examples: "Hello!", "Bela", "123"
-
-- `bool`: Short for boolean. A boolean is a value that can only be one of two things: True or False. Example: whether a player has won a game.
-
-We can use multiple panda methods to analyze qualitative data. Some columns contain categories, we can count how often each category appears with the `value_counts()` pandas method.
-
-### Counting categories of `Primary_Platform` column
-
-First, just like we did with our numeric columns, let's select our column:
-
-```python
-primaty_platform_column = df["Primary_Platform"]
-print(primaty_platform_column)
-```
-Now let's use `value_counts()`:
-
-```python
-print(primaty_platform_column.value_counts())
-```
-Now you can see the what was the primary platform that most of the students use!
-
-### YOUR TURN: Use `value_counts()` method with other categorical columns!
-
-In this dataset the 8 columns that have string and boolean values are:
-- `Student_ID`
-- `Gender`
-- `Academic_Level` 
-- `Primary_Platform` **(We already got the information of this one)**
-- `Device_Type`
-- `Late_Night_Usage`
-- `Social_Comparison_Frequency`
-- `Overall_Impact`
-
-Check the CSV file, which are the other columns that have categorical values? how many do we have?
-
-Once you identified the other columns, it is your turn to:
-- Create one variable per each column where you can save and select the column information
-- Use the `value_counts()` method on each variable
-- Print and analyze the results!
-
-**HINT**: Check the code that we used for the `Primary_Platform` column!
-
-### Reflect on results
-
-Before we continue playing with qualitative and quantitative data, it is always great to reflect on what the data is telling us. 
-
-## Data Analysis: Filtering data
-
-One of the most useful things we can do with pandas is **filter** data. **Filtering** means selecting only the rows that match a condition.
-
-### Filter numerical values 
+### Grouping numerical values
 
 Let's start with a question:
+- How many **hours on average** do students of **each age** spend on **social media** everyday?
 
-***How many students spend more than 8 hours a day on social media?***
+To answer this question, we will **group** students ***by their age*** and calculate their ***averge daily social media use***.
 
-To answer this question, we'll work with the `Daily_Usage_Hours` column.
-
-#### Select the column
-
-If you already created a variable for this column, you can skip this step and reuse it. Otherwise, add the following:
-
+Let's look at the `Age` and `Daily_Usage_Hours` columns:
 ```python
-daily_usage_hours_column = df["Daily_Usage_Hours"]
-print(daily_usage_hours_column)
+#you can print or display, you decide!
+display(df[["Age","Daily_Usage_Hours"]])
 ```
-Now that we created the `daily_usage_hours_column` variable we have access to all the values in the column. The **next step** is to define a condition for the filtering.
-
-#### Create a filter condition
-
-We want to filter **students whose daily social media usage is greater than 8 hours**.
-
-This is the general structure of a filter in pandas:
-
+Now let's use `groupby()`:
 ```python
-df[condition]
+group_by_age = df.groupby("Age")["Daily_Usage_Hours"].mean()
+#again 
+display(group_by_age)
+```
+Now you can see the average daily social media for each age group!
+
+I know this may look like a lot of code, so let's break it down:
+
+- `group_by_age`: The variable where we store the results.
+- `df`: The DataFrame containing our dataset.
+- `.groupby("Age")`: Organizes the students into groups based on their age. Students with the same age will be part of the same group!
+- `["Daily_Usage_Hours"]`: Selects the column we want to analyze.
+- `.mean()`: Calculates the average daily social media usage for each age group.
+
+**IMPORTANT:** We are grouping students using the `Age` column, but calculating the average using the `Daily_Usage_Hours` column!
+
+#### Use new methods within the group data
+
+We can also use other mathematical methods after grouping our data:
+- `.mean()`: Calculates the average.
+- `.sum()`: Adds all the values together.
+- `.count()`: Counts the number of non-missing values in each group.
+- `.min()`: Finds the smallest value.
+- `.max()`: Finds the largest value.
+
+For example, if we want to know the highest daily social media usage recorded for each age group, we could use:
+```python
+highest_usage_by_age = df.groupby("Age")["Daily_Usage_Hours"].max()
+display(highest_usage_by_age)
+```
+### Grouping text values
+
+We can also group data using text values! For example, we might be curious to know:
+
+- How many **hours** do students who use **each social media platform** spend online **every day**?
+
+This time, we will group students according to their primary social media platform. Let's look at the columns we will use:
+```python
+print(df[["Primary_Platform", "Daily_Usage_Hours"]])
+```
+
+Now let's use `groupby()` again:
+```python
+group_by_platform = df.groupby("Primary_Platform")["Daily_Usage_Hours"].mean()
+
+print(group_by_platform)
+```
+
+Now we can compare the average daily social media usage across different platforms! Notice that our code looks almost the same as the previous example. The only difference is that we are grouping students using `Primary_Platform` instead of `Age`.
+
+**IMPORTANT:** We can group our data using both numerical and text columns. What matters is choosing the column that will help us answer our question!
+
+### Using grouping to count
+
+Sometimes instead of calculating averages, we just want to know how many students belong to each group.
+
+For example:
+
+- How many **students** belong to **each academic level**?
+
+We can use `groupby()` together with `.size()` to count the number of rows in each group.
+```python
+group_by_level = df.groupby("Academic_Level").size()
+print(group_by_level)
 ```
 
 Let's break it down:
+- `group_by_level`: The variable where we store the results.
+- `df`: The DataFrame containing our dataset.
+- `.groupby("Academic_Level")`: Groups students according to their academic level.
+- `.size()`: Counts how many rows (students) belong to each group.
 
-- `df`: the DataFrame containing our dataset
-- `[condition]`: a rule that determines which rows to keep. Pandas checks each row against the condition and returns `True` or `False`. Only rows where the condition is `True` are included in the filtered DataFrame.
+Now we can see how many students are in each academic level!
 
-This is how our condition would look like:
+**GOOD PRACTICE:** Remember that we previously learned about `value_counts()`. That method can also count how many times each category appears in a column. However, `groupby()` is especially useful when we want to organize our data into groups and perform additional calculations, such as finding averages or maximum values.
 
-```python
-df[daily_usage_hours_column > 8]
-```
+### YOUR TURN: Practice grouping data!
 
-The `>` operator means greater than. This filter keeps only the rows where students' daily social media usage is greater than 8 hours.
+Let's practice our grouping skills! For each challenge:
 
-#### Filter the rows
+- Create a new variable to store your grouped results.
+- Use `groupby()` to organize your data.
+- Choose the appropriate pandas method to calculate the results.
+- Use `print()` to display your results.
+- Analyze what the data is telling you!
 
-We can use the condition inside `df[...]` to keep only the rows that meet it.
+#### Challenge 1: Grouping students by academic level
+Let's explore the academic levels represented in our dataset. Use `groupby()` and `.size()` to answer the following questions:
 
-```python
-more_than_8h_online = df[daily_usage_hours_column > 8]
-print(more_than_8h_online)
-```
+- How many High School students are in the dataset?
+- How many Undergraduate students are in the dataset?
+- How many Postgraduate students are in the dataset?
 
-Congrats!!! You've created your first filter! The variable `more_than_8h_online` now contains only the students who spend more than 8 hours a day on social media.
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
-#### Count the filter rows
+#### Challenge 2: Grouping social media usage by platform
+Let's investigate the relationship between social media platforms and daily usage. Group the students by `Primary_Platform` and calculate the average `Daily_Usage_Hours` for each platform. Answer the following questions:
 
-How many students meet our condition?
+- Which social media platform has the highest average daily usage?
+- Which platform has the lowest average daily usage?
 
-We can use `.shape` to find the dimensions of a DataFrame. It returns a **tuple** containing the number of rows and columns. The first value of the tuple, `shape[0]`, tells us how many rows there are.
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
-Add the following code:
+#### Challenge 3: Grouping sleep duration by academic level
+Let's investigate how sleep duration compares across different academic levels. Group students by `Academic_Level` and calculate the average `Sleep_Duration_Hours` for each group. Answer the following questions:
 
-```python
-print(more_than_8h_online.shape[0])
-```
-Now we know that out of the 4,500 students, ***632 students spend more than 8 hours*** in social media everyday.
+- Which academic level has the highest average sleep duration?
+- Which academic level has the lowest average sleep duration?
 
-### Filter with text values
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
-We can also filter data using text values, for example social media platform names. 
+#### Challenge 4: Grouping mental health scores by gender
+Let's explore the average mental health scores across different gender groups.Group students by `Gender` and calculate the average `Mental_Health_Index` for each group. Answer the following questions:
 
-Let's answer a new question:
+- What is the average mental health index for each gender group?
+- Which group has the highest average score?
 
-***How many students use TikTok as their primary social media platform?***
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
-Just like we did in the past example, the first step is to select the column we want to work with. If you created a variable for `Primary_Platform` before, you can **jump to the next step** and **use your own variable**. Otherwise, add:
-```python
-primary_platform_column = df["Primary_Platform"]
-#if you would like to see the values of this column you can print it!
-print(primary_platform_column)
-```
+#### Challenge 5: Big Challenge
+Let's investigate the relationship between late-night social media usage and sleep duration! Group students by `Late_Night_Usage` and calculate the average `Sleep_Duration_Hours` for each group. Answer the following questions:
 
-Now that we created the `primary_platform_column` variable we have access to all the values in that column. The **next step** is to define a condition for the filtering.
+- What is the average sleep duration for students who use social media late at night?
+- What is the average sleep duration for students who do not use social media late at night?
+- Which group has the higher average sleep duration?
 
-This time, we want to find rows where the primary platform is TikTok.
-```python
-primary_platform_column == "TikTok"
-```
-
-The `==` operator checks whether a value is equal to another value. Just like our numerical filter, this condition returns `True` or `False` for each row.
-
-Let's apply the condition to our DataFrame:
-```python
-tiktok_users = df[primary_platform_column == "TikTok"]
-print(tiktok_users)
-```
-
-This displays only the rows where `Primary_Platform` is `"TikTok"`. To count these students, we can use:
-```python
-print(tiktok_users.shape[0])
-```
-
-### When comparing a column's text values, we need to remember...
-
-1) **Use quotation marks** around text, for example `"TikTok"`, so Python recognizes it as a string.
-2) **Match the text in your dataset exactly** including spaces and capitalization.
-    Our code:
-    ```python
-    primary_platform_column == "TikTok"
-    ```
-    checks for the exact text `"TikTok"`. Writing `primary_platform_column == TikTok` without quotation marks makes Python interpret `TikTok` as a variable name which can cause a `NameError` if that variable hasn't been defined.
-
-    If you write `"Tik Tok"` with a space instead, Python treats it as a string, but it won't match rows containing `"TikTok"`. The filter will simply return no matching rows if that exact value doesn't exist in the column.
-
-### Filtering with multiple conditions
-
-We learn how to filter data with numerical and text values, now let's combine conditions!
-
-For example, maybe we are curious to know:
-***How many students use social media for more than 8 hours per day `AND` sleep less than 6 hours per night***
-
-Remember: when combining conditions in pandas, put each condition inside parentheses.
-
-```python
-#feel free to change the names of the variables
-two_conditions = df[(df["Daily_Usage_Hours"] > 8) & 
-    (df["Sleep_Duration_Hours"] < 6)]
-
-print(two_conditions)
-#you can also display it! 
-display(two_conditions)
-```
-In this condition, the `&` operator means `AND`.
-
-Let's count how many students accomplished our conditions. **how many students use social media more than 8 hours per day `AND` sleep less than 6 hours per night.**
-
-```python
-print(two_conditions.shape[0])
-```
-Now we know **518 students** use social media *more than 8 hours per day* `AND` *sleep less than 6 hours per night.*
-
-### YOUR TURN: Create 5 multiple condition filters!!!
-
-Let's practice our filter skills! Create a filter condition that answers the following questions. Remember:
-
-- Create a new variable to store your filtered DataFrame
-- Use `&` when you want **both conditions** to be true
-- Put each conditions inside parentheses
-- Use `df[condition]` to filter the rows
-- Use `print()` and `display()` to show the filtered results
-- Use `.shape[0]` to count how many students meet your conditions
-
-#### Challenge 1: Social media AND Sleep duration
-
-Create a multiple condition filter that can answer this question: 
-- *How many students use **social media for more than 6 hours** per day AND **sleep for less than 7 hours** per night?*
-
-#### Challenge 2: Social media AND Mental health
-
-Create a multiple condition filter that can answer this question: 
-- *How many students use **social media for more than 5 hours** per day AND have a **mental health score greater than 7**?*
-
-#### Challenge 3: Prefered platform AND Daily usage
-
-Create a multiple condition filter that can answer this question: 
-- *How many students use **social media for more than 6 hours** per day AND use **Instagram as their primary social media** platform?*
-
-#### Challenge 4: Social media AND Academic performance
-
-Create a multiple condition filter that can answer this question: 
-- *How many students use **social media for less than 3 hours** per day AND have an **academic performance score greater than 7**?*
-
-#### Challenge 5: Challenge!
-Create a multiple condition filter that can answer this question: 
-- *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
-
-## Data Analysis: Sorting data
-
-We have learned how to explore, clean and filter our dataser. Now, let's learn how to **sort data**!
-
-**Sorting** means organizing the rows of our DataFrame in a particular order. For example, we might want to arrange the students from youngest to oldest or from students who spend more time on social media and students who spend less time.
-
-### Sorting numerical values
-
-Let's start with a question:
-- Which students spend **the most hours** on social media each day?
-
-We can use the `sort_values()` pandas method to arrange our data based on a specific column, in this case we will work with `Daily_Usage_Hours`.
-
-Add the following code to you jupyter notebook:
-
-```python
-sorted_daily_usage_hours = df.sort_values("Daily_Usage_Hours")
-
-print(sorted_daily_usage_hours)
-display(sorted_daily_usage_hours)
-```
-
-That line of code looks kind of long, let's break it down:
-- `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame
-- `df`: The DataFrame containing our dataset
-- `.sort_values()`: The pandas method that sorts the rows
-- `"Daily_Usage_Hours"`: The column we want to use to sort the data
-
-We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
-
-Let's make our filter in **descending order**, from the largest to the smallest daily usage hours:
-
-```python
-descending_daily_usage_hours = df.sort_values(
-    "Daily_Usage_Hours",
-    ascending=False
-)
-
-print(descending_daily_usage_hours)
-display(descending_daily_usage_hours)
-```
-
-The parameter `ascending=False` tells pandas to sort the values in **descending order**, from the largest to the smallest. Now, students who spend the most hours on social media appear first!
-
-**REMEMBER:**
-- `ascending=True`: Smallest to largest (the default)
-- `ascending=False`: Largest to smallest
-
-### Sorting text values
-
-We can also sort text values. For example, we can arrange the student's answers based on their primary social media platform.
-
-```python
-sorted_platforms = df.sort_values("Primary_Platform")
-
-print(sorted_platforms)
-display(sorted_platforms)
-```
-By default, pandas arranges text values alphabetically. When you run this code, first you will see all the students whose `Primary_Platform` is Instagram.
-
-### YOUR TURN: Practice sorting data
-
-Let's practice our sorting skills! Create a new variable for each question and use `sort_values()` to arrange the rows.
-
-#### Challenge 1: Sorting daily social media usage
-
-Sort the dataset by `Daily_Usage_Hours` in ascending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
-
-- What is the `Student_ID` of the student that appears first in the dataframe? 
-- How much time its their daily usage hour? 
-- What is the lowest daily usage value?
-
-#### Challenge 2: Sorting sleep duration
-
-Sort the dataset by `Sleep_Duration_Hours` in descending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
-- What is the `Student_ID` of the student that appears first in the dataframe? 
-- What is the highest sleep duration?
-- What is the lowest sleep duration?
-
-#### Challenge 3: Sorting academic performance
-
-Sort the dataset by `Academic_Performance_GPA` in descending order. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
-- What is the `Student_ID` of the student that has the highest GPA and it is a High School student? 
-- What is the `Student_ID` of the student that has the highest GPA and it is an Undergraduate student? 
-- What is the `Student_ID` of the student that has the highest GPA and it is an Postgraduate student? 
-
-#### Challenge 4: Sorting social media prefered platforms
-
-Sort the dataset alphabetically by `Primary_Platform`. Run your code, analyze the data and print the answers for the following questions in your jupyter notebook.
-- Which platform appears first alphabetically?
-
-Try sorting again `Primary_Platform` but now in descending order! Remember to use: 
-```python
-ascending=False
-```
-- Which platform appears first now?
-
-#### Challenge 5: First 10 rows
-
-Can you sort `Daily_Usage_Hours` in descending order and then display only the first 10 rows? 
-**HINT**: Review the `head()` method!
-
-## Data Analysis: Grouping data
-
-🚧This part of the tutorial is under construction!!!🚧
-
+REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
 
 ## Data Visualization!
 
+We have learned how to explore, clean, filter, sort, and group our dataset. Now, let's turn our results into **visualizations**!
+
+A **data visualization** is a visual representation of information, such as a bar chart, histogram, or line graph. Visualizations can help us identify patterns, compare categories, and communicate our findings more clearly.
+
+In this tutorial, we will use the `matplotlib` library to create graphs. Remember that **we imported matplotlib** at the beginning of our notebook! We assigned the shorter name `plt` to matplotlib so we can use its functions more easily.
+
+### Creating a bar chart
+
+Let's start with a question:
+- Which **primary social media platforms** are **most common** among the students in our dataset?
+
+Earlier in the tutorial, we used `value_counts()` to count how often each category appeared in a column. We can use those results to create a bar chart!
+
+Add the following code:
+```python
+platform_counts = df["Primary_Platform"].value_counts()
+
+platform_counts.plot(kind="bar")
+
+plt.title("Students by Primary Social Media Platform")
+plt.xlabel("Social Media Platform")
+plt.ylabel("Number of Students")
+
+plt.show()
+```
+
+Run the code and look at the graph!
+This count is kind of long, let's understand what each line does:
+
+- `platform_counts`: The variable where we store our counting.
+- `df["Primary_Platform"].value_counts()`: Counts how many students use each platform as their primary platform.
+- `platform_counts.plot(kind="bar")`: Creates a bar chart from the counts.
+- `plt.title()`: Adds a title to the graph.
+- `plt.xlabel()`: Adds a label to the horizontal axis (the x-axis).
+- `plt.ylabel()`: Adds a label to the vertical axis (the y-axis).
+- `plt.show()`: Displays the graph.
+
+In a bar chart, each bar represents a category. The height of each bar represents the number of students in that category. 
+
+Look at your graph! ***Which platform has the tallest bar? Which has the shortest?***
+
+### Creating a histogram
+Bar charts are useful for comparing categories but... what if we want to understand how a numerical variable is distributed?
+
+For example:
+- How many hours do students typically spend on social media each day, and how are those values distributed?
+
+We can make a **histogram** to explore this question!
+
+Add the following code:
+```python
+plt.hist(df["Daily_Usage_Hours"], bins=10)
+
+plt.title("Distribution of Daily Social Media Usage")
+plt.xlabel("Daily Usage (Hours)")
+plt.ylabel("Number of Students")
+
+plt.show()
+```
+Let's break it down:
+- `plt.hist()`: Creates a histogram.
+- `df["Daily_Usage_Hours"]`: The numerical column we want to explore.
+- `bins=10`: Divides the range of values into 10 intervals, or bins.
+- `plt.title()`: Adds a title to the graph.
+- `plt.xlabel()`: Adds a label to the horizontal axis (the x-axis).
+- `plt.ylabel()`: Adds a label to the vertical axis (the y-axis).
+- `plt.show()`: Displays the graph.
+
+In a histogram, each bar represents a range of numerical values. The height of each bar shows how many students' values fall within that range. For example, a bar might represent students who spend between 4 and 5 hours on social media per day.
+
+**REMEMBER:** A bar chart compares categories, while a histogram shows the distribution of numerical values.
+
+### YOUR TURN: Create your own visualizations!
+
+Now it is your turn to communicate what you have learned through graphs! For each challenge, write the code to create a visualization. Remember to include a title, labels for the axes, and `plt.show()`.
+
+#### Challenge 1: Primary social media platforms
+Create a bar chart showing the number of students who use each `Primary_Platform`.
+
+- Which platform has the most students?
+- Which platform has the fewest students?
+
+#### Challenge 2: Academic levels
+Create a bar chart showing the number of students in each `Academic_Level`.
+
+- Which academic level appears most often in the dataset?
+
+#### Challenge 3: Daily social media usage
+Create a histogram using the `Daily_Usage_Hours` column.
+
+- Which range of daily usage hours appears most frequently?
+- Are most students concentrated in a small range of values, or are the values spread out?
+
+#### Challenge 4: Sleep duration
+Create a histogram using the `Sleep_Duration_Hours` column.
+
+- What can you observe about students' sleep duration?
+- Does the distribution look similar to the distribution of daily social media usage?
+
+#### Challenge 5: Compare average usage across platforms
+Create a bar chart showing the average `Daily_Usage_Hours` for each `Primary_Platform`.
+
+Hint: You can combine the methods you have learned:
+
+1. Group the data by `Primary_Platform`.
+2. Calculate the mean of `Daily_Usage_Hours`.
+3. Use `.plot(kind="bar")` to create your graph.
+4. Add a title and axis labels.
+
 ## Data Interpretation: What the graphs can tell us?
+
+Take a moment to reflect on the graphs you created:
+- What patterns did you notice?
+- Which results surprised you?
+- Did any graph help you answer a question more clearly than a table?
+- What additional questions would you like to investigate?
+
+**REMEMBER:** Visualizations help us explore patterns, but they do not automatically explain why those patterns exist. We need to interpret our results carefully and avoid assuming that one factor causes another just because they appear related.
+
+### Saving a graph
+
+After creating your graphs, you can always save the visualizations as an image file!
+
+For example:
+```python
+plt.savefig("my-data-analysis.png")
+```
+You can use this to save a graph for your presentation or portfolio. Make sure you call `savefig()` before `plt.show()`:
+
+```python
+plt.savefig("my-data-analysis.png")
+plt.show()
+```
 
 ## Putting It Together!
 
@@ -1730,8 +1182,8 @@ Congrats!!! Look how much you learn!!!! Now you are ready to create data analysi
 ## Future Steps
 
 Now you can use all this knowledge to:
-- Create your own data analysis and visualization
-- Start learning about Machine Learning models
+- Create your own data analysis and visualization.
+- Start learning about Machine Learning models.
 Check the next tutorial soon!
 
 ## References
@@ -1742,31 +1194,11 @@ To create this tutorial I used the following references:
 
 - MIT IBM, [What is exploratory data analysis (EDA)?](https://www.ibm.com/think/topics/exploratory-data-analysis)
 
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-- MIT CSAIL, ("6.S079 Data Cleaning – Part 2")[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
-
-- 
->>>>>>> 76a0163 (moving folders around)
-=======
-- MIT CSAIL, (6.S079 Data Cleaning – Part 2)[https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf]
-=======
-- MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf)
->>>>>>> b516378 (fixing reference links)
-
->>>>>>> a2855aa (data cleaning part 3)
-=======
 - MIT CSAIL, [6.S079 Data Cleaning – Part 2](https://dsg.csail.mit.edu/6.S079-2022/lectures/6.S079_Lec08.pdf), Fall 2022
 
-<<<<<<< HEAD
->>>>>>> 9924c9b (finish with data cleaning strategy)
-=======
 - Pavlos Protopapas and Natesh Pillai, Harvard SEAS, [CS109a Introduction to PANDAS](https://harvard-iacs.github.io/2021-CS109A/lectures/lecture02/notebook-3/), Fall 2021
 
 
->>>>>>> 0fe1a18 (Start sorting + update references + draft of next steps)
 
 
 
