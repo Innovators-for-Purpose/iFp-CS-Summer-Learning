@@ -419,18 +419,6 @@ print(average_stress)
 
 After we got the mean we save the result in the variable called `average_stress`. When we `print(average_stress)` it will show the mean result in the terminal.
 
-### YOUR TURN: Cleaning `Academic_Performance_GPA`
-
-As we find out before, we have missing data in the `Perceived_Stress_Score` and `Academic_Performance_GPA` columns. Now it is your turn to find the mean for the `Academic_Performance_GPA` column.
-
-Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`. HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
-
-```python
-average_gpa = ______________________________ 
-
-print(average_gpa)
-
-```
 
 ### Replacing the missing values with the mean
 
@@ -456,15 +444,15 @@ df["Perceived_Stress_Score"] = ...
 ```
 stores the cleaned column back in our DataFrame.
 
-### YOUR TURN: Fill the missing values in `Academic_Performance_GPA`!
+### Your Turn: Clean and fill in missing values in `Academic_Performance_GPA`
 
-Two steps ago you created a variable called: `average_gpa` where you store the mean of the `Academic_Performance_GPA` column. It should look like this:
+We have solved for the missing data in the `Perceived_Stress_Score` Now it is your turn to find do the same for missing data and the mean for the `Academic_Performance_GPA` column.
 
-```python
-average_gpa = df["Academic_Performance_GPA"].mean()
+Create a variable called `average_gpa` and called a pandas function that helps you get the mean of the `Academic_Performance_GPA`.
 
-print(average_gpa)
-```
+Once you set you variable, your going to store the mean of the `Academic_Performance_GPA` column. It should look like this:
+
+ HINT: review what we did to get the mean of `Perceived_Stress_Score`!!!
 
 Now use that mean to fill the missing values:
 HINT: review what we did to replace the missing values of `Perceived_Stress_Score`!!!
@@ -486,6 +474,20 @@ print(df.isna().sum())
 Now add it again to your file and run it! Check the data display in your terminal. `Perceived_Stress_Score` & `Academic_Performance_GPA` should now be at 0.
 
 **GOOD PRACTICE TIP:** In data analysis, we should not assume that our code worked just because Python did not show an error. We should check our data before and after cleaning to make sure the change happened.
+
+
+### CHECKPOINT 1: Before you move on...
+
+Check in with your mentor's before you move on. Up until this point, you have learned how to structure and run functions, analyze data using methods, and make variables to isolate select data.
+
+In you notebook, create a new cell and print/display a column of your choosing, and use a method to analyze it. For example, let's say you want to isolate and look at the last ten device times used in the dataframe, it would look something like this:
+
+```python
+print(df['Device_Type'].tail(10))
+```
+
+After you make a function, explain to your mentor what this section of data is telling us, breakdown why the function works, and why is this data you isolated important.
+
 
 ## Data Analysis: Working with quantitative data
 
@@ -772,6 +774,15 @@ Create a multiple condition filter that can answer this question:
 Create a multiple condition filter that can answer this question: 
 - *How many students use **social media for more than 5 hours** per day, **sleep for less than 7 hours** per night, have a **mental health score greater than 5**, AND have **Youtube as their primary social media** platform?*
 
+### CHECKPOINT 2: Before you move on...
+
+Check in with your mentor before you continue. You have practiced describing numerical and categorical data, filtering rows with numerical and text conditions, and combining conditions to answer questions about students in the dataset.
+
+In your notebook, create a new cell that filters the dataset using at least two conditions. Store the filtered DataFrame in a variable, display it, and use `.shape[0]` to count how many students match. For example, you could find students who use a particular platform and spend more than a number of hours on social media each day. Choose your own platform and number, and make sure the values match the dataset.
+
+After you run your code, explain to your mentor what question your filter answers, what each condition checks, and why the conditions are joined with `&`.
+
+
 ## Data Analysis: Sorting data
 
 We have learned how to explore, clean and filter our dataser. Now, let's learn how to **sort data**!
@@ -1021,6 +1032,14 @@ Let's investigate the relationship between late-night social media usage and sle
 - Which group has the higher average sleep duration?
 
 REMEMBER to `print()` or `display()` your answers in your jupyter notebook!
+
+### CHECKPOINT 3: Before you move on...
+
+Check in with your mentor before you continue. Since Checkpoint 2, you have practiced sorting rows in ascending and descending order and grouping students by a category or number to calculate averages, counts, and other summaries.
+
+In your notebook, create a new cell that groups students by `Academic_Level` and calculates the average `Daily_Usage_Hours` for each group. Display the results, then sort the averages so the highest average appears first. (You can use the `groupby()` and `sort_values()` methods you just learned.)
+
+After you run your code, explain to your mentor what each row in your results represents, and how the grouping and average help answer your question.
 
 ## Data Visualization!
 
