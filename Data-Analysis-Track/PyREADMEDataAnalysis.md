@@ -797,8 +797,7 @@ display(sorted_daily_usage_hours)
 That line of code looks kind of long, let's break it down:
 - `sorted_daily_usage_hours`: The new variable where we store our sorted DataFrame.
 - `df`: The DataFrame containing our dataset.
-- `.sort_values()`: The pandas method that sorts the rows.
-- `"Daily_Usage_Hours"`: The column we want to use to sort the data.
+- `.sort_values()`: The pandas method that sorts the rows.hj,m
 
 We want to know how many students have bigger daily usage hours but our output is showing us first the students with the smallest daily usage hours. By default, `sort_values()`, arranges numerical values in **ascending order**, from the smallest to the largest.
 
