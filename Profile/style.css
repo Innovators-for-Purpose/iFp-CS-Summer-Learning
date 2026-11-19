@@ -20,18 +20,27 @@ body{
     border-radius: 50%;
 }
 
+.header{
+    position: relative;
+    text-align: center;
+    font-family: "BBH Bogle", serif;
+    color: rgb(171, 171, 171)
+}
+
+.email{
+    position: relative;
+    text-align: center;
+}
 
 .title{
     font-family: "BBH Bogle", serif;
     position: relative;
     text-align: center;
     font-size: 80px;
-    color: rgb(74, 74, 74);
+    color: rgb(161, 161, 161);
 }
 
 p {
-    height: 50px;
-    width: 290px;
     color: #bbb8b8;
     position: relative;
     text-align: center;
