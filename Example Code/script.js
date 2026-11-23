@@ -16,16 +16,33 @@ function showAbout() {
 
     document.getElementById("section-title").textContent = "About Me";
 
-    document.getElementById("description").textContent = "Hello! My name is ______.";
+    document.getElementById("description").textContent = "Hello! My name is Bela!";
 
 }
 
 function showSkills() {
 
-    document.getElementById("section-title").innerHTML =
-        "Skills";
+    document.getElementById("section-title").innerHTML = "Skills";
 
     document.getElementById("description").innerHTML =
         "Python<br>HTML<br>CSS<br>JavaScript";
 
+}
+
+function showExp() {
+
+    document.getElementById("section-title").innerHTML = "Experience";
+
+    document.getElementById("description").innerHTML = "Innovators for Purpose";
+
+}
+
+function showInterests() {
+    document.getElementById("section-title").innerHTML = "Interests";
+    document.getElementById("description").innerHTML = "Accessible design, AI literacy, Animation";
+
+}
+
+function showMessage(){
+    document.getElementById("little-message").innerHTML = "Hey!";
 }

@@ -3,7 +3,6 @@ body {
   color: #2e3a4f;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
   display: flex;
   justify-content: center;
 }
@@ -45,14 +44,18 @@ button {
 button:hover {
   background-color: #496fdb;
 }
-.drawing-title{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-style: italic;
+
+.little-message{
+  font-size: 30px;
+  color: #496fdb;
+}
+
+.drawing-btn{
+  background-color: #f4f7fb;
 }
 
 .drawing{
   width: 40%;
-  display: flex;
 }
 /*name, time, speed of animation, how many times is repeated, moves forward and backward instead of restarting*/
 
@@ -71,3 +74,4 @@ button:hover {
         transform: rotate(3deg);
     }
 }
+

@@ -12,6 +12,10 @@
     <!-- ==============================
          PROFILE CARD
     ============================== -->
+    <div>
+        <img class="drawing" src="sample-drawing.png" alt="my-drawing">
+    </div>
+
     <div class="profile-card">
 
         <!-- Profile Image -->
@@ -22,10 +26,10 @@
         >
 
         <!-- Student Name -->
-        <h1>Your Name Here</h1>
+        <h1>Bela</h1>
 
         <!-- Short Tagline -->
-        <h3>Aspiring Software Developer</h3>
+        <h3>Computer Science Mentor</h3>
 
         <!-- ==============================
              INFORMATION BOX
@@ -37,8 +41,7 @@
             </h2>
 
             <p id="description">
-                Hello! My name is ______.
-
+                Hola! My name is Bela!
                 I enjoy technology, games, and learning new things.
             </p>
 
@@ -57,7 +60,7 @@
                 Skills
             </button>
 
-            <button onclick="showExperience()">
+            <button onclick="showExp()">
                 Experience
             </button>
 
@@ -69,14 +72,13 @@
         <talking-button></talking-button>
     </div>
 
-    <!-- Connect our JavaScript file -->
-    <!-- <script src="script.js"></script>
-    <script src="talking-button/script.js"></script> -->
-    <script src="talking-button/talking-button.js"></script>
     <div>
-        <p class="drawing-title">Pass the cursor over the drawing!</p>
-        <img class="drawing" src="sample-drawing.png" alt="my-drawing">
+        <button class="drawing-btn" onclick="showMessage()">
+            <img class="drawing" src="sample-drawing.png" alt="my-drawing">
+        </button>
+        <p class="little-message"></p>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
