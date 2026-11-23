@@ -55,8 +55,33 @@ button:hover {
 }
 
 .drawing{
-  width: 40%;
+  width: 80%;
 }
+
+
+.img-container{
+  position:relative;
+}
+
+.img-container img{
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.img-hover{
+  position:absolute;
+  opacity: 0;
+}
+
+.img-container:hover .img-hover{
+  opacity: 1;
+}
+
+.img-container:hover .img-normal{
+  opacity: 0;
+}
+
+
 /*name, time, speed of animation, how many times is repeated, moves forward and backward instead of restarting*/
 
 .drawing:hover{
