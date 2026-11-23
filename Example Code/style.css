@@ -45,3 +45,8 @@ button {
 button:hover {
   background-color: #496fdb;
 }
+
+.drawing{
+  width: 50%;
+  display: flex;
+}
