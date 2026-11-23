@@ -50,37 +50,9 @@ button:hover {
   color: #496fdb;
 }
 
-.drawing-btn{
-  background-color: #f4f7fb;
-}
-
 .drawing{
-  width: 80%;
+  width: 90%;
 }
-
-
-.img-container{
-  position:relative;
-}
-
-.img-container img{
-  width: 100%;
-  transition: opacity 0.3s ease;
-}
-
-.img-hover{
-  position:absolute;
-  opacity: 0;
-}
-
-.img-container:hover .img-hover{
-  opacity: 1;
-}
-
-.img-container:hover .img-normal{
-  opacity: 0;
-}
-
 
 /*name, time, speed of animation, how many times is repeated, moves forward and backward instead of restarting*/
 
@@ -100,3 +72,29 @@ button:hover {
     }
 }
 
+/*replacing image when hovering*/
+
+.img-container{
+  position:relative;
+  width: 300px;
+}
+
+.img-container img{
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.img-hover{
+  position:absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.img-container:hover .img-hover{
+  opacity: 1;
+}
+
+.img-container:hover .img-normal{
+  opacity: 0;
+}
