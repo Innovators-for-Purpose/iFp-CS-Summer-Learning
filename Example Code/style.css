@@ -45,8 +45,29 @@ button {
 button:hover {
   background-color: #496fdb;
 }
+.drawing-title{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
 
 .drawing{
-  width: 50%;
+  width: 40%;
   display: flex;
+}
+/*name, time, speed of animation, how many times is repeated, moves forward and backward instead of restarting*/
+
+.drawing:hover{
+  animation: wiggle 0.5s ease-in-out infinite alternate;
+}
+
+/*define the animation*/
+@keyframes wiggle {
+    from {
+      /*rotate drawing 3 degrees to the left*/
+        transform: rotate(-3deg);
+    }
+    to {
+      /*rotate drawing 3 degrees to the right*/
+        transform: rotate(3deg);
+    }
 }
