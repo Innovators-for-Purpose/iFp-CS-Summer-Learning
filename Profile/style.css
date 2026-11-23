@@ -1,12 +1,31 @@
 body{
     background-image:  #faeeee;
+    cursor: url("img/Cursor.png"), auto;
+}
+
+.header{
+    text-align: center;
+    font-family: "BBH Bogle", serif;
+    color: rgb(96, 95, 95)
 }
 
 .name-me{
     font-family: "BBH Bogle", serif;
     text-align: center; 
-    font-size: 80px;
+    font-size: 120px;
+    margin-bottom: 40px;
+    color: rgb(51, 51, 51);
+    letter-spacing: 4px;
+
 }
+h1{
+    margin:0;
+}
+h2{
+    margin-top:1;
+    margin-bottom:0;
+}
+
 
 .profile-card{
     align-items: center;
@@ -14,47 +33,58 @@ body{
     flex-direction: column;
 }
 
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-
-.header{
-    position: relative;
-    text-align: center;
-    font-family: "BBH Bogle", serif;
-    color: rgb(171, 171, 171)
-}
-
-.email{
-    position: relative;
-    text-align: center;
-}
-
 .title{
     font-family: "BBH Bogle", serif;
-    position: relative;
     text-align: center;
-    font-size: 80px;
-    color: rgb(161, 161, 161);
+    font-size: 110px;
+    color: rgb(124, 122, 122);
+    letter-spacing: 4px;
 }
 
-p {
-    color: #bbb8b8;
+.box{
     position: relative;
-    text-align: center;
-    font-family: "BBH Bogle", serif;
+    width: 100%;
 }
+.box img{
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.profile-h{
+    width:100;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+}
+
+.box:hover .profile-h{
+ opacity: 1;
+}
+
+.box:hover .profile-image{
+    opacity: 0;
+}
+
+.subtitle{
+    font-family: "BBH Bogle", serif;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    word-spacing: 4px;
+}
+
+/* buttons */
+
 button {
     background-color: #83473a;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    position: relative;
+    cursor: url("img/CursorH.png"), auto;
     left: 7px;
+    margin:    6px;
     box-shadow: 10px 5px 5px rgba(144, 66, 66, 0.353);
     font-family: "Playfair Display", serif;
 }
@@ -67,49 +97,10 @@ button {
 
 /* fonts */
 
-.castoro-titling-regular {
-  font-family: "Castoro Titling", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.im-fell-double-pica-regular {
-  font-family: "IM Fell Double Pica", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.im-fell-double-pica-regular-italic {
-  font-family: "IM Fell Double Pica", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-
 .playfair-display-regular {
   font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.textpert-1{
-    font-family: "IM Fell Double Pica", serif;
-    position: relative;
-    left: 428px;
-    top: -300px;
-    rotate: -7deg;
-}
-.textpert-2{
-    font-family: "IM Fell Double Pica", serif;
-    position: relative;
-    left: -379px;
-    top: -380px;
-    rotate: 12deg;
 }
 
 .bbh-bogle-regular {
   font-family: "BBH Bogle", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
