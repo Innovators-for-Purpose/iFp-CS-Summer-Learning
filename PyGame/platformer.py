@@ -130,13 +130,14 @@ def main(window):
                 won = True
 
         camera_x = max(0, min(player.centerx - WIDTH // 2, WORLD_WIDTH - WIDTH))
+
         draw_background(window, camera_x)
         for platform in platforms:
             visible = platform.copy().move(-camera_x, 0)
             pygame.draw.rect(window, PLATFORM_SIDE, visible)
             pygame.draw.rect(window, PLATFORM_TOP, (visible.x, visible.y, visible.width, 7))
-        draw_player(window, player, camera_x)
 
+        draw_player(window, player, camera_x)
         hint = font.render("A / D or arrows: move    SPACE: jump    R: restart", True, INK)
         window.blit(hint, (22, 20))
         if won:
